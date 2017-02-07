@@ -1,0 +1,1494 @@
+<html>
+ <head>
+  <title>Resource index</title> 
+  <script>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</script> 
+  <link rel="stylesheet" type="text/css" href="doclet.css" title="Style" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+ </head> 
+ <body>
+  <table class="menu">
+   <colgroup>
+    <col />
+    <col />
+   </colgroup>
+   <tbody>
+    <tr>
+     <td class="NavBarCell1" colspan="2">
+      <table>
+       <tbody>
+        <tr>
+         <th><a href="overview-summary.html">Overview</a></th>
+         <th class="selected">Index</th>
+         <th><a href="index.html">Root resource</a></th>
+        </tr>
+       </tbody>
+      </table></td>
+    </tr>
+   </tbody>
+  </table>
+  <hr />
+  <table class="info">
+   <caption class="TableCaption">
+    Resources
+   </caption>
+   <tbody>
+    <tr>
+     <th class="TableHeader">Method</th>
+     <th class="TableHeader">URL</th>
+     <th class="TableHeader">Description</th>
+     <th class="TableHeader">Tintri Api Server support</th>
+     <th class="TableHeader">Input</th>
+     <th class="TableHeader">Output</th>
+    </tr>
+    <tr>
+     <td><a href="info/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="info/index.html"><tt>/info</tt></a></td>
+     <td>Returns basic information about API supported by this server.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v/dto/domain/RestApi.html">RestApi</a></tt> - RestApi Contains information about API versions supported and preferred version on this server.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/alert/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/alert/index.html"><tt>/v310/alert</tt></a></td>
+     <td>Fetches information based on the alert related query string parameters.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/Alert.html", "Alert");
+ </script> items.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/alert/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/alert/index.html"><tt>/v310/alert</tt></a></td>
+     <td>Updates the specified properties by values of passed alerts instance.</td>
+     <td><tt>All</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/Alert.html">Alert</a>&gt;</tt> - Container of Alert</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/alert/alertListDownloadable/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/alert/alertListDownloadable/index.html"><tt>/v310/alert/alertListDownloadable</tt></a></td>
+     <td>Create a URL for retrieving the specified alert report which is returned as output.</td>
+     <td><tt>TgcOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/alerts/AlertDownloadableReportFilter.html">AlertDownloadableReportFilter</a></tt> - The filer for generating the report.</td><td><tt>String</tt> - The URL that the user can use to retrieve the alert list report.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/alert/filter/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/alert/filter/index.html"><tt>/v310/alert/filter</tt></a></td>
+     <td>Returns alert properties as specified by a filter request such as VMstore names and log message count.</td>
+     <td><tt>TgcOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/FilterScope.html">FilterScope</a></tt> - FilterScope</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/alert/markArchived/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/alert/markArchived/index.html"><tt>/v310/alert/markArchived</tt></a></td>
+     <td>Marks all non-archived alerts to archived.</td>
+     <td><tt>All</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/alert/markRead/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/alert/markRead/index.html"><tt>/v310/alert/markRead</tt></a></td>
+     <td>Marks all non-acknowledged alerts to acknowledged.</td>
+     <td><tt>All</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/index.html"><tt>/v310/appliance</tt></a></td>
+     <td>Gets Tintri Appliances.</td>
+     <td><tt>All</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/Appliance.html">Appliance</a>&gt;</tt> - List of Appliance instances.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/index.html"><tt>/v310/appliance/{uuid}</tt></a></td>
+     <td>Gets Tintri Appliance properties.</td>
+     <td><tt>All</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/Appliance.html">Appliance</a>&gt;</tt> - List of Appliance instances</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/index.html"><tt>/v310/appliance/{uuid}</tt></a></td>
+     <td>Updates Tintri appliance's specified properties.</td>
+     <td><tt>All</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/Appliance.html">Appliance</a>&gt;</tt> - The request contains properties to update</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/action=testEmail/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/action=testEmail/index.html"><tt>/v310/appliance/{uuid}/action=testEmail</tt></a></td>
+     <td><b>Deprecated.</b> Tests alert mail.</td>
+     <td><tt>All</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceEmail.html">ApplianceEmail</a></tt></td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Response.html">Response</a></tt> - The response to indicate if the test email is successful or not</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/action=testSNMP/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/action=testSNMP/index.html"><tt>/v310/appliance/{uuid}/action=testSNMP</tt></a></td>
+     <td><b>Deprecated.</b> Send a SNMP test trap to a remote trap receiver host.</td>
+     <td><tt>VMstoreOnly - Since v310.41</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/snmp/ApplianceSnmp.html">ApplianceSnmp</a>&gt;</tt> - This contains the user security and remote host information.</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Response.html">Response</a></tt> - Formatted error message if operation fails.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/action=testSyslogForwarding/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/action=testSyslogForwarding/index.html"><tt>/v310/appliance/{uuid}/action=testSyslogForwarding</tt></a></td>
+     <td><b>Deprecated.</b> Send a test log forwarding message to the remote host.</td>
+     <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceSyslogForwarding.html">ApplianceSyslogForwarding</a>&gt;</tt> - This contains the remote host address.</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Response.html">Response</a></tt> - Formatted error message if operation fails.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/action=upgrade/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/action=upgrade/index.html"><tt>/v310/appliance/{uuid}/action=upgrade</tt></a></td>
+     <td><b>Deprecated.</b> Starts the Tintri appliance upgrade.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Response.html">Response</a></tt> - The respond to indicate if request is successful or not</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/alertCounts/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/alertCounts/index.html"><tt>/v310/appliance/{uuid}/alertCounts</tt></a></td>
+     <td>Gets the number of notifications on appliance</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/alerts/ApplianceAlertCounts.html">ApplianceAlertCounts</a></tt> - The number of notifications</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/certificate/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/certificate/index.html"><tt>/v310/appliance/{uuid}/certificate</tt></a></td>
+     <td>Returns any present host certificate and trusted Certificate Authority (CA) certificates.</td>
+     <td><tt>All</tt><td> </td><td><tt>Collection&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/Certificate.html">Certificate</a>&gt;</tt> - any present host certificate and trusted Certificate Authority (CA) certificates.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/certificate/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/certificate/index.html"><tt>/v310/appliance/{uuid}/certificate</tt></a></td>
+     <td>Upload a certificate to VMstore.</td>
+     <td><tt>All</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/Certificate.html">Certificate</a></tt> - the uploaded Certificate and the private key is applicable.</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/certificate/generate/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/certificate/generate/index.html"><tt>/v310/appliance/{uuid}/certificate/generate</tt></a></td>
+     <td>Generate new self-signed host certificate with hostname and IP address in the Subject Alternative Name extension on VMstore.</td>
+     <td><tt>VMstoreOnly - Since v310.41</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/certificate/{id}/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/certificate/{id}/index.html"><tt>/v310/appliance/{uuid}/certificate/{id}</tt></a></td>
+     <td>Returns certificate(s) that matche the certificate ID or empty collection if not found.</td>
+     <td><tt>All</tt><td> </td><td><tt>Collection&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/Certificate.html">Certificate</a>&gt;</tt> - The collection that contains requested certificate if found, or it will be empty.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/certificate/{id}/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/certificate/{id}/index.html"><tt>/v310/appliance/{uuid}/certificate/{id}</tt></a></td>
+     <td>Deletes a certificate by certificate ID.</td>
+     <td><tt>All</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/component/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/component/index.html"><tt>/v310/appliance/{uuid}/component</tt></a></td>
+     <td>Gets the Tintri appliance components.</td>
+     <td><tt>VMstoreOnly - Since v310.31</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceComponent.html">ApplianceComponent</a>&gt;</tt> - The information about Tintri components.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/connectivity/testPing/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/connectivity/testPing/index.html"><tt>/v310/appliance/{uuid}/connectivity/testPing</tt></a></td>
+     <td>Ping test.</td>
+     <td><tt>VMstoreOnly - Since v310.51</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/connectivity/PingTestRequest.html">PingTestRequest</a></tt> - which contains the host name or IP and a packetSize.</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/connectivity/PingTestResult.html">PingTestResult</a></tt> - The ping test result indicating if the test succeeded or not.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/controller/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/controller/index.html"><tt>/v310/appliance/{uuid}/controller</tt></a></td>
+     <td>Gets the Tintri appliance controllers.</td>
+     <td><tt>VMstoreOnly - Since v310.31</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceController.html">ApplianceController</a>&gt;</tt> - The information about Tintri controllers.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/customizationInfo/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/customizationInfo/index.html"><tt>/v310/appliance/{uuid}/customizationInfo</tt></a></td>
+     <td>Gets the Tintri appliance customization information, which includes replication interface and space saving support.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceCustomizationInfo.html">ApplianceCustomizationInfo</a></tt> - Appliance customization information</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/dateTime/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/dateTime/index.html"><tt>/v310/appliance/{uuid}/dateTime</tt></a></td>
+     <td>Returns the date and time settings.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceDateTime.html">ApplianceDateTime</a></tt> - The date and time configuration for the appliance.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/disk/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/disk/index.html"><tt>/v310/appliance/{uuid}/disk</tt></a></td>
+     <td>Gets the Tintri appliance disks.</td>
+     <td><tt>VMstoreOnly - Since v310.31</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceDisk.html">ApplianceDisk</a>&gt;</tt> - The information about Tintri disks.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/dns/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/dns/index.html"><tt>/v310/appliance/{uuid}/dns</tt></a></td>
+     <td>Gets the Tintri appliance DNS setting.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceDns.html">ApplianceDns</a></tt> - The DNS configuration</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/emailalerts/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/emailalerts/index.html"><tt>/v310/appliance/{uuid}/emailalerts</tt></a></td>
+     <td>Gets the Tintri appliance alert email configuration.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceEmail.html">ApplianceEmail</a></tt> - The appliance alert email configuration</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/enableEncryption/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/enableEncryption/index.html"><tt>/v310/appliance/{uuid}/enableEncryption</tt></a></td>
+     <td>Enables disk encryption.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceDiskEncryptionResult.html">ApplianceDiskEncryptionResult</a></tt> - The appliance disk encryption result</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/encryptionInfo/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/encryptionInfo/index.html"><tt>/v310/appliance/{uuid}/encryptionInfo</tt></a></td>
+     <td>Gets the disk encryption information.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceDiskEncryptionInfo.html">ApplianceDiskEncryptionInfo</a></tt> - The appliance disk encryption information</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/expand/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/expand/index.html"><tt>/v310/appliance/{uuid}/expand</tt></a></td>
+     <td>Expands the storage capacity of the Tintri appliance after successful HA failover, the additional capacity will be added to realstore's single large RAID group.</td>
+     <td><tt>All - Since v310.53</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceCapacityErrorInfo.html">ApplianceCapacityErrorInfo</a></tt> - Error info if the Appliance capacity expansion request was not successfull otherwise null.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/failedComponents/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/failedComponents/index.html"><tt>/v310/appliance/{uuid}/failedComponents</tt></a></td>
+     <td>Gets the failed hardware parts that need to be replaced.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceFailedComponents.html">ApplianceFailedComponents</a></tt> - The failed hardware parts</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/hafailover/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/hafailover/index.html"><tt>/v310/appliance/{uuid}/hafailover</tt></a></td>
+     <td>API to perform HA failover.</td>
+     <td><tt>VMstoreOnly - Since v310.21</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/info/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/info/index.html"><tt>/v310/appliance/{uuid}/info</tt></a></td>
+     <td>Gets the Tintri appliance basic information, which includes serial number, model name, OS verison, and product ID.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceInfo.html">ApplianceInfo</a></tt> - The basic information about Tintri appliance</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/ipmi/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/ipmi/index.html"><tt>/v310/appliance/{uuid}/ipmi</tt></a></td>
+     <td>Gets IPMI configuration.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceIpmi.html">ApplianceIpmi</a></tt> - The IPMI configuration</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/ips/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/ips/index.html"><tt>/v310/appliance/{uuid}/ips</tt></a></td>
+     <td>Gets the Tintri appliance IP configurations.</td>
+     <td><tt>All</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceIp.html">ApplianceIp</a>&gt;</tt> - The list of appliance IP configurations</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/lacp/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/lacp/index.html"><tt>/v310/appliance/{uuid}/lacp</tt></a></td>
+     <td>Gets LACP configuration.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceLacp.html">ApplianceLacp</a></tt> - The LACP configuration</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/maintenanceMode/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/maintenanceMode/index.html"><tt>/v310/appliance/{uuid}/maintenanceMode</tt></a></td>
+     <td>Gets maintenance mode.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceMaintenanceMode.html">ApplianceMaintenanceMode</a></tt> - The appliance maintenance mode</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/operationalStatus/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/operationalStatus/index.html"><tt>/v310/appliance/{uuid}/operationalStatus</tt></a></td>
+     <td>Gets the Tintri appliance operational status, which contains sample time, up time, count of unread alerts, file system status, urgent message.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceOperationalInfo.html">ApplianceOperationalInfo</a></tt> - Appliance operational information</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/rbacExternalConfig/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/rbacExternalConfig/index.html"><tt>/v310/appliance/{uuid}/rbacExternalConfig</tt></a></td>
+     <td>Returns the external directory service authentication configuration.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/RbacExternalConfig.html">RbacExternalConfig</a></tt> - the external directory service authentication configuration.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/rbacExternalConfig/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/rbacExternalConfig/index.html"><tt>/v310/appliance/{uuid}/rbacExternalConfig</tt></a></td>
+     <td>Updates the external directory service authentication configuration.</td>
+     <td><tt>All</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/RbacExternalConfig.html">RbacExternalConfig</a></tt></td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/reboot/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/reboot/index.html"><tt>/v310/appliance/{uuid}/reboot</tt></a></td>
+     <td>API to perform Appliance reboot operation</td>
+     <td><tt>VMstoreOnly - Since v310.11</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/restartWebServer/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/restartWebServer/index.html"><tt>/v310/appliance/{uuid}/restartWebServer</tt></a></td>
+     <td>Restart the web server.</td>
+     <td><tt>All - Since v310.41</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/rotateEncryptionKey/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/rotateEncryptionKey/index.html"><tt>/v310/appliance/{uuid}/rotateEncryptionKey</tt></a></td>
+     <td>Rotates the disk encryption key.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/shutdown/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/shutdown/index.html"><tt>/v310/appliance/{uuid}/shutdown</tt></a></td>
+     <td>API to perform Appliance shutdown operation</td>
+     <td><tt>VMstoreOnly - Since v310.11</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/snmp/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/snmp/index.html"><tt>/v310/appliance/{uuid}/snmp</tt></a></td>
+     <td>Gets the sytem SNMP configuration.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/snmp/ApplianceSnmp.html">ApplianceSnmp</a></tt> - ApplianceConfigSnmp</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/snmp/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/snmp/index.html"><tt>/v310/appliance/{uuid}/snmp</tt></a></td>
+     <td>Updates the specified SNMP configuration.</td>
+     <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/snmp/ApplianceSnmp.html">ApplianceSnmp</a></tt> - SNMP configuration</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/snmpTarget/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/snmpTarget/index.html"><tt>/v310/appliance/{uuid}/snmpTarget</tt></a></td>
+     <td>Get all the SNMP trap targets information.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Response.html">Response</a></tt> - The list of all the SNMP trap target configurations.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/snmpTarget/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/snmpTarget/index.html"><tt>/v310/appliance/{uuid}/snmpTarget</tt></a></td>
+     <td>Create a SNMP trap target.</td>
+     <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/snmp/ApplianceSnmpTarget.html">ApplianceSnmpTarget</a></tt> - This is the SNMP trap target configuration.</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/snmpTarget/{targetid}/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/snmpTarget/{targetid}/index.html"><tt>/v310/appliance/{uuid}/snmpTarget/{targetid}</tt></a></td>
+     <td>Get the specified SNMP trap target configuration.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/snmp/ApplianceSnmpTarget.html">ApplianceSnmpTarget</a></tt> - The SNMP trap configuration associated with the specified trap target ID.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/snmpTarget/{targetid}/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/snmpTarget/{targetid}/index.html"><tt>/v310/appliance/{uuid}/snmpTarget/{targetid}</tt></a></td>
+     <td>Delete the specified SNMP trap target.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/snmpTarget/{targetid}/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/snmpTarget/{targetid}/index.html"><tt>/v310/appliance/{uuid}/snmpTarget/{targetid}</tt></a></td>
+     <td>Updates the specified trap target configuration.</td>
+     <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/snmp/ApplianceSnmpTarget.html">ApplianceSnmpTarget</a></tt> - This is the SNMP trap target configuration.</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/snmpUser/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/snmpUser/index.html"><tt>/v310/appliance/{uuid}/snmpUser</tt></a></td>
+     <td>Gets SNMP users.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Response.html">Response</a></tt> - The list of all the SNMP user configurations.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/snmpUser/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/snmpUser/index.html"><tt>/v310/appliance/{uuid}/snmpUser</tt></a></td>
+     <td>Create a SNMP user with the specified configuration.</td>
+     <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/snmp/ApplianceSnmpUser.html">ApplianceSnmpUser</a></tt> - This contains the SNMP user configuration.</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/snmpUser/{username}/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/snmpUser/{username}/index.html"><tt>/v310/appliance/{uuid}/snmpUser/{username}</tt></a></td>
+     <td>Returns the SNMP configuration of the specified user.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/snmp/ApplianceSnmpUser.html">ApplianceSnmpUser</a></tt> - The SNMP user configuration associated with the specified user name.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/snmpUser/{username}/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/snmpUser/{username}/index.html"><tt>/v310/appliance/{uuid}/snmpUser/{username}</tt></a></td>
+     <td>Remove the specified SNMP user.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/snmpUser/{username}/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/snmpUser/{username}/index.html"><tt>/v310/appliance/{uuid}/snmpUser/{username}</tt></a></td>
+     <td>Updates the specified SNMP user configuration.</td>
+     <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/snmp/ApplianceSnmpUser.html">ApplianceSnmpUser</a></tt> - This contains the SNMP user configuration.</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/support/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/support/index.html"><tt>/v310/appliance/{uuid}/support</tt></a></td>
+     <td>Gets the Tintri appliance autosupport settings.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceSupport.html">ApplianceSupport</a></tt> - The appliance auto-support settings.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/syslogForwarding/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/syslogForwarding/index.html"><tt>/v310/appliance/{uuid}/syslogForwarding</tt></a></td>
+     <td>Gets the log forwarding info.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceSyslogForwarding.html">ApplianceSyslogForwarding</a></tt> - ApplianceSyslogForwarding</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/temperature/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/temperature/index.html"><tt>/v310/appliance/{uuid}/temperature</tt></a></td>
+     <td>Gets the Tintri appliance termperatures.</td>
+     <td><tt>VMstoreOnly - Since v310.31</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/Temperature.html">Temperature</a>&gt;</tt> - The information about Tintri temperatures.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/testEmail/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/testEmail/index.html"><tt>/v310/appliance/{uuid}/testEmail</tt></a></td>
+     <td>Tests alert mail.</td>
+     <td><tt>All - Since v310.41</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceEmail.html">ApplianceEmail</a></tt> - e-mail address</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Response.html">Response</a></tt> - The response to indicate if the test email is successful or not</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/testRbacExternalConfig/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/testRbacExternalConfig/index.html"><tt>/v310/appliance/{uuid}/testRbacExternalConfig</tt></a></td>
+     <td>Test the external directory service authentication configuration.</td>
+     <td><tt>All</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/RbacExternalConfig.html">RbacExternalConfig</a></tt></td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/rbac/RbacTestResult.html">RbacTestResult</a>&gt;</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/testRbacExternalConfig/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/testRbacExternalConfig/index.html"><tt>/v310/appliance/{uuid}/testRbacExternalConfig</tt></a></td>
+     <td><b>Deprecated.</b> Test the external directory service authentication configuration.</td>
+     <td><tt>All</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/RbacExternalConfig.html">RbacExternalConfig</a></tt></td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/rbac/RbacTestResult.html">RbacTestResult</a>&gt;</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/testSNMP/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/testSNMP/index.html"><tt>/v310/appliance/{uuid}/testSNMP</tt></a></td>
+     <td>Send a SNMP test trap to a remote trap receiver host.</td>
+     <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/snmp/ApplianceSnmp.html">ApplianceSnmp</a>&gt;</tt> - This contains the user security and remote host information.</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Response.html">Response</a></tt> - Formatted error message if operation fails.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/testSyslogForwarding/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/testSyslogForwarding/index.html"><tt>/v310/appliance/{uuid}/testSyslogForwarding</tt></a></td>
+     <td>Send a test log forwarding message to the remote host.</td>
+     <td><tt>VMstoreOnly - Since v310.41</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceSyslogForwarding.html">ApplianceSyslogForwarding</a>&gt;</tt> - This contains the remote host address.</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Response.html">Response</a></tt> - Formatted error message if operation fails.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/timezones/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/timezones/index.html"><tt>/v310/appliance/{uuid}/timezones</tt></a></td>
+     <td>Returns list of all time zones supported by the server.</td>
+     <td><tt>All</tt><td> </td><td><tt>List&lt;String&gt;</tt> - The list of string representation of time zones</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/upgrade/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/upgrade/index.html"><tt>/v310/appliance/{uuid}/upgrade</tt></a></td>
+     <td>Starts the Tintri appliance upgrade.</td>
+     <td><tt>All - Since v310.41</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Response.html">Response</a></tt> - The respond to indicate if request is successful or not</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/upgradeInfo/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/upgradeInfo/index.html"><tt>/v310/appliance/{uuid}/upgradeInfo</tt></a></td>
+     <td>Gets the Tintri appliance upgrade information, which includes upgrade state, checksum, verison, error message.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceUpgradeInfo.html">ApplianceUpgradeInfo</a></tt> - The appliance upgrade information</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/clusterConfig/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/clusterConfig/index.html"><tt>/v310/clusterConfig</tt></a></td>
+     <td>Returns current cluster configuration</td>
+     <td><tt>TgcOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/ClusterConfiguration.html">ClusterConfiguration</a></tt> - ClusterConfiguration</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/clusterConfig/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/clusterConfig/index.html"><tt>/v310/clusterConfig</tt></a></td>
+     <td>Update current cluster configuration</td>
+     <td><tt>TgcOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/ClusterConfiguration.html">ClusterConfiguration</a></tt> - The new ClusterConfiguration</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/index.html"><tt>/v310/datastore</tt></a></td>
+     <td>Get all datastore properties.</td>
+     <td><tt>All</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/Datastore.html">Datastore</a>&gt;</tt> - List of datastores.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/index.html"><tt>/v310/datastore/{uuid}</tt></a></td>
+     <td>Get the specified datastore properties.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/Datastore.html">Datastore</a></tt> - Datastore datastore properties.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/index.html"><tt>/v310/datastore/{uuid}</tt></a></td>
+     <td>Updates the specified properties of the specified datastore.</td>
+     <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/Datastore.html">Datastore</a>&gt;</tt> - A request wrapper containing the datastore attributes to be modified set in the object and a properties set listing the attributes to be updated.</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/customizationSpec/{vcenterName}/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/customizationSpec/{vcenterName}/index.html"><tt>/v310/datastore/{uuid}/customizationSpec/{vcenterName}</tt></a></td>
+     <td>Gets the customization specifications of the datastore for the specified vCenter.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCustomizationSpec.html">VirtualMachineCustomizationSpec</a>&gt;</tt> - The list of virtual machone customaization specifications for the specified datastore and vCenter.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/fileShare/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/fileShare/index.html"><tt>/v310/datastore/{uuid}/fileShare</tt></a></td>
+     <td>Gets all FileShares on a given datastore.</td>
+     <td><tt>VMstoreOnly - Since v310.11</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/FileShare.html">FileShare</a>&gt;</tt> - A list of file shares</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/fileShare/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/fileShare/index.html"><tt>/v310/datastore/{uuid}/fileShare</tt></a></td>
+     <td>Creates a FileShare.</td>
+     <td><tt>VMstoreOnly - Since v310.11</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/FileShare.html">FileShare</a></tt> - The FileShare to create.</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/FileShare.html">FileShare</a></tt> - The created FileShare.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/fileShare/{fsName}/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/fileShare/{fsName}/index.html"><tt>/v310/datastore/{uuid}/fileShare/{fsName}</tt></a></td>
+     <td>Gets a specific FileShare given the FileShare name.</td>
+     <td><tt>VMstoreOnly - Since v310.11</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/FileShare.html">FileShare</a></tt> - The FileShare.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/fileShare/{fsName}/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/fileShare/{fsName}/index.html"><tt>/v310/datastore/{uuid}/fileShare/{fsName}</tt></a></td>
+     <td>Updates a FileShare.</td>
+     <td><tt>VMstoreOnly - Since v310.31</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/FileShare.html">FileShare</a>&gt;</tt> - Desired parameters for the new FileShare.</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/fileShare/{fsName}/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/fileShare/{fsName}/index.html"><tt>/v310/datastore/{uuid}/fileShare/{fsName}</tt></a></td>
+     <td>Deletes the specified FileShare.</td>
+     <td><tt>VMstoreOnly - Since v310.11</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/fileShare/{fsName}/acl/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/fileShare/{fsName}/acl/index.html"><tt>/v310/datastore/{uuid}/fileShare/{fsName}/acl</tt></a></td>
+     <td>Gets the access control list (ACL) of a specified FileShare.</td>
+     <td><tt>VMstoreOnly - Since v310.11</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/fileShare/Acl.html">Acl</a></tt> - The Acl (access control list).</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/fileShare/{fsName}/acl/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/fileShare/{fsName}/acl/index.html"><tt>/v310/datastore/{uuid}/fileShare/{fsName}/acl</tt></a></td>
+     <td>Creates a specified access control entry (ACE) on a FileShare.</td>
+     <td><tt>VMstoreOnly - Since v310.11</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/fileShare/Ace.html">Ace</a></tt> - The Ace (access control entry) to create.</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/fileShare/Ace.html">Ace</a></tt> - The created Ace (access control entry).</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/fileShare/{fsName}/acl/{aceId}/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/fileShare/{fsName}/acl/{aceId}/index.html"><tt>/v310/datastore/{uuid}/fileShare/{fsName}/acl/{aceId}</tt></a></td>
+     <td>Gets a specific access control entry (ACE) of a specified FileShare and access control entry ID.</td>
+     <td><tt>VMstoreOnly - Since v310.11</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/fileShare/Ace.html">Ace</a></tt> - The Ace (access control entry).</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/fileShare/{fsName}/acl/{aceId}/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/fileShare/{fsName}/acl/{aceId}/index.html"><tt>/v310/datastore/{uuid}/fileShare/{fsName}/acl/{aceId}</tt></a></td>
+     <td>Deletes the specified access control entry (ACE) from a FileShare.</td>
+     <td><tt>VMstoreOnly - Since v310.11</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/hostResources/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/hostResources/index.html"><tt>/v310/datastore/{uuid}/hostResources</tt></a></td>
+     <td>Returns a list of host resources, Host, Resource Pool, Cluster, Compute Resource, etc.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineHostResource.html">VirtualMachineHostResource</a>&gt;</tt> - The list of virtual machine host resources for the specified datastore.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/hypervisorDatastore/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/hypervisorDatastore/index.html"><tt>/v310/datastore/{uuid}/hypervisorDatastore</tt></a></td>
+     <td>Get all hypervisor datastores.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/HypervisorDatastore.html">HypervisorDatastore</a>&gt;</tt> - A list of hypervisor datastore infromation.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/hypervisorManagerConfig/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/hypervisorManagerConfig/index.html"><tt>/v310/datastore/{uuid}/hypervisorManagerConfig</tt></a></td>
+     <td>Adds hypervisor manager configuration</td>
+     <td><tt>VMstoreOnly - Since v310.21</tt><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/HypervisorManagerConfig.html">HypervisorManagerConfig</a>&gt;</tt> - List of HypervisorManagaerConfig objects with hypervisor manager information</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/hypervisorManagerConfig/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/hypervisorManagerConfig/index.html"><tt>/v310/datastore/{uuid}/hypervisorManagerConfig</tt></a></td>
+     <td>Gets hypervisor manager configuration</td>
+     <td><tt>VMstoreOnly - Since v310.21</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/HypervisorManagerConfig.html">HypervisorManagerConfig</a>&gt;</tt> - A list of configured Hypervisor Managers</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/hypervisorManagerConfig/{managerConfigId}/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/hypervisorManagerConfig/{managerConfigId}/index.html"><tt>/v310/datastore/{uuid}/hypervisorManagerConfig/{managerConfigId}</tt></a></td>
+     <td>Delete hypervisor manager configuration</td>
+     <td><tt>VMstoreOnly - Since v310.21</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/hypervisorManagerConfig/{managerConfigId}/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/hypervisorManagerConfig/{managerConfigId}/index.html"><tt>/v310/datastore/{uuid}/hypervisorManagerConfig/{managerConfigId}</tt></a></td>
+     <td>Updates username or password of already configured hypervisor manager.</td>
+     <td><tt>VMstoreOnly - Since v310.21</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/HypervisorManagerConfig.html">HypervisorManagerConfig</a>&gt;</tt> - - HypervisorManagerConfig with new username/password or both</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/hypervisorManagerStatus/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/hypervisorManagerStatus/index.html"><tt>/v310/datastore/{uuid}/hypervisorManagerStatus</tt></a></td>
+     <td>Ping hypervisor managers configured on the Datastore</td>
+     <td><tt>VMstoreOnly - Since v310.21</tt><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/HypervisorManagerConfig.html">HypervisorManagerConfig</a>&gt;</tt></td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/HypervisorManagerConfig.html">HypervisorManagerConfig</a>&gt;</tt> - Status of the ping calls to hypervisor managers</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/hypervisorManagersFromAD/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/hypervisorManagersFromAD/index.html"><tt>/v310/datastore/{uuid}/hypervisorManagersFromAD</tt></a></td>
+     <td>Find potential Hyper-V hosts from Active Directory that this Datastore can manage.</td>
+     <td><tt>VMstoreOnly - Since v310.31</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/HypervisorManagerConfig.html">HypervisorManagerConfig</a>&gt;</tt> - Status of the find calls to potential hypervisor managers</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/nfsaccess/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/nfsaccess/index.html"><tt>/v310/datastore/{uuid}/nfsaccess</tt></a></td>
+     <td>Gets the NFS access control list and the NFS access enabled flag.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/nfsaccess/DatastoreNfsAccesses.html">DatastoreNfsAccesses</a></tt> - The NFS access control list and the NFS access enabled flag.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/nfsaccess/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/nfsaccess/index.html"><tt>/v310/datastore/{uuid}/nfsaccess</tt></a></td>
+     <td>Sets the NFS access control list and the NFS access enabled flag.</td>
+     <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/nfsaccess/DatastoreNfsAccesses.html">DatastoreNfsAccesses</a></tt> - The full NFS access control settings to replace the current settings.</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/qosInfo/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/qosInfo/index.html"><tt>/v310/datastore/{uuid}/qosInfo</tt></a></td>
+     <td>Returns the system-wide QoS information such as total minimum IOPS allocated.</td>
+     <td><tt>VMstoreOnly - Since v310.21</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/DatastoreQoSInfo.html">DatastoreQoSInfo</a></tt> - The system QoS Info.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/replicationConfig/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/replicationConfig/index.html"><tt>/v310/datastore/{uuid}/replicationConfig</tt></a></td>
+     <td>Returns the system-wide replication configuration</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html">VirtualMachineReplicationConfig</a></tt> - The system virtual machine replication configuration for the datastore.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/replicationConfig/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/replicationConfig/index.html"><tt>/v310/datastore/{uuid}/replicationConfig</tt></a></td>
+     <td>Update the system replication configuration, for example, from system disabled to system enabled.</td>
+     <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html">VirtualMachineReplicationConfig</a></tt> - The system virtual machine replication configuration to update.</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/replicationInfo/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/replicationInfo/index.html"><tt>/v310/datastore/{uuid}/replicationInfo</tt></a></td>
+     <td>Gets the replication properties.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/DatastoreReplicationInfo.html">DatastoreReplicationInfo</a></tt> - The replication imformation of the datastore.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/replicationInfo/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/replicationInfo/index.html"><tt>/v310/datastore/{uuid}/replicationInfo</tt></a></td>
+     <td>Updates the specified replication properties on the specified datastore instance by the incoming replication properties instance.</td>
+     <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/DatastoreReplicationInfo.html">DatastoreReplicationInfo</a>&gt;</tt> - A request wrapper containing the datastore replication path attributes to be modified set in the object and a properties set listing the attributes to be updated.</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/replicationPath/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/replicationPath/index.html"><tt>/v310/datastore/{uuid}/replicationPath</tt></a></td>
+     <td>Creates a new replication path and adds it to this datastore as an outgoing replication path.</td>
+     <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/DatastoreReplicationPath.html">DatastoreReplicationPath</a></tt> - The replication link to create.</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/DatastoreReplicationPath.html">DatastoreReplicationPath</a></tt> - The created datastore replication path.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/replicationPath/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/replicationPath/index.html"><tt>/v310/datastore/{uuid}/replicationPath</tt></a></td>
+     <td>Updates the specified replication link on the specified datastore instance by the incoming replication instance.</td>
+     <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/DatastoreReplicationPath.html">DatastoreReplicationPath</a>&gt;</tt> - A request wrapper containing the datastore replication path attributes to be modified set in the object and a properties set listing the attributes to be updated.</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/replicationPath/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/replicationPath/index.html"><tt>/v310/datastore/{uuid}/replicationPath</tt></a></td>
+     <td>Gets all of the replication paths.</td>
+     <td><tt>All</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/DatastoreReplicationPath.html">DatastoreReplicationPath</a>&gt;</tt> - A list of outgoing replication paths.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/replicationPath/test/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/replicationPath/test/index.html"><tt>/v310/datastore/{uuid}/replicationPath/test</tt></a></td>
+     <td><b>Deprecated.</b> Tests the specified replication link on the specified datastore instance.</td>
+     <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/TestReplicationPath.html">TestReplicationPath</a>&gt;</tt> - Replication link to test.</td><td><tt>String</tt> - The result of the test. An empty string on success. If only encrypton is being tested then the reason for the failure is returned.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/replicationPath/{smReplLinkId}/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/replicationPath/{smReplLinkId}/index.html"><tt>/v310/datastore/{uuid}/replicationPath/{smReplLinkId}</tt></a></td>
+     <td>Deletes the specified replication path on the specified datastore instance.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/schedulesDefault/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/schedulesDefault/index.html"><tt>/v310/datastore/{uuid}/schedulesDefault</tt></a></td>
+     <td>Updates a system snapshot schedule</td>
+     <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSnapshotSchedule.html">VirtualMachineSnapshotSchedule</a></tt> - The snapshot schedule to be updated.</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/schedulesDistinct/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/schedulesDistinct/index.html"><tt>/v310/datastore/{uuid}/schedulesDistinct</tt></a></td>
+     <td>Gets a list of distinct snapshot schedules, including the system default snapshot schedules.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSnapshotSchedule.html">VirtualMachineSnapshotSchedule</a>&gt;</tt> - A list of virtual mackine customization specifications for the datastore.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/smbSettings/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/smbSettings/index.html"><tt>/v310/datastore/{uuid}/smbSettings</tt></a></td>
+     <td>Gets the SMB settings and the SMB settings enabled flag.</td>
+     <td><tt>VMstoreOnly - Since v310.11</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/fileShare/DatastoreSmbSettings.html">DatastoreSmbSettings</a></tt> - The DatastoreSmbSettings, including the data path SMB host name.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/smbSettings/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/smbSettings/index.html"><tt>/v310/datastore/{uuid}/smbSettings</tt></a></td>
+     <td>Sets the SMB settings and the SMB settings enabled flag.</td>
+     <td><tt>VMstoreOnly - Since v310.11</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/fileShare/DatastoreSmbSettings.html">DatastoreSmbSettings</a></tt> - The DatastoreSmbSettings, including the data path SMB host name.</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/statsDownloadable/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/statsDownloadable/index.html"><tt>/v310/datastore/{uuid}/statsDownloadable</tt></a></td>
+     <td>Create a URL for retrieving the system historical performance statistics report which is returned as output.</td>
+     <td><tt>TgcOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/DatastoreStatDownloadableReportFilter.html">DatastoreStatDownloadableReportFilter</a></tt> - The filer for generating the report.</td><td><tt>String</tt> - The URL that the user can use to retrieve the historic datastore statistics report.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/statsHistoric/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/statsHistoric/index.html"><tt>/v310/datastore/{uuid}/statsHistoric</tt></a></td>
+     <td>Gets the historic datastore performance slices containing all of the statistics for the datastore.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/Stats.html", "Stat");
+ </script> items containing a list of <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/DatastoreStat.html", "DatastoreStat");
+ </script>.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/statsRealtime/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/statsRealtime/index.html"><tt>/v310/datastore/{uuid}/statsRealtime</tt></a></td>
+     <td>Gets the real time datastore performance slice containing all of the statistics for the datastore.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/Stats.html", "Stat");
+ </script> items contining a list of <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/DatastoreStat.html", "DatastoreStat");
+ </script>.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/statsSummary/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/statsSummary/index.html"><tt>/v310/datastore/{uuid}/statsSummary</tt></a></td>
+     <td>Gets the latest historic datastore performance slice containing all of the statistics for the datastore.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/DatastoreStat.html">DatastoreStat</a></tt> - The latest statistics for the datastore.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/testReplicationPath/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/testReplicationPath/index.html"><tt>/v310/datastore/{uuid}/testReplicationPath</tt></a></td>
+     <td>Tests the specified replication link on the specified datastore instance.</td>
+     <td><tt>VMstoreOnly - Since v310.41</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/TestReplicationPath.html">TestReplicationPath</a>&gt;</tt> - The replication link to test.</td><td><tt>String</tt> - The result of the test. An empty string on success. If only encrypton is being tested then the reason for the failure is returned.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/testSmbConfig/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/testSmbConfig/index.html"><tt>/v310/datastore/{uuid}/testSmbConfig</tt></a></td>
+     <td>Test SMB host name configuration.</td>
+     <td><tt>VMstoreOnly - Since v310.11</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/SmbConfig.html">SmbConfig</a></tt> - SMB configuration</td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/rbac/SmbTestResult.html">SmbTestResult</a>&gt;</tt> - The list of test results</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/license/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/license/index.html"><tt>/v310/license</tt></a></td>
+     <td>Adds a license.</td>
+     <td><tt>All</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/License.html">License</a></tt> - is the feature and model information to add a license</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/License.html">License</a></tt> - the validated license.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/license/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/license/index.html"><tt>/v310/license</tt></a></td>
+     <td>Returns a list of all the licenses.</td>
+     <td><tt>All</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/License.html">License</a>&gt;</tt> - the found licenses.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/license/bulk/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/license/bulk/index.html"><tt>/v310/license/bulk</tt></a></td>
+     <td>Adds one or more licenses.</td>
+     <td><tt>TgcOnly - Since v310.51</tt><td><tt>String</tt> - is a string of one or more license keys separated by comma, space, or line break</td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/License.html">License</a>&gt;</tt> - the validated or failed licenses.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/license/licenseListDownloadable/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/license/licenseListDownloadable/index.html"><tt>/v310/license/licenseListDownloadable</tt></a></td>
+     <td>Create a URL for retrieving the license list report which is returned as output.</td>
+     <td><tt>TgcOnly - Since v310.51</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/license/LicenseDownloadableReportFilter.html">LicenseDownloadableReportFilter</a></tt> - The LicenseDownloadableReportFilter for generating the report.</td><td><tt>String</tt> - The URL that the user can use to retrieve the Licenses list report.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/license/summary/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/license/summary/index.html"><tt>/v310/license/summary</tt></a></td>
+     <td>Returns a summary of the number of license types (i.e.</td>
+     <td><tt>TgcOnly - Since v310.51</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/license/LicenseSummary.html">LicenseSummary</a></tt> - the LicenseSummary</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/license/{key}/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/license/{key}/index.html"><tt>/v310/license/{key}</tt></a></td>
+     <td>Removes a license resource identified by the license key.</td>
+     <td><tt>All</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/replTopology/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/replTopology/index.html"><tt>/v310/replTopology</tt></a></td>
+     <td>Gets the replication links.</td>
+     <td><tt>TgcOnly</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/ReplLink.html">ReplLink</a>&gt;</tt> - List 
+       <repllink>
+         Return all the replication links 
+       </repllink></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/role/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/role/index.html"><tt>/v310/role</tt></a></td>
+     <td>Returns a collection of fixed access control Role instances.</td>
+     <td><tt>All</tt><td> </td><td><tt>Collection&lt;<a href="../../jaxb/v310/com/tintri/api/rest/vcommon/dto/rbac/GenericRestApiRole.html">GenericRestApiRole</a>&gt;</tt> - a collection of fixed access control Role instances.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/role/external/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/role/external/index.html"><tt>/v310/role/external</tt></a></td>
+     <td>Returns a collection of external groups from external directory service.</td>
+     <td><tt>All</tt><td> </td><td><tt>Collection&lt;<a href="../../jaxb/v310/com/tintri/api/rest/vcommon/dto/rbac/GenericRestApiRole.html">GenericRestApiRole</a>&gt;</tt> - a collection of external groups from external directory service.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/role/external/{id}/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/role/external/{id}/index.html"><tt>/v310/role/external/{id}</tt></a></td>
+     <td>Returns an access control Role that matches the external group ID.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/vcommon/dto/rbac/GenericRestApiRole.html">GenericRestApiRole</a></tt> - an access control Role that matches the external group ID.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/role/{id}/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/role/{id}/index.html"><tt>/v310/role/{id}</tt></a></td>
+     <td>Returns an access control Role by instance Tintri UUID.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/vcommon/dto/rbac/GenericRestApiRole.html">GenericRestApiRole</a></tt> - an access control Role by instance Tintri UUID.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/role/{id}/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/role/{id}/index.html"><tt>/v310/role/{id}</tt></a></td>
+     <td>Associates a collection of external groups with an access control Role.</td>
+     <td><tt>All</tt><td><tt>Collection&lt;String&gt;</tt> - A list of external group IDs.</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/servicegroup/index.html"><tt>/v310/servicegroup</tt></a></td>
+     <td>Get page list of service groups.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/ServiceGroup.html", "ServiceGroup");
+ </script> items known to this API server. Service groups can defined or created on a different servers.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/servicegroup/index.html"><tt>/v310/servicegroup</tt></a></td>
+     <td>Create a new service group.</td>
+     <td><tt>All</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/ServiceGroup.html">ServiceGroup</a></tt> - New ServiceGroup to be created</td><td><tt>String</tt> - If successful returns Tintri UUID of the newly created service group, else error message.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/servicegroup/index.html"><tt>/v310/servicegroup</tt></a></td>
+     <td>Update an existing service group.</td>
+     <td><tt>All</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/ServiceGroup.html">ServiceGroup</a></tt> - ServiceGroup with new attribute values.</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/svgListDownloadable/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/servicegroup/svgListDownloadable/index.html"><tt>/v310/servicegroup/svgListDownloadable</tt></a></td>
+     <td>Create a URL for retrieving service group report which is returned as output.</td>
+     <td><tt>TgcOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/svg/SvgDownloadableReportFilter.html">SvgDownloadableReportFilter</a></tt> - The filter for generating the report.</td><td><tt>String</tt> - The URL that the user can use to retrieve the service group list report.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/{id}/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/servicegroup/{id}/index.html"><tt>/v310/servicegroup/{id}</tt></a></td>
+     <td>Returns the service group associated with the specified ID.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/ServiceGroup.html">ServiceGroup</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/ServiceGroup.html", "ServiceGroup");
+ </script> items.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/{id}/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/servicegroup/{id}/index.html"><tt>/v310/servicegroup/{id}</tt></a></td>
+     <td>Delete a specific service group.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/ServiceGroup.html">ServiceGroup</a></tt> - ServiceGroup</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/{id}/members/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/servicegroup/{id}/members/index.html"><tt>/v310/servicegroup/{id}/members</tt></a></td>
+     <td>Return the service group members associcated with the specified ID..</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/svg/ServiceGroupMember.html", "ServiceGroupMember");
+ </script> items.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/{id}/members/static/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/servicegroup/{id}/members/static/index.html"><tt>/v310/servicegroup/{id}/members/static</tt></a></td>
+     <td>Update static members for the given service group.</td>
+     <td><tt>TgcOnly - Since v310.21</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/CollectionChangeRequest.html">CollectionChangeRequest</a></tt></td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/{id}/operationStatus/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/servicegroup/{id}/operationStatus/index.html"><tt>/v310/servicegroup/{id}/operationStatus</tt></a></td>
+     <td>Return the current or last service group operation associated with protection of the specified service group.</td>
+     <td><tt>TgcOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/svg/ServiceGroupOperationStatus.html">ServiceGroupOperationStatus</a></tt> - ServiceGroupOperationStatus None if no operation was run.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/{id}/policy/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/servicegroup/{id}/policy/index.html"><tt>/v310/servicegroup/{id}/policy</tt></a></td>
+     <td>Apply the policy configured by PUT <script>
+ create_link("jaxrs/v310/com/tintri/api/rest/v310/servicegroup/policyConfig/index.html", "/v310/servicegroup/{id}/policyConfig");
+ </script> to all members in the service group for the given service group.</td>
+     <td><tt>TgcOnly</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/{id}/policyConfig/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/servicegroup/{id}/policyConfig/index.html"><tt>/v310/servicegroup/{id}/policyConfig</tt></a></td>
+     <td>Replace the protection policy (both snapshot schedules and replication configuration) for the given service group.</td>
+     <td><tt>TgcOnly - Since v310.21</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/svg/PolicyConfig.html">PolicyConfig</a></tt> - PolicyConfig to be replaced</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/{id}/policyConfig/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/servicegroup/{id}/policyConfig/index.html"><tt>/v310/servicegroup/{id}/policyConfig</tt></a></td>
+     <td>Returns the PolicyConfig associated with the given service group.</td>
+     <td><tt>TgcOnly - Since v310.21</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/svg/PolicyConfig.html">PolicyConfig</a></tt> - PolicyConfig the policy associated with the given service group</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/{id}/qos/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/servicegroup/{id}/qos/index.html"><tt>/v310/servicegroup/{id}/qos</tt></a></td>
+     <td>Apply the QoS configured by update QoS Config API <script>
+ create_link("jaxrs/v310/v310/servicegroup/{id}/qosConfig/index.html", "PUT /v310/servicegroup/{id}/qosConfig");
+ </script> to all members in the service group for the given service group.</td>
+     <td><tt>TgcOnly</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/{id}/qos/operationStatus/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/servicegroup/{id}/qos/operationStatus/index.html"><tt>/v310/servicegroup/{id}/qos/operationStatus</tt></a></td>
+     <td>Return the current or last service group operation associated with QoS of the specified service group.</td>
+     <td><tt>TgcOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/svg/ServiceGroupOperationStatus.html">ServiceGroupOperationStatus</a></tt> - ServiceGroupOperationStatus None if no operation was run.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/{id}/qosConfig/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/servicegroup/{id}/qosConfig/index.html"><tt>/v310/servicegroup/{id}/qosConfig</tt></a></td>
+     <td>Replace the QoS policy for the given service group.</td>
+     <td><tt>TgcOnly - Since v310.31</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineQoSConfig.html">VirtualMachineQoSConfig</a></tt> - qosConfig to be replaced</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/{id}/qosConfig/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/servicegroup/{id}/qosConfig/index.html"><tt>/v310/servicegroup/{id}/qosConfig</tt></a></td>
+     <td>Returns the QoS configuration associated with the given service group.</td>
+     <td><tt>TgcOnly - Since v310.31</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineQoSConfig.html">VirtualMachineQoSConfig</a></tt> - QoSConfig the QoS associated with the given service group</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/{id}/replConfig/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/servicegroup/{id}/replConfig/index.html"><tt>/v310/servicegroup/{id}/replConfig</tt></a></td>
+     <td>Getter for the replication configuration associated with the service group.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html">VirtualMachineReplicationConfig</a></tt> - VirtualMachineReplicationConfig Return the replication configuration associated with the service group.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/{id}/rules/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/servicegroup/{id}/rules/index.html"><tt>/v310/servicegroup/{id}/rules</tt></a></td>
+     <td>Update rules for a given service group.</td>
+     <td><tt>TgcOnly - Since v310.21</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/svg/ServiceGroupRules.html">ServiceGroupRules</a></tt></td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/{id}/snapshotSchedules/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/servicegroup/{id}/snapshotSchedules/index.html"><tt>/v310/servicegroup/{id}/snapshotSchedules</tt></a></td>
+     <td>Returns list of snapshot schedules which will be applied to members of this service group.</td>
+     <td><tt>All</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSnapshotSchedule.html">VirtualMachineSnapshotSchedule</a>&gt;</tt> - List 
+       <virtualmachinesnapshotschedule>
+         List of snapshot schedules associated the service group. 
+       </virtualmachinesnapshotschedule></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/{id}/srmConfig/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/servicegroup/{id}/srmConfig/index.html"><tt>/v310/servicegroup/{id}/srmConfig</tt></a></td>
+     <td>Return SRM configuration associated with this service group.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/svg/srm/SrmConfig.html">SrmConfig</a></tt> - SrmConfig None if no SRM Configuration is associated.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/session/active/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/session/active/index.html"><tt>/v310/session/active</tt></a></td>
+     <td>Returns a list of user sessions information that are currently logged in.</td>
+     <td><tt>VMstoreOnly - Since v310.51</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/UserSession.html">UserSession</a>&gt;</tt> - list of user sessions</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/session/current/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/session/current/index.html"><tt>/v310/session/current</tt></a></td>
+     <td>Returns the current user session information.</td>
+     <td><tt>VMstoreOnly - Since v310.51</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/UserSession.html">UserSession</a></tt> - current user session</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/session/login/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/session/login/index.html"><tt>/v310/session/login</tt></a></td>
+     <td>Creates session on Tintri API server after successful authentication and authorization.</td>
+     <td><tt>All</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/vcommon/dto/rbac/RestApiCredentials.html">RestApiCredentials</a></tt> - The credentials to login to the REST API server. Full API version is an optional attribute inside it and the default 'v310.1' will be used if not provided</td><td><tt>String</tt> - The role name of the credentials</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/session/logout/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/session/logout/index.html"><tt>/v310/session/logout</tt></a></td>
+     <td>Logout from Tintri API server session.</td>
+     <td><tt>All</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/session/logout/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/session/logout/index.html"><tt>/v310/session/logout</tt></a></td>
+     <td><b>Deprecated.</b> Logout from Tintri API server session.</td>
+     <td><tt>All</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/session/ssoauth/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/session/ssoauth/index.html"><tt>/v310/session/ssoauth</tt></a></td>
+     <td>Creates a valid session after successful authentication with Kerberos tickets and successful authorization on Tintri API server.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt>String</tt> - Returns Tintri Role name associated with the credentials</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/snapshot/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/snapshot/index.html"><tt>/v310/snapshot</tt></a></td>
+     <td>Fetches snapshot information based on the snapshot related query string parameters.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/Snapshot.html", "Snapshot");
+ </script> items.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/snapshot/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/snapshot/index.html"><tt>/v310/snapshot</tt></a></td>
+     <td>Takes a manual snapshot for a list of VMs.</td>
+     <td><tt>VMstoreOnly</tt><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/snapshot/SnapshotSpec.html">SnapshotSpec</a>&gt;</tt></td><td><tt>List&lt;String&gt;</tt> - a list of Snapshot Tintri UUIDs</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/snapshot/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/snapshot/index.html"><tt>/v310/snapshot</tt></a></td>
+     <td>Removes snapshots that match given snapshot filter criteria in which vmUuid is a madatory field.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt>String</tt> - formatted string response message about snapshot deletion.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/snapshot/{tintriSnapshotUuid}/disks/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/snapshot/{tintriSnapshotUuid}/disks/index.html"><tt>/v310/snapshot/{tintriSnapshotUuid}/disks</tt></a></td>
+     <td>Fetches disks of a snapshot.</td>
+     <td><tt>VMstoreOnly - Since v310.21</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/VirtualDisk.html">VirtualDisk</a>&gt;</tt> - the VirtualDisk objects of snapshot.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/snapshot/{tintriUuid}/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/snapshot/{tintriUuid}/index.html"><tt>/v310/snapshot/{tintriUuid}</tt></a></td>
+     <td>Fetches a snapshot by Tintri UUID.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/Snapshot.html">Snapshot</a></tt> - the particular snapshot as specified by snapshotId in the URI in the form of a Tintri UUID.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/snapshot/{tintriUuid}/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/snapshot/{tintriUuid}/index.html"><tt>/v310/snapshot/{tintriUuid}</tt></a></td>
+     <td>Removes snapshot resource identified by snapshot Tintri UUID.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt>String</tt> - formatted string response message about snapshot deletion.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/task/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/task/index.html"><tt>/v310/task</tt></a></td>
+     <td>Return a paginated set of Tasks</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/Task.html", "Task");
+ </script> items.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/task/{id}/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/task/{id}/index.html"><tt>/v310/task/{id}</tt></a></td>
+     <td>Cancel a job by jobId</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/task/{id}/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/task/{id}/index.html"><tt>/v310/task/{id}</tt></a></td>
+     <td>Returns a job by Id</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Task.html">Task</a></tt> - JobEntity</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/task/{id}/acknowledge/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/task/{id}/acknowledge/index.html"><tt>/v310/task/{id}/acknowledge</tt></a></td>
+     <td>Acknowledge a job</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/userAccount/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/userAccount/index.html"><tt>/v310/userAccount</tt></a></td>
+     <td>Return a collection of UserAccount objects configured in the system.</td>
+     <td><tt>All</tt><td> </td><td><tt>Collection&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/UserAccount.html">UserAccount</a>&gt;</tt> - a collection of UserAccount objects configured in the system.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/userAccount/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/userAccount/index.html"><tt>/v310/userAccount</tt></a></td>
+     <td>Creates a user account.</td>
+     <td><tt>All</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/UserAccount.html">UserAccount</a></tt></td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/UserAccount.html">UserAccount</a></tt> - the created UserAccount object.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/userAccount/resetPassword/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/userAccount/resetPassword/index.html"><tt>/v310/userAccount/resetPassword</tt></a></td>
+     <td>Resets the password of a local user.</td>
+     <td><tt>All</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/vcommon/dto/rbac/RestApiCredentials.html">RestApiCredentials</a></tt></td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/userAccount/{id}/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/userAccount/{id}/index.html"><tt>/v310/userAccount/{id}</tt></a></td>
+     <td>Delete a local user by UserAccount Tintri UUID.</td>
+     <td><tt>All</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/userAccount/{id}/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/userAccount/{id}/index.html"><tt>/v310/userAccount/{id}</tt></a></td>
+     <td>Return an UserAccount object by Tintri UUID.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/UserAccount.html">UserAccount</a></tt> - an UserAccount object by Tintri UUID.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/userAccount/{id}/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/userAccount/{id}/index.html"><tt>/v310/userAccount/{id}</tt></a></td>
+     <td>Updates the specified properties by values of passed UserAccount instance.</td>
+     <td><tt>All</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/UserAccount.html">UserAccount</a>&gt;</tt></td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/userAgreement/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/userAgreement/index.html"><tt>/v310/userAgreement</tt></a></td>
+     <td>Returns user agreement.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/UserAgreement.html">UserAgreement</a></tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/userAgreement/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/userAgreement/index.html"><tt>/v310/userAgreement</tt></a></td>
+     <td>Update the user agreement</td>
+     <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/UserAgreement.html">UserAgreement</a></tt> - - Updated UserAgreement</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/virtualDisk/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/virtualDisk/index.html"><tt>/v310/virtualDisk</tt></a></td>
+     <td>Returns information about virtual disks.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/VirtualDisk.html", "VirtualDisk");
+ </script> items.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/virtualDisk/filter/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/virtualDisk/filter/index.html"><tt>/v310/virtualDisk/filter</tt></a></td>
+     <td>Return virtual disk filter scope.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/CommonStatFilterScope.html">CommonStatFilterScope</a></tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/virtualDisk/{vmId}/{vdiskId}/pin/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/virtualDisk/{vmId}/{vdiskId}/pin/index.html"><tt>/v310/virtualDisk/{vmId}/{vdiskId}/pin</tt></a></td>
+     <td>Operation will pin the Virtual Disk of the VM to Flash storage in case of hybrid platform.</td>
+     <td><tt>VMstoreOnly - Since v310.21</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/virtualDisk/{vmId}/{vdiskId}/statsHistoric/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/virtualDisk/{vmId}/{vdiskId}/statsHistoric/index.html"><tt>/v310/virtualDisk/{vmId}/{vdiskId}/statsHistoric</tt></a></td>
+     <td>Performance historic trend data for the virtual disk</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/Stats.html", "Stat");
+ </script> items contining a list of <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/CommonStat.html", "CommonStat");
+ </script>.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/virtualDisk/{vmId}/{vdiskId}/statsRealtime/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/virtualDisk/{vmId}/{vdiskId}/statsRealtime/index.html"><tt>/v310/virtualDisk/{vmId}/{vdiskId}/statsRealtime</tt></a></td>
+     <td>Latest performance trend data for the virtual disk</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/Stats.html", "Stat");
+ </script> items contining a list of <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/CommonStat.html", "CommonStat");
+ </script>.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/virtualDisk/{vmId}/{vdiskId}/unpin/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/virtualDisk/{vmId}/{vdiskId}/unpin/index.html"><tt>/v310/virtualDisk/{vmId}/{vdiskId}/unpin</tt></a></td>
+     <td>Operation will unpin the Virtual Disk of the VM from Flash storage in case of hybrid platform.</td>
+     <td><tt>VMstoreOnly - Since v310.21</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/vm/index.html"><tt>/v310/vm</tt></a></td>
+     <td>Return information on virtual machines in a pagenated form as specified by the request parameters.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/VirtualMachine.html", "VirtualMachine");
+ </script> items representing VMs.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/vm/index.html"><tt>/v310/vm</tt></a></td>
+     <td>Creates a clone of Virtual machine.</td>
+     <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.html">VirtualMachineCloneSpec</a></tt> - Specifies source VM/snapshot and clone destination properties for the clone operation.</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Task.html">Task</a></tt> - Task It is used to get the progress of the clone operation through Task APIs.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/deleteSyncDisks/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/vm/deleteSyncDisks/index.html"><tt>/v310/vm/deleteSyncDisks</tt></a></td>
+     <td>Delete all the virtual disks that restored via SyncVM File-Level Restore operation for each of the targeted virtual machine.</td>
+     <td><tt>VMstoreOnly - Since v310.31</tt><td><tt>List&lt;String&gt;</tt> - A list of Tintri VM UUIDs</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/filter/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/vm/filter/index.html"><tt>/v310/vm/filter</tt></a></td>
+     <td>Returns VM properties as specified by a filter request such as performance stats minimum and maximum filter limits.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/VmFilterScope.html">VmFilterScope</a></tt> - VmFilterScope</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/filterScope/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/vm/filterScope/index.html"><tt>/v310/vm/filterScope</tt></a></td>
+     <td>Returns all filter properties</td>
+     <td><tt>TgcOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/FilterScope.html">FilterScope</a></tt> - FilterScope</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/policyErrorStat/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/vm/policyErrorStat/index.html"><tt>/v310/vm/policyErrorStat</tt></a></td>
+     <td>Return a list of current policy errors, and the number of VMs affected by each type of error.</td>
+     <td><tt>TgcOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/PolicyErrorStat.html", "PolicyErrorStat");
+ </script> items.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/qosConfig/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/vm/qosConfig/index.html"><tt>/v310/vm/qosConfig</tt></a></td>
+     <td>Update multiple VM's QoS settings.</td>
+     <td><tt>VMstoreOnly - Since v310.21</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/MultipleSelectionRequest.html">MultipleSelectionRequest</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineQoSConfig.html">VirtualMachineQoSConfig</a>&gt;</tt> - the VirtualMachineQoSConfig MultipleSelectionRequest</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/replicationConfig/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/vm/replicationConfig/index.html"><tt>/v310/vm/replicationConfig</tt></a></td>
+     <td><b>Deprecated.</b> Create a new replication configuration for the specified VMs.</td>
+     <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/MultipleSelectionRequest.html">MultipleSelectionRequest</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html">VirtualMachineReplicationConfig</a>&gt;</tt> - MultipleSelectionRequest of type VirtualMachineReplicationConfig containing the VM UUIDs and replication configuration information.</td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html">VirtualMachineReplicationConfig</a>&gt;</tt> - List of VirtualMachineReplicationConfig objects created for the specified VMs</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/sync/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/vm/sync/index.html"><tt>/v310/vm/sync</tt></a></td>
+     <td>Synchronize a Virtual Machine to one of its snapshots.</td>
+     <td><tt>VMstoreOnly - Since v310.21.</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSyncSpec.html">VirtualMachineSyncSpec</a></tt></td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Task.html">Task</a></tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/thinProvision/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/vm/thinProvision/index.html"><tt>/v310/vm/thinProvision</tt></a></td>
+     <td>Convert a collection of VMs and all their files to thin-provisioning for maximum space savings.</td>
+     <td><tt>VMstoreOnly - Since v310.11</tt><td><tt>List&lt;String&gt;</tt></td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/updateReplicationConfigToDefault/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/vm/updateReplicationConfigToDefault/index.html"><tt>/v310/vm/updateReplicationConfigToDefault</tt></a></td>
+     <td>Update the outgoing replication configurations for the specified VMs to the system default replication configuration.</td>
+     <td><tt>All - Since v310.21</tt><td><tt>List&lt;String&gt;</tt> - the selected Tintri UUIDs</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/updateScheduleToDefault/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/vm/updateScheduleToDefault/index.html"><tt>/v310/vm/updateScheduleToDefault</tt></a></td>
+     <td>Update selected VMs to use the default snapshot schedules.</td>
+     <td><tt>All</tt><td><tt>List&lt;String&gt;</tt> - the selected Tintri UUIDs</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/vmListDownloadable/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/vm/vmListDownloadable/index.html"><tt>/v310/vm/vmListDownloadable</tt></a></td>
+     <td>Create a URL for retrieving the specified VM list report which is returned as output.</td>
+     <td><tt>TgcOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineDownloadableReportFilter.html">VirtualMachineDownloadableReportFilter</a></tt> - The filer for generating the report.</td><td><tt>String</tt> - The URL that the user can use to retrieve the VM list report.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/{vmId}/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/vm/{vmId}/index.html"><tt>/v310/vm/{vmId}</tt></a></td>
+     <td>Return the virtual machine information specified in the URI.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/VirtualMachine.html">VirtualMachine</a></tt> - VirtualMachine This includes basic information, latest historic statistics, replication configuration along with it's status</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/{vmId}/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/vm/{vmId}/index.html"><tt>/v310/vm/{vmId}</tt></a></td>
+     <td>Update VM properties apart from SnapshotSchedule and ReplConfig, like enabling or disabling replication at VM level.</td>
+     <td><tt>All</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/VirtualMachine.html">VirtualMachine</a>&gt;</tt> - the vm container</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/{vmId}/affinity/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/vm/{vmId}/affinity/index.html"><tt>/v310/vm/{vmId}/affinity</tt></a></td>
+     <td>Updates virtual machine affinity rule.</td>
+     <td><tt>TgcOnly - Since v310.51</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineAffinityRule.html">VirtualMachineAffinityRule</a></tt> - the VirtualMachineAffinityRule to set.</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/{vmId}/customizationScripts/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/vm/{vmId}/customizationScripts/index.html"><tt>/v310/vm/{vmId}/customizationScripts</tt></a></td>
+     <td>API to get customization scripts for the VM</td>
+     <td><tt>VMstoreOnly - Since v310.21</tt><td> </td><td><tt>List&lt;String&gt;</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/{vmId}/hfSnapshotConfig/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/vm/{vmId}/hfSnapshotConfig/index.html"><tt>/v310/vm/{vmId}/hfSnapshotConfig</tt></a></td>
+     <td>Update the VM high frequency snapshot configuration properties</td>
+     <td><tt>VMstoreOnly - Since v310.21</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/HighFrequencySnapshotConfig.html">HighFrequencySnapshotConfig</a>&gt;</tt> - The High Frequency Snapshot Configuration</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/{vmId}/pin/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/vm/{vmId}/pin/index.html"><tt>/v310/vm/{vmId}/pin</tt></a></td>
+     <td>Operation will pin the VM to Flash storage in case of hybrid platform.</td>
+     <td><tt>VMstoreOnly - Since v310.21</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/{vmId}/qosConfig/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/vm/{vmId}/qosConfig/index.html"><tt>/v310/vm/{vmId}/qosConfig</tt></a></td>
+     <td>Update QoS per VM.</td>
+     <td><tt>All - Since v310.21</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineQoSConfig.html">VirtualMachineQoSConfig</a>&gt;</tt> - the VirtualMachineQoSConfig Request</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/{vmId}/replicationConfig/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/vm/{vmId}/replicationConfig/index.html"><tt>/v310/vm/{vmId}/replicationConfig</tt></a></td>
+     <td><b>Deprecated.</b> Delete all the incoming and custom outgoing replication configurations for a VM.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/{vmId}/replicationConfig/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/vm/{vmId}/replicationConfig/index.html"><tt>/v310/vm/{vmId}/replicationConfig</tt></a></td>
+     <td><b>Deprecated.</b> Create a new replication configuration for the VM.</td>
+     <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html">VirtualMachineReplicationConfig</a></tt> - The new outgoing replication configuration, to be created for the specified VM</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html">VirtualMachineReplicationConfig</a></tt> - VirtualMachineReplicationConfig object created for the specified VM</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/{vmId}/replicationConfig/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/vm/{vmId}/replicationConfig/index.html"><tt>/v310/vm/{vmId}/replicationConfig</tt></a></td>
+     <td>Update the passed replication (repl) configuration.</td>
+     <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html">VirtualMachineReplicationConfig</a>&gt;</tt> - the replication configuration</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/{vmId}/replicationConfig/{id}/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/vm/{vmId}/replicationConfig/{id}/index.html"><tt>/v310/vm/{vmId}/replicationConfig/{id}</tt></a></td>
+     <td><b>Deprecated.</b> Delete a specific incoming replication configuration for a VM.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/{vmId}/replicationConfigs/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/vm/{vmId}/replicationConfigs/index.html"><tt>/v310/vm/{vmId}/replicationConfigs</tt></a></td>
+     <td>Update the outgoing replication configurations for the specified VMs to the new replication configurations, specified in the API input.</td>
+     <td><tt>All - Since v310.21</tt><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html">VirtualMachineReplicationConfig</a>&gt;</tt> - List of VirtualMachineReplicationConfig objects, representing a new set of replication configurations to be applied to the VM.</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/{vmId}/snapshotSchedule/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/vm/{vmId}/snapshotSchedule/index.html"><tt>/v310/vm/{vmId}/snapshotSchedule</tt></a></td>
+     <td>Update VM snapshot schedule properties</td>
+     <td><tt>All</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSnapshotSchedule.html">VirtualMachineSnapshotSchedule</a>&gt;</tt> - the snapshot schedule</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/{vmId}/statsDownloadable/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/vm/{vmId}/statsDownloadable/index.html"><tt>/v310/vm/{vmId}/statsDownloadable</tt></a></td>
+     <td>Create a URL for retrieving the specified VM historical statistics report which is returned as output.</td>
+     <td><tt>TgcOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineStatDownloadableReportFilter.html">VirtualMachineStatDownloadableReportFilter</a></tt> - The filer for generating the report.</td><td><tt>String</tt> - The URL that the user can use to retrieve the historic VM statistics report.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/{vmId}/statsHistoric/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/vm/{vmId}/statsHistoric/index.html"><tt>/v310/vm/{vmId}/statsHistoric</tt></a></td>
+     <td>Gets the historic VM performance slice containing all of the statistics for the VM specified by query parameters.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/Stats.html", "Stat");
+ </script> items contining a list of <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/VirtualMachineStat.html", "VirtualMachineStat");
+ </script>.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/{vmId}/statsRealtime/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/vm/{vmId}/statsRealtime/index.html"><tt>/v310/vm/{vmId}/statsRealtime</tt></a></td>
+     <td>Gets the real time VM performance slice containing all of the statistics for the VM.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/Stats.html", "Stat");
+ </script> items contining a list of <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/VirtualMachineStat.html", "VirtualMachineStat");
+ </script>.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/{vmId}/unpin/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/vm/{vmId}/unpin/index.html"><tt>/v310/vm/{vmId}/unpin</tt></a></td>
+     <td>Un-pin VM from Flash storage in case of hybrid platform.</td>
+     <td><tt>VMstoreOnly - Since v310.21</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vmstore/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/vmstore/index.html"><tt>/v310/vmstore</tt></a></td>
+     <td>Returns all VMstores and their properties in the Tintri Global Center cluster.</td>
+     <td><tt>TgcOnly</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/VmStore.html">VmStore</a>&gt;</tt> - All VMstores added to the cluster.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vmstore/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/vmstore/index.html"><tt>/v310/vmstore</tt></a></td>
+     <td>Add a VMstore to the Tintri Global Center cluster.</td>
+     <td><tt>TgcOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/VmStore.html">VmStore</a></tt> - The VMstore and its properties.</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/VmStore.html">VmStore</a></tt> - VMStore with the new Tintri UUID assigned by the sytem.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vmstore/vmstoreListDownloadable/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/vmstore/vmstoreListDownloadable/index.html"><tt>/v310/vmstore/vmstoreListDownloadable</tt></a></td>
+     <td>Create a URL for retrieving the VMstore list report which is returned as output.</td>
+     <td><tt>TgcOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/VMstoreDownloadableReportFilter.html">VMstoreDownloadableReportFilter</a></tt> - The filter for generating the report.</td><td><tt>String</tt> - The URL that the user can use to retrieve the VMstore list report.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vmstore/{uuid}/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/vmstore/{uuid}/index.html"><tt>/v310/vmstore/{uuid}</tt></a></td>
+     <td>Deletes a VMstore by it's Tintri UUID.</td>
+     <td><tt>TgcOnly</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vmstore/{vmStoreUuid}/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/vmstore/{vmStoreUuid}/index.html"><tt>/v310/vmstore/{vmStoreUuid}</tt></a></td>
+     <td>Updates the specified VMstore properties.</td>
+     <td><tt>TgcOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/VmStore.html">VmStore</a>&gt;</tt> - The VMstore properties.</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vmstorePool/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/vmstorePool/index.html"><tt>/v310/vmstorePool</tt></a></td>
+     <td>Return a list of all the VMstore pools in the Tintri Global Center.</td>
+     <td><tt>TgcOnly - Since v310.51</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/VmstorePool.html", "VmstorePool");
+ </script> items.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vmstorePool/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/vmstorePool/index.html"><tt>/v310/vmstorePool</tt></a></td>
+     <td>Create a new VMstore pool</td>
+     <td><tt>TgcOnly - Since v310.51</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/VmstorePool.html">VmstorePool</a></tt> - New VMstore pool to be created</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/VmstorePool.html">VmstorePool</a></tt> - Newly created VMstore pool.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vmstorePool/vmPoolListDownloadable/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/vmstorePool/vmPoolListDownloadable/index.html"><tt>/v310/vmstorePool/vmPoolListDownloadable</tt></a></td>
+     <td>Create a URL for retrieving the specified VM Pool report which is returned as output.</td>
+     <td><tt>TgcOnly - Since v310.51</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/VmstorePoolDownloadableReportFilter.html">VmstorePoolDownloadableReportFilter</a></tt> - VmstorePoolDownloadableReportFilter specifies the report name, the report fields, the report format, and start and end times for the report.</td><td><tt>String</tt> - The output URL is used to download the report.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vmstorePool/{poolUuid}/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/vmstorePool/{poolUuid}/index.html"><tt>/v310/vmstorePool/{poolUuid}</tt></a></td>
+     <td>Return the VMstore pool associated with the specified ID</td>
+     <td><tt>TgcOnly - Since v310.51</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/VmstorePool.html">VmstorePool</a></tt> - The VMstore pool if found else error message.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vmstorePool/{poolUuid}/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/vmstorePool/{poolUuid}/index.html"><tt>/v310/vmstorePool/{poolUuid}</tt></a></td>
+     <td>Update the specified VMstore pool with the new configuration</td>
+     <td><tt>TgcOnly - Since v310.51</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/VmstorePool.html">VmstorePool</a></tt> - VMstore pool with new attribute values.</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vmstorePool/{poolUuid}/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/vmstorePool/{poolUuid}/index.html"><tt>/v310/vmstorePool/{poolUuid}</tt></a></td>
+     <td>Delete the VMstore pool associated with the specified ID.</td>
+     <td><tt>TgcOnly - Since v310.51</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vmstorePool/{poolUuid}/members/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/vmstorePool/{poolUuid}/members/index.html"><tt>/v310/vmstorePool/{poolUuid}/members</tt></a></td>
+     <td>Add or delete members for the given VMstore pool.</td>
+     <td><tt>TgcOnly - Since v310.51</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/CollectionChangeRequest.html">CollectionChangeRequest</a></tt> - new and deleted members to be updated</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vmstorePool/{poolUuid}/recommendation/current/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/vmstorePool/{poolUuid}/recommendation/current/index.html"><tt>/v310/vmstorePool/{poolUuid}/recommendation/current</tt></a></td>
+     <td>Returns the current Recommendation for a specified VMstorePool UUID.</td>
+     <td><tt>TgcOnly - Since v310.51</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/loadbalance/recommendation/Recommendation.html">Recommendation</a></tt> - the Recommendation if found else error message.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vmstorePool/{poolUuid}/recommendation/{recoUuid}/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/vmstorePool/{poolUuid}/recommendation/{recoUuid}/index.html"><tt>/v310/vmstorePool/{poolUuid}/recommendation/{recoUuid}</tt></a></td>
+     <td>Returns the Recommendation associated with the specified Recommendation UUID.</td>
+     <td><tt>TgcOnly - Since v310.51</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/loadbalance/recommendation/Recommendation.html">Recommendation</a></tt> - the Recommendation if found else error message.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vmstorePool/{poolUuid}/recommendation/{recoUuid}/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/vmstorePool/{poolUuid}/recommendation/{recoUuid}/index.html"><tt>/v310/vmstorePool/{poolUuid}/recommendation/{recoUuid}</tt></a></td>
+     <td>Update one or more attributes of a Recommendation for the specified Recommendation UUID.</td>
+     <td><tt>TgcOnly - Since v310.51</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/loadbalance/recommendation/Recommendation.html">Recommendation</a>&gt;</tt> - Request object that contains attribute and value to be updated.</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vmstorePool/{poolUuid}/recommendation/{recoUuid}/accept/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/vmstorePool/{poolUuid}/recommendation/{recoUuid}/accept/index.html"><tt>/v310/vmstorePool/{poolUuid}/recommendation/{recoUuid}/accept</tt></a></td>
+     <td>Accept a Recommendation.</td>
+     <td><tt>TgcOnly - Since v310.51</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vmstorePool/{poolUuid}/recommendation/{recoUuid}/acknowledge/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/vmstorePool/{poolUuid}/recommendation/{recoUuid}/acknowledge/index.html"><tt>/v310/vmstorePool/{poolUuid}/recommendation/{recoUuid}/acknowledge</tt></a></td>
+     <td>Acknowledge a Recommendation.</td>
+     <td><tt>TgcOnly - Since v310.51</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vmstorePool/{poolUuid}/recommendation/{recoUuid}/cancel/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/vmstorePool/{poolUuid}/recommendation/{recoUuid}/cancel/index.html"><tt>/v310/vmstorePool/{poolUuid}/recommendation/{recoUuid}/cancel</tt></a></td>
+     <td>Cancel a Recommendation that has been accepted.</td>
+     <td><tt>TgcOnly - Since v310.51</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vmstorePool/{poolUuid}/recommendation/{recoUuid}/issues/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/vmstorePool/{poolUuid}/recommendation/{recoUuid}/issues/index.html"><tt>/v310/vmstorePool/{poolUuid}/recommendation/{recoUuid}/issues</tt></a></td>
+     <td>Select a subset of VMstores and/or issues.</td>
+     <td><tt>TgcOnly - Since 310.51</tt><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/loadbalance/recommendation/RecommendationIssueSelection.html">RecommendationIssueSelection</a>&gt;</tt> - List of RecommenationType(s) to select.</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vmstorePool/{poolUuid}/recommendation/{recoUuid}/reset/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/vmstorePool/{poolUuid}/recommendation/{recoUuid}/reset/index.html"><tt>/v310/vmstorePool/{poolUuid}/recommendation/{recoUuid}/reset</tt></a></td>
+     <td>Reset a Recommendation.</td>
+     <td><tt>TgcOnly - Since v310.51</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vmstorePool/{poolUuid}/recommendationHistory/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/vmstorePool/{poolUuid}/recommendationHistory/index.html"><tt>/v310/vmstorePool/{poolUuid}/recommendationHistory</tt></a></td>
+     <td>Returns the Recommendation history for 30 days.</td>
+     <td><tt>TgcOnly - Since v310.51</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/loadbalance/recommendation/Recommendation.html">Recommendation</a>&gt;</tt> - a list of Recommendations</td></td>
+    </tr>
+   </tbody>
+  </table>
+  <hr />
+  <table class="menu">
+   <colgroup>
+    <col />
+    <col />
+   </colgroup>
+   <tbody>
+    <tr>
+     <td class="NavBarCell1" colspan="2">
+      <table>
+       <tbody>
+        <tr>
+         <th><a href="overview-summary.html">Overview</a></th>
+         <th class="selected">Index</th>
+         <th><a href="index.html">Root resource</a></th>
+        </tr>
+       </tbody>
+      </table></td>
+    </tr>
+   </tbody>
+  </table>
+  <hr />
+  <div class="footer">
+   Generated by 
+   <i>Lunatech Labs jax-doclets v0.8</i>
+  </div>
+ </body>
+</html>

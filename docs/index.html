@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="https://www.tintri.com/sites/default/files/favicon.ico" type="image/vnd.microsoft.icon" />
+
+<style>
+body {
+    margin: 25px;
+}
+
+table {
+    border-spacing: 5px;
+    border: 1px solid gray;
+	border-collapse: collapse;
+	font-family: calibri;
+	font-size: 18px;
+	color: #1599D1;
+}
+
+td,th {
+    text-align: center;
+	padding-right: 25px;
+	padding-left: 25px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	border-top: 1px solid gray;
+}
+
+p {
+	font-family: calibri;
+	font-size: 18px;
+}
+
+li {
+	font-family: calibri;
+	font-size: 18px;
+}
+
+h1 {
+    font-family: calibri;
+    font-size: 36px;
+}
+
+h2 {
+    font-family: calibri;
+    font-size: 28px;
+    color: #303030;
+}
+
+</style>
+
+<script type="text/javascript">
+
+// Guarentees title and H1 heading are the same.
+function title_h1(title_string) {
+        document.write("<title>" + title_string + "</title>");
+        document.write("<h1>" +  title_string + "</h1>");
+}
+
+</script>
+</head>
+
+<body>
+<script type="text/javascript">
+title_h1("Tintri APIs");
+</script>
+
+<p>
+The Tintri APIs provide a way to manage Tintri's virtual aware storage.  APIs
+provide a developer tools to create applications and automation workflows.
+Currently, only HTTP REST APIs are supported.
+<p>
+Functionality includes obtaining information on:
+<ul>
+    <li>appliance</li>
+    <li>alerts</li>
+    <li>performance statistics</li>
+    <li>snapshots</li>
+    <li>virtual machines</li>
+    <li>virtual disks</li>
+    <li>datastores</li>
+    <li>licensing</li>
+    <li>RBAC</li>
+    <li>replication</li>
+    <li>service groups</li>
+</ul>
+
+<p>
+As well as obtaining information, the APIs control
+the following:
+<ul>
+    <li>appliance</li>
+    <li>alert reports</li>
+    <li>autosupports</li>
+    <li>datastore reports</li>
+    <li>licensing</li>
+    <li>service groups</li>
+    <li>RBAC</li>
+    <li>replication</li>
+    <li>snapshots</li>
+    <li>virtual machine reports</li>
+</ul>
+
+<h2>HTTP</h2>
+<p>
+This HTTP interface is RESTful with JSON payloads.  The download includes
+documentation and samples.
+
+<table>
+<tr>
+   <td><a href="client/http/docs/http_doc.html">Documentation</a></td>
+   <td><a href="client/http/samples/python/index.html">Samples</a></td>
+   <td><a href="https://github.com/Tintri/tintri-api-examples">More Samples</a></td>
+</tr>
+</table>
+
+<p>
+<img src="TintriLogo-300.png" alt="Tintri Logo" height="122px" width="320px">
+</body>
+</html>
