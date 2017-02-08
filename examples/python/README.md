@@ -1,5 +1,5 @@
 # Tintri REST API Python Examples
-API version v310.53 maps to TXOS 4.2.1.x and TGC 3.0.1.x.
+API version v310.61 maps to TXOS 4.3.0.x and TGC 3.5.0.x.
 
 These code examples all use the library tintri_1_1.py.
 
