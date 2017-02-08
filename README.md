@@ -1,5 +1,5 @@
 # tintri-rest-api
-Tintri REST API documentation version v310.53 and code examples.
+Tintri REST API documentation version v310.61 and code examples.
 
-API version v310.53 maps to TXOS 4.2.1.x and TGC 3.0.1.x.
+API version v310.61 maps to TXOS 4.3.0.x and TGC 3.5.0.x.
 

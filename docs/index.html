@@ -49,15 +49,35 @@ h2 {
 
 </style>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+
 <script type="text/javascript">
 
 // Guarentees title and H1 heading are the same.
 function title_h1(title_string) {
-        document.write("<title>" + title_string + "</title>");
-        document.write("<h1>" +  title_string + "</h1>");
+    document.write("<title>" + title_string + "</title>");
+    document.write("<h1>" +  title_string + "</h1>");
+}
+
+
+// Allow the section_id to be shown if the url exists.
+function show_section(url, section_id) {
+    var xhr = new XMLHttpRequest();
+    var id_tag = "#" + section_id;
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status >= 400) {
+                $(id_tag).hide();
+            }
+        }
+    };
+
+    xhr.open('HEAD', url)
+    xhr.send();
 }
 
 </script>
+
 </head>
 
 <body>
@@ -68,7 +88,7 @@ title_h1("Tintri APIs");
 <p>
 The Tintri APIs provide a way to manage Tintri's virtual aware storage.  APIs
 provide a developer tools to create applications and automation workflows.
-Currently, only HTTP REST APIs are supported.
+
 <p>
 Functionality includes obtaining information on:
 <ul>
@@ -101,18 +121,60 @@ the following:
     <li>virtual machine reports</li>
 </ul>
 
-<h2>HTTP</h2>
+<script type="text/javascript">
+show_section("client/http/docs/http_doc.html", "http");
+</script>
+
+<section id="http">
+<h2>REST APIs</h2>
 <p>
-This HTTP interface is RESTful with JSON payloads.  The download includes
-documentation and samples.
+The REST APIs are over HTTP with JSON payloads.  The download includes
+documentation and code samples.
 
 <table>
 <tr>
    <td><a href="client/http/docs/http_doc.html">Documentation</a></td>
    <td><a href="client/http/samples/python/index.html">Samples</a></td>
-   <td><a href="https://github.com/Tintri/tintri-api-examples">More Samples</a></td>
+   <td><a href="https://github.com/Tintri/tintri-api-examples">GitHub Samples</a></td>
 </tr>
 </table>
+</section>
+
+<script type="text/javascript">
+show_section("client/pysdk/docs/pysdk_doc.html", "pysdk");
+</script>
+
+<section id="pysdk">
+<h2>Python SDK</h2>
+<p>
+The Python SDK (PySDK) is a pythonic interface to the Tintri REST APIs. Samples
+are located on GitHub.
+
+<table>
+<tr>
+   <td><a href="client/pysdk/docs/pysdk_doc.html">Documentation</a></td>
+   <td><a href="https://github.com/Tintri/tintri-pysdk-examples">GitHub Samples</a></td>
+</tr>
+</table>
+</section>
+
+<script type="text/javascript">
+show_section("client/powershell/docs/powershell.html", "powershell");
+</script>
+
+<section id="powershell">
+<h2>PowerShell Toolkit</h2>
+<p>
+The PowerShell Toolkit is a high level interface ot the Tintri REST APIs.
+Samples are located on GitHub.
+
+<table>
+<tr>
+   <td><a href="client/powershell/docs/powershell.html">Documentation</a></td>
+   <td><a href="https://github.com/Tintri/tintri-powershell-examples">Samples</a></td>
+</tr>
+</table>
+</section>
 
 <p>
 <img src="TintriLogo-300.png" alt="Tintri Logo" height="122px" width="320px">

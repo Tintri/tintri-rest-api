@@ -163,7 +163,7 @@ Tintri requires that all requests are done over SSL.  All requests to port 80 ar
 <p>
 All strings passed to and from the Tintri APIs need to be UTF-8 encoded.
 
-<h3>API Compatibility</h3>
+<h3 id="api_compatibility">API Compatibility</h3>
 <p>
 Over time, the Tintri APIs will change.  Future versions may add new managed entitties or keys.
 To keep older clients working, the behavior and return values with given parameters will not change
@@ -173,6 +173,7 @@ additional response keys.
 With this in mind, clients should avoid passing undocumented parameters and accept keys that are not
 currently documented.  API clients will have to be modified to obtain new Tintri features.
 
+<a id="compatibility_table">
 <table>
 <caption>API - TXOS - TGC Version Matrix</caption>
 <tr>
@@ -215,6 +216,11 @@ currently documented.  API clients will have to be modified to obtain new Tintri
     <td>4.2.1.x</td>
     <td>3.0.1.x</td>
 </tr>
+<tr>
+    <td>v310.61</td>
+    <td>4.3.0.x</td>
+    <td>3.5.0.x</td>
+</tr>
 </table>
 
 <h3>Error Handling</h3>
@@ -228,19 +234,19 @@ are listed below:
 </tr>
 <tr>
     <td>200</td>
-    <td>Successful API call with non empty result body</td>
+    <td>Successful API call with non empty result body.</td>
 </tr>
 <tr>
     <td>204</td>
-    <td>Successful API call with empty result body</td>
+    <td>Successful API call with empty result body.</td>
 </tr>
 <tr>
     <td>400</td>
-    <td>Bad request - Request validation failed. Request content incorrect/invalid</td>
+    <td>Bad request - Request validation failed. Request content incorrect/invalid.</td>
 </tr>
 <tr>
     <td>401</td>
-    <td>Non authorized API access - User needs to successfully login with needed privileges to perform the operation</td>
+    <td>Non authorized API access - User needs to successfully login with needed privileges to perform the operation.</td>
 </tr>
 <tr>
     <td>403</td>
@@ -248,11 +254,27 @@ are listed below:
 </tr>
 <tr>
     <td>404</td>
-    <td>API not found</td>
+    <td>API not found.</td>
+</tr>
+<tr>
+    <td>405</td>
+    <td>Method not allowed.</td>
+</tr>
+<tr>
+    <td>409</td>
+    <td>Conflict - object already exists when creating object.</td>
 </tr>
 <tr>
     <td>500</td>
-    <td>Internal Error - something went wrong in the server side processing</td>
+    <td>Internal Error - something went wrong in the server side processing.</td>
+</tr>
+<tr>
+    <td>501</td>
+    <td>Not Implemented - For example if supported by VMstore but not TGC.</td>
+</tr>
+<tr>
+    <td>503</td>
+    <td>Service unavailable - External service, like active directory, is unavailable. This is usually temporary and worth retrying later.</td>
 </tr>
 </table>
 
@@ -314,7 +336,7 @@ The admin user is a special user that cannot be deleted or modified.
 
 <h3>Filters</h3>
 <p>
-Filtering parameters are based on <a href="http://tools.ietf.org/html/rfc6570">RFC 6570</a>.
+Filtering parameters are bassed on <a href="http://tools.ietf.org/html/rfc6570">RFC 6570</a>.
 
 <table>
 <tr>
@@ -410,7 +432,7 @@ object which is composed as follows:
 <p>
 Session login uses the session resource.  An HTTP POST with the user name,
 password, and role is sent.  A session cookie is returned and this cookie
-is used in all subsequent API invocations.
+is used in all subsequent API invokations.
 <dl>
 <dt>URL structure</dt>
 <dd><pre>
@@ -526,7 +548,7 @@ HTTP status 204.
 Only the properties that are in <i>properyNames</i> for the specified object in
 <i>newValue</i> for the <i>ids</i> will be updated.
 
-<h2 id="new_apis">New APIs for v310.53</h2>
+<h2 id="new_apis">New APIs for v310.61</h2>
 <table>
 <tr>
     <th>Method</th>
@@ -536,8 +558,62 @@ Only the properties that are in <i>properyNames</i> for the specified object in
 </tr>
 <tr>
     <td>POST</td>
-    <td>/v310/appliance/{uuid}/expand</td>
-    <td>Expands the storage capacity of a Tintri appliance</td>
+    <td>/v310/appliance/%s/testEncryption</td>
+    <td>Tests disk encryption</td>
+    <td>All</td>
+</tr>
+<tr>
+    <td>POST</td>
+    <td>/v310/servicegroup/syncRepl/test</td>
+    <td>Test the synchronous replication associated with the service group</td>
+    <td>All</td>
+</tr>
+<tr>
+    <td>POST</td>
+    <td>/v310/servicegroup/syncRepl/pause</td>
+    <td>Pause all synchronous replication configurations</td>
+    <td>All</td>
+</tr>
+<tr>
+    <td>POST</td>
+    <td>/v310/servicegroup/syncRepl/resume</td>
+    <td>Resume all synchronous replication configurations</td>
+    <td>All</td>
+</tr>
+<tr>
+    <td>POST</td>
+    <td>/v310/servicegroup/%s/syncRepl/pause</td>
+    <td>Pause specified synchronous replication configuration</td>
+    <td>All</td>
+</tr>
+<tr>
+    <td>POST</td>
+    <td>/v310/servicegroup/%s/syncRepl/resume</td>
+    <td>Resume specified synchronous replication configuration</td>
+    <td>All</td>
+</tr>
+<tr>
+    <td>POST</td>
+    <td>/v310/servicegroup/%s/syncRepl/makePrimary</td>
+    <td>Initiate a failover</td>
+    <td>All</td>
+</tr>
+<tr>
+    <td>GET</td>
+    <td>/v310/servicegroup/%s/syncRepl/statsHistoric</td>
+    <td>Return historic statistics for a service group</td>
+    <td>All</td>
+</tr>
+<tr>
+    <td>GET</td>
+    <td>/v310/servicegroup/%s/syncRepl/statsRealtime</td>
+    <td>Return real-time statistics for a service group</td>
+    <td>All</td>
+</tr>
+<tr>
+    <td>DELETE</td>
+    <td>/v310/vm/%s/replicationConfig/incoming</td>
+    <td>Delete incoming replication configuration for a VM</td>
     <td>All</td>
 </tr>
 </table>

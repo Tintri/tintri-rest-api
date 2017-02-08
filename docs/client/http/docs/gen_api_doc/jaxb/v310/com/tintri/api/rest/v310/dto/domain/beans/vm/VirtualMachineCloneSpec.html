@@ -21,6 +21,7 @@ function create_link(jax_path, path_name) {
  
  <ol>
  <li>Clone From VM <br>
+ Adding to the hypervisor inventory will be attempeted by the VMstore. <br>
  <pre>
  {@code
   {
@@ -47,6 +48,7 @@ function create_link(jax_path, path_name) {
  </li>
  
  <li>Clone From Snapshot <br>
+ Adding to the hypervisor inventory will be attempeted by the VMstore. <br>
  <pre>
  {@code
   {
@@ -73,6 +75,7 @@ function create_link(jax_path, path_name) {
  </li>
  
  <li>Remote copy clone <br>
+ Requires a separate step to add the clone to the hypervisor inventory. <br>
  <pre>
  {@code
   {
@@ -93,7 +96,8 @@ function create_link(jax_path, path_name) {
  </pre>
  </li>
  
- <li>MiniDR <br>
+ <li>Restore <br>
+ Requires a separate step to add the restored VM to the hypervisor inventory. <br>
  <pre>
  {@code
   {
