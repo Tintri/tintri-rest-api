@@ -5,3 +5,6 @@ API version v310.61 maps to TXOS 4.3.0.x and TGC 3.5.0.x.
 
 ## REST API Documentation ##
 The REST API documentation is located [here](https://tintri.github.io/tintri-rest-api/index.html).
+
+## Questions or Comments ##
+For questions and comments, please go to the [Tintricity Automation Discussion Group](http://hub.tintricity.com/discussions/automation).
