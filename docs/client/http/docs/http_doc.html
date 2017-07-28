@@ -221,6 +221,11 @@ currently documented.  API clients will have to be modified to obtain new Tintri
     <td>4.3.0.x</td>
     <td>3.5.0.x</td>
 </tr>
+<tr>
+    <td>v310.64</td>
+    <td>4.3.2.2</td>
+    <td>3.5.0.x</td>
+</tr>
 </table>
 
 <h3>Error Handling</h3>
@@ -548,73 +553,31 @@ HTTP status 204.
 Only the properties that are in <i>properyNames</i> for the specified object in
 <i>newValue</i> for the <i>ids</i> will be updated.
 
-<h2 id="new_apis">New APIs for v310.61</h2>
+<h2 id="new_apis">New APIs for v310.64</h2>
 <table>
 <tr>
-    <th>Method</th>
-    <th>URL</th>
-    <th>Description</th>
-    <th>Tintri API Server Support</th>
-</tr>
-<tr>
-    <td>POST</td>
-    <td>/v310/appliance/%s/testEncryption</td>
-    <td>Tests disk encryption</td>
-    <td>All</td>
-</tr>
-<tr>
-    <td>POST</td>
-    <td>/v310/servicegroup/syncRepl/test</td>
-    <td>Test the synchronous replication associated with the service group</td>
-    <td>All</td>
-</tr>
-<tr>
-    <td>POST</td>
-    <td>/v310/servicegroup/syncRepl/pause</td>
-    <td>Pause all synchronous replication configurations</td>
-    <td>All</td>
-</tr>
-<tr>
-    <td>POST</td>
-    <td>/v310/servicegroup/syncRepl/resume</td>
-    <td>Resume all synchronous replication configurations</td>
-    <td>All</td>
-</tr>
-<tr>
-    <td>POST</td>
-    <td>/v310/servicegroup/%s/syncRepl/pause</td>
-    <td>Pause specified synchronous replication configuration</td>
-    <td>All</td>
-</tr>
-<tr>
-    <td>POST</td>
-    <td>/v310/servicegroup/%s/syncRepl/resume</td>
-    <td>Resume specified synchronous replication configuration</td>
-    <td>All</td>
-</tr>
-<tr>
-    <td>POST</td>
-    <td>/v310/servicegroup/%s/syncRepl/makePrimary</td>
-    <td>Initiate a failover</td>
-    <td>All</td>
+    <td>GET</td>
+    <td>/v310/datastore/{uuid}/systemProperty</td>
+    <td>Returns a list of system properties and related information</td>
+    <td>VMstore Only</td>
 </tr>
 <tr>
     <td>GET</td>
-    <td>/v310/servicegroup/%s/syncRepl/statsHistoric</td>
-    <td>Return historic statistics for a service group</td>
-    <td>All</td>
+    <td>/v310/datastore/{uuid}/systemProperty/{propertyName}</td>
+    <td>Get information on the specified system property given the property name</td>
+    <td>VMstore Only</td>
 </tr>
 <tr>
-    <td>GET</td>
-    <td>/v310/servicegroup/%s/syncRepl/statsRealtime</td>
-    <td>Return real-time statistics for a service group</td>
-    <td>All</td>
+    <td>PUT</td>
+    <td>/v310/datastore/{uuid}/systemProperty</td>
+    <td>Updates the specified system property's custom value</td>
+    <td>VMstore Only</td>
 </tr>
 <tr>
     <td>DELETE</td>
-    <td>/v310/vm/%s/replicationConfig/incoming</td>
-    <td>Delete incoming replication configuration for a VM</td>
-    <td>All</td>
+    <td>/v310/datastore/{uuid}/systemProperty/{propertyName}</td>
+    <td>Removes the specified system property's custom value, and restores the default value</td>
+    <td>VMstore Only</td>
 </tr>
 </table>
 

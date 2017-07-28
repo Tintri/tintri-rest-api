@@ -735,6 +735,30 @@ function create_link(jax_path, path_name) {
      <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/DatastoreStat.html">DatastoreStat</a></tt> - The latest statistics for the datastore.</td></td>
     </tr>
     <tr>
+     <td><a href="v310/datastore/{uuid}/systemProperty/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/systemProperty/index.html"><tt>/v310/datastore/{uuid}/systemProperty</tt></a></td>
+     <td>Returns a list of system properties and related information.</td>
+     <td><tt>VMstoreOnly - Since v310.64</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/SystemProperty.html">SystemProperty</a>&gt;</tt> - the list of system properties and related information, empty list if no system properties found</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/systemProperty/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/systemProperty/index.html"><tt>/v310/datastore/{uuid}/systemProperty</tt></a></td>
+     <td>Updates the specified system property's custom value.</td>
+     <td><tt>VMstoreOnly - Since v310.64</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/SystemProperty.html">SystemProperty</a></tt> - The system property where only &quot;name&quot; and &quot;value&quot; attributes are required, not null</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/systemProperty/{propertyName}/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/systemProperty/{propertyName}/index.html"><tt>/v310/datastore/{uuid}/systemProperty/{propertyName}</tt></a></td>
+     <td>Get information on the specified system property given the property name.</td>
+     <td><tt>VMstoreOnly - Since v310.64</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/SystemProperty.html">SystemProperty</a></tt> - The System Property</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/systemProperty/{propertyName}/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/systemProperty/{propertyName}/index.html"><tt>/v310/datastore/{uuid}/systemProperty/{propertyName}</tt></a></td>
+     <td>Removes the specified system property's custom value, and restores the default value.</td>
+     <td><tt>VMstoreOnly - Since v310.64</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
      <td><a href="v310/datastore/{uuid}/testReplicationPath/index.html#POST"><tt>POST</tt></a></td>
      <td><a href="v310/datastore/{uuid}/testReplicationPath/index.html"><tt>/v310/datastore/{uuid}/testReplicationPath</tt></a></td>
      <td>Tests the specified replication link on the specified datastore instance.</td>
