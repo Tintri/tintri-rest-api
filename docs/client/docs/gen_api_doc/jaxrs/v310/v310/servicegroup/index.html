@@ -1,0 +1,132 @@
+<HTML><HEAD><TITLE>Resource servicegroup</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../overview-summary.html'>Overview</a></th><th><a href='../../overview-index.html'>Index</a></th><th><a href='../../index.html'>Root resource</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3'>summary: <a href='#resources'>resource</a> | <a href='#methods-summary'>method</a></td><td class='NavBarCell3'>detail: <a href='#methods-details'>method</a></td></tr></table><h2>Path: <a href='../../index.html'>/</a> <a href='../index.html'>v310</a> / servicegroup</h2><hr/><table class='info' id='resources'><caption class='TableCaption'>Resources</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Description</th></tr><tr><td><a href='svgListDownloadable/index.html'>svgListDownloadable</a></td><td>Create a URL for retrieving service group report which is returned as output.</td></tr><tr><td><a href='syncRepl/index.html'>syncRepl</a></td><td></td></tr><tr><td><a href='{id}/index.html'>{id}</a></td><td>Returns the service group associated with the specified ID.</td></tr><tr><td><a href='{uuid}/index.html'>{uuid}</a><br/> ↳ <span class='deep-resource'><a href='{uuid}/statsDownloadable/index.html'>{uuid}/statsDownloadable</a></span></td><td>Create a URL for retrieving the service group historical performance statistics report which
+ is returned as output.</td></tr></tbody></table><hr/><table class='info' id='methods-summary'><caption class='TableCaption'>Method Summary</caption><tbody><tr><th class='TableHeader'>Resource</th><th class='TableHeader'>Description</th></tr><tr><td><tt><a href='#GET'>GET /v310/servicegroup</a></tt></td><td>Get page list of service groups. To filter the ServiceGroup items returned in the response, following query
+ parameters are supported for this API:
+ <ol>
+ <li>capabilities : ServiceGroup capability, for exampleSYNC_REPL, REPLICATION, etc. Default value = NONE ( so
+ return all ServiceGroups )</li>
+ <li>isDeleted : Return deleted ServiceGroups, or live ServiceGroups or both. Default value = false.</li>
+ <li>syncReplVmstoreIds : For TGC, return the ServiceGroups containing all the VMStores identified by the IDs, as
+ synchronous replication participants. This parameter is ignored for the VMStore.</li>
+ <li>since : return only the updated ServiceGroups containing all the VMstores identified by the IDs, as Synchronous Replication participants
+ since the time specified. If since is null or not specified, it returns all the current ServiceGroups. </li>
+ </ol></td></tr><tr><td><tt><a href='#POST'>POST /v310/servicegroup</a></tt></td><td>Create a new service group. For TGC,
+ <ol>
+ <li>This would throw exception if the ServiceGroup object contains SRM specific data.</li>
+ <li>If the ServiceGroup has a synchronous replication capability, then the "SyncReplConfig" and a rule based on "submount" path
+ must be specified.</li>
+ <li>If the ServiceGroup has a Space Quota capability, then the rule based on "submount" path and "VmstoreUuid"
+ must be specified.<li>
+ <li>The SynRepl configuration will be saved locally inside a ServiceGroup object first, before TGC starts pushing
+ it to all the participating VMStores, until the push is successful. In case of failure to push to one or more
+ VMStores, TGC will generate policy error on the ServiceGroup.</li>
+ </ol></td></tr><tr><td><tt><a href='#PUT'>PUT /v310/servicegroup</a></tt></td><td>Update an existing service group.
+
+ For synchronous replication Service Group, the following rules apply:
+
+ <ol>
+ <li>Once the the "submount" in ServiceGroupRules has been created, it is not allowed to be modified.</li>
+ <li>Removing an existing SyncReplConfig by setting the value to null is not allowed. Please delete the whole
+ service group instead.</li>
+ <li>ServiceGroup.SyncReplConfig.isPaused can not be changed as part of this API. Please use pause/resume APIs
+ instead.</li>
+ </ol>
+
+ The synchronous replication of the specified service group has to be non-null, otherwise an error will be thrown.
+ Synchronous replication configuration can be created using <script>create_link("jaxrs/v310/v310/servicegroup/index.html#POST",
+ "createServiceGroup")</script>.
+
+ ServiceGroup.SyncReplConfig.isPaused can not be changed as part of this API. Please use
+ <script>create_link("jaxrs/v310/v310/servicegroup/syncRepl/pause/index.html", "pause")</script>/
+ <script>create_link("jaxrs/v310/v310/servicegroup/syncRepl/resume/index.html", "resume")</script> APIs instead.
+
+ For TGC, this API would return error if the ServiceGroup object contains SRM specific data. TGC will only allow
+ modifying the following properties. Any other property specified for modification, will return an error.
+
+ <ol>
+ <li>clusterIpConfig, in the SyncReplConfig</li>
+ <li>ipAddress of the SyncReplVmstoreInfo</li>
+ <li>syncReplPort of the SyncReplVmstoreInfo</li>
+ <li>authKey of the SyncReplVmstoreInfo</li>
+ </ol>
+
+ TGC will update the local copy of the synchronous replication configuration first, before making
+ attempts to update the synchronous replication config on all the participating VMStores, until the updates are successful. In
+ case of failure on one or more VMStore, a policy error will be generated on the ServiceGroup.</td></tr></tbody></table><hr/><table class='info' id='methods-details'><caption class='TableCaption'>Method Detail</caption><tbody></tr><tr><td><a name='GET'></a><table class='examples'><tr><td><b>HTTP Example:</b><pre>GET /v310/servicegroup
+
+</pre></td><td><b>API Example:</b><p><tt>ServiceGroupResource.getAllServiceGroups({});</tt></p></td></tr></table><p><dt><b>Description:</b></dt><dd>Get page list of service groups. To filter the ServiceGroup items returned in the response, following query
+ parameters are supported for this API:
+ <ol>
+ <li>capabilities : ServiceGroup capability, for exampleSYNC_REPL, REPLICATION, etc. Default value = NONE ( so
+ return all ServiceGroups )</li>
+ <li>isDeleted : Return deleted ServiceGroups, or live ServiceGroups or both. Default value = false.</li>
+ <li>syncReplVmstoreIds : For TGC, return the ServiceGroups containing all the VMStores identified by the IDs, as
+ synchronous replication participants. This parameter is ignored for the VMStore.</li>
+ <li>since : return only the updated ServiceGroups containing all the VMstores identified by the IDs, as Synchronous Replication participants
+ since the time specified. If since is null or not specified, it returns all the current ServiceGroups. </li>
+ </ol></dd><dl><dt><b>Tintri Api Server Support:</b></dt><dd><tt>All</tt></dd><dt><b>Query parameter Reference:</b></dt><dd><tt><a href='../../../../jaxb/v310/com/tintri/api/rest/v310/dto/ServiceGroupPageFilterSpec.html'>ServiceGroupPageFilterSpec</a></tt></dd><dt><b>Output:</b></dt><dd><tt><a href='../../../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html'>Page</a></tt> - Paginated <script> create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/ServiceGroup.html",
+         "ServiceGroup"); </script> items known to this API server. Service groups can be defined or created on a
+         different servers.</dd><dt><b>Produces:</b></dt><dd>application/json;qs=1, application/xml;qs=0.5</dd><dt><b>Consumes:</b></dt><dd>application/json;qs=1, application/xml;qs=0.5</dd></dl></td></tr><tr><td><a name='POST'></a><table class='examples'><tr><td><b>HTTP Example:</b><pre>POST /v310/servicegroup
+
+</pre></td><td><b>API Example:</b><p><tt>ServiceGroupResource.createServiceGroup({'$entity': <span class='comment'>/* svg
+            New ServiceGroup to be created */</span>});</tt></p></td></tr></table><p><dt><b>Description:</b></dt><dd>Create a new service group. For TGC,
+ <ol>
+ <li>This would throw exception if the ServiceGroup object contains SRM specific data.</li>
+ <li>If the ServiceGroup has a synchronous replication capability, then the "SyncReplConfig" and a rule based on "submount" path
+ must be specified.</li>
+ <li>If the ServiceGroup has a Space Quota capability, then the rule based on "submount" path and "VmstoreUuid"
+ must be specified.<li>
+ <li>The SynRepl configuration will be saved locally inside a ServiceGroup object first, before TGC starts pushing
+ it to all the participating VMStores, until the push is successful. In case of failure to push to one or more
+ VMStores, TGC will generate policy error on the ServiceGroup.</li>
+ </ol></dd><dl><dt><b>Tintri Api Server Support:</b></dt><dd><tt>All</tt></dd><dt><b>Input:</b></dt><dd><tt><a href='../../../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/ServiceGroup.html'>ServiceGroup</a></tt> - New ServiceGroup to be created</dd><dt><b>Output:</b></dt><dd><tt>String</tt> - If successful returns Tintri UUID of the newly created service group, else error message.</dd><dt><b>Errors:</b></dt><table class='Errors'><tr><td><b>Error Code</b></td><td><b>Message</b></td><td><b>HTTP Response Code</b></td></tr><tr><td>ERR-API-9001</td><td>Invalid service group request</td><td>400</td></tr><tr><td>ERR-API-7001</td><td>Failed to create service group</td><td>500</td></tr><tr><td>ERR-API-7014</td><td>Failed to create service group because request is not valid:</td><td>400</td></tr><tr><td>ERR-API-7015</td><td>Failed to create service group:</td><td>503</td></tr><tr><td>ERR-API-9462</td><td>Synchronous Replication operation is not supported on this model.</td><td>403</td></tr><tr><td>ERR-API-6011</td><td>Replication license missing. Please add replication license to this VMstore. Please contact Tintri Sales on how to acquire one. ErrorCode = '%s'</td><td>403</td></tr></table><dt><b>Produces:</b></dt><dd>application/json;qs=1, application/xml;qs=0.5</dd><dt><b>Consumes:</b></dt><dd>application/json;qs=1, application/xml;qs=0.5</dd></dl></td></tr><tr><td><a name='PUT'></a><table class='examples'><tr><td><b>HTTP Example:</b><pre>PUT /v310/servicegroup
+
+</pre></td><td><b>API Example:</b><p><tt>ServiceGroupResource.updateServiceGroup({'$entity': <span class='comment'>/* svg
+            ServiceGroup with new attribute values. */</span>});</tt></p></td></tr></table><p><dt><b>Description:</b></dt><dd>Update an existing service group.
+
+ For synchronous replication Service Group, the following rules apply:
+
+ <ol>
+ <li>Once the the "submount" in ServiceGroupRules has been created, it is not allowed to be modified.</li>
+ <li>Removing an existing SyncReplConfig by setting the value to null is not allowed. Please delete the whole
+ service group instead.</li>
+ <li>ServiceGroup.SyncReplConfig.isPaused can not be changed as part of this API. Please use pause/resume APIs
+ instead.</li>
+ </ol>
+
+ The synchronous replication of the specified service group has to be non-null, otherwise an error will be thrown.
+ Synchronous replication configuration can be created using <script>create_link("jaxrs/v310/v310/servicegroup/index.html#POST",
+ "createServiceGroup")</script>.
+
+ ServiceGroup.SyncReplConfig.isPaused can not be changed as part of this API. Please use
+ <script>create_link("jaxrs/v310/v310/servicegroup/syncRepl/pause/index.html", "pause")</script>/
+ <script>create_link("jaxrs/v310/v310/servicegroup/syncRepl/resume/index.html", "resume")</script> APIs instead.
+
+ For TGC, this API would return error if the ServiceGroup object contains SRM specific data. TGC will only allow
+ modifying the following properties. Any other property specified for modification, will return an error.
+
+ <ol>
+ <li>clusterIpConfig, in the SyncReplConfig</li>
+ <li>ipAddress of the SyncReplVmstoreInfo</li>
+ <li>syncReplPort of the SyncReplVmstoreInfo</li>
+ <li>authKey of the SyncReplVmstoreInfo</li>
+ </ol>
+
+ TGC will update the local copy of the synchronous replication configuration first, before making
+ attempts to update the synchronous replication config on all the participating VMStores, until the updates are successful. In
+ case of failure on one or more VMStore, a policy error will be generated on the ServiceGroup.</dd><dl><dt><b>Since API version</b></dt><dd><tt>v310.61</tt></dd><dt><b>Tintri Api Server Support:</b></dt><dd><tt>All</tt></dd><dt><b>Input:</b></dt><dd><tt><a href='../../../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/ServiceGroup.html'>ServiceGroup</a></tt> - ServiceGroup with new attribute values.</dd><dt><b>Output:</b></dt><dd><tt>void</tt></dd><dt><b>Errors:</b></dt><table class='Errors'><tr><td><b>Error Code</b></td><td><b>Message</b></td><td><b>HTTP Response Code</b></td></tr><tr><td>ERR-API-9001</td><td>Invalid service group request</td><td>400</td></tr><tr><td>ERR-API-7002</td><td>Failed to update service group</td><td>500</td></tr><tr><td>ERR-API-7016</td><td>Failed to update service group because request is not valid:</td><td>400</td></tr><tr><td>ERR-API-7017</td><td>Failed to update service group</td><td>503</td></tr><tr><td>ERR-API-9016</td><td>This operation is not supported.</td><td>400</td></tr><tr><td>ERR-API-9462</td><td>Synchronous Replication operation is not supported on this model.</td><td>403</td></tr><tr><td>ERR-API-6011</td><td>Replication license missing. Please add replication license to this VMstore. Please contact Tintri Sales on how to acquire one. ErrorCode = '%s'</td><td>403</td></tr><tr><td>ERR-API-9453</td><td>Cannot create synchronous replication configuration with update API.</td><td>400</td></tr><tr><td>ERR-API-9454</td><td>Cannot pause synchronous replication using synchronous replication config update API. Please use pause synchronous replication API</td><td>400</td></tr><tr><td>ERR-API-9455</td><td>Cannot resume synchronous replication using synchronous replication config update API. Please use resume synchronous replication API</td><td>400</td></tr></table><dt><b>Produces:</b></dt><dd>application/json;qs=1, application/xml;qs=0.5</dd><dt><b>Consumes:</b></dt><dd>application/json;qs=1, application/xml;qs=0.5</dd></dl></td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../overview-summary.html'>Overview</a></th><th><a href='../../overview-index.html'>Index</a></th><th><a href='../../index.html'>Root resource</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3'>summary: <a href='#resources'>resource</a> | <a href='#methods-summary'>method</a></td><td class='NavBarCell3'>detail: <a href='#methods-details'>method</a></td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

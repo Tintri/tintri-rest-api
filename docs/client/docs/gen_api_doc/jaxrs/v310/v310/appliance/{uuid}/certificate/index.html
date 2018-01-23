@@ -1,0 +1,38 @@
+<HTML><HEAD><TITLE>Resource certificate</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../overview-summary.html'>Overview</a></th><th><a href='../../../../overview-index.html'>Index</a></th><th><a href='../../../../index.html'>Root resource</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3'>summary: <a href='#resources'>resource</a> | <a href='#methods-summary'>method</a></td><td class='NavBarCell3'>detail: <a href='#methods-details'>method</a></td></tr></table><h2>Path: <a href='../../../../index.html'>/</a> <a href='../../../index.html'>v310</a> / <a href='../../index.html'>appliance</a> / <a href='../index.html'>{uuid}</a> / certificate</h2><dl><dt><b>Path parameters:</b></dt><dd><b>uuid</b> - Appliance Tintri UUID.</dd></dl><hr/><table class='info' id='resources'><caption class='TableCaption'>Resources</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Description</th></tr><tr><td><a href='generate/index.html'>generate</a></td><td>Generate new self-signed host certificate with hostname and IP address in the Subject Alternative Name extension
+ on VMstore.</td></tr><tr><td><a href='{id}/index.html'>{id}</a></td><td>Returns certificate(s) that matche the certificate ID or empty collection if not found.</td></tr></tbody></table><hr/><table class='info' id='methods-summary'><caption class='TableCaption'>Method Summary</caption><tbody><tr><th class='TableHeader'>Resource</th><th class='TableHeader'>Description</th></tr><tr><td><tt><a href='#GET'>GET /v310/appliance/{uuid}/certificate</a></tt></td><td>Returns any present host certificate and trusted Certificate Authority (CA) certificates.</td></tr><tr><td><tt><a href='#PUT'>PUT /v310/appliance/{uuid}/certificate</a></tt></td><td>Upload a certificate to VMstore.
+ 
+ The uploaded Certificate object must contain these attributes:
+  - type (SIGNED or CA), and
+  - content (certificate in PEM format). 
+      For Signed certificate, the content must contain both the certificate and the key, in that order.
+      For CA certificate, the content must contains only the certificate. Chained certificates may be appended.
+ 
+ The certificates are only used for LDAP authentication when TLS is enabled.</td></tr></tbody></table><hr/><table class='info' id='methods-details'><caption class='TableCaption'>Method Detail</caption><tbody></tr><tr><td><a name='GET'></a><table class='examples'><tr><td><b>HTTP Example:</b><pre>GET /v310/appliance/{uuid}/certificate
+
+</pre></td><td><b>API Example:</b><p><tt>ApplianceResource.getCertificates({'uuid': <span class='comment'>/* uuid Appliance Tintri UUID. */</span>});</tt></p></td></tr></table><p><dt><b>Description:</b></dt><dd>Returns any present host certificate and trusted Certificate Authority (CA) certificates.</dd><dl><dt><b>Tintri Api Server Support:</b></dt><dd><tt>All</tt></dd><dt><b>Output:</b></dt><dd><tt>Collection&lt;<a href='../../../../../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/Certificate.html'>Certificate</a>&gt;</tt> - any present host certificate and trusted Certificate Authority (CA) certificates.</dd><dt><b>Produces:</b></dt><dd>application/json;qs=1, application/xml;qs=0.5</dd><dt><b>Consumes:</b></dt><dd>application/json;qs=1, application/xml;qs=0.5</dd></dl></td></tr><tr><td><a name='PUT'></a><table class='examples'><tr><td><b>HTTP Example:</b><pre>PUT /v310/appliance/{uuid}/certificate
+
+</pre></td><td><b>API Example:</b><p><tt>ApplianceResource.addSignedCertificate({'uuid': <span class='comment'>/* uuid Appliance Tintri UUID */</span>,<br/>&nbsp;&nbsp;'$entity': <span class='comment'>/* cert the uploaded Certificate and the private key is applicable. */</span>});</tt></p></td></tr></table><p><dt><b>Description:</b></dt><dd>Upload a certificate to VMstore.
+ 
+ The uploaded Certificate object must contain these attributes:
+  - type (SIGNED or CA), and
+  - content (certificate in PEM format). 
+      For Signed certificate, the content must contain both the certificate and the key, in that order.
+      For CA certificate, the content must contains only the certificate. Chained certificates may be appended.
+ 
+ The certificates are only used for LDAP authentication when TLS is enabled.</dd><dl><dt><b>Tintri Api Server Support:</b></dt><dd><tt>All</tt></dd><dt><b>Input:</b></dt><dd><tt><a href='../../../../../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/Certificate.html'>Certificate</a></tt> - the uploaded Certificate and the private key is applicable.</dd><dt><b>Output:</b></dt><dd><tt>void</tt></dd><dt><b>Errors:</b></dt><table class='Errors'><tr><td><b>Error Code</b></td><td><b>Message</b></td><td><b>HTTP Response Code</b></td></tr><tr><td>ERR-API-6008</td><td>Upload certificate failed</td><td>500</td></tr></table><dt><b>Produces:</b></dt><dd>application/json;qs=1, application/xml;qs=0.5</dd><dt><b>Consumes:</b></dt><dd>application/json;qs=1, application/xml;qs=0.5</dd></dl></td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../overview-summary.html'>Overview</a></th><th><a href='../../../../overview-index.html'>Index</a></th><th><a href='../../../../index.html'>Root resource</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3'>summary: <a href='#resources'>resource</a> | <a href='#methods-summary'>method</a></td><td class='NavBarCell3'>detail: <a href='#methods-details'>method</a></td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

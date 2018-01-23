@@ -1,0 +1,62 @@
+<HTML><HEAD><TITLE>XML element SystemProperty</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: element | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: SystemProperty</h2>Contains system property information<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.SystemProperty",
+   "<a href='#m_custom'>custom</a>": &ltBoolean&gt,
+   "<a href='#m_defaultValue'>defaultValue</a>": &ltString&gt,
+   "<a href='#m_name'>name</a>": &ltString&gt,
+   "<a href='#m_value'>value</a>": &ltString&gt,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_custom'>custom</td><td>xsd:boolean</td><td>‘True’ indicates the current value is a custom value specified by the user. ‘False’ indicates that the current value is the default value.</td></tr><tr><td id='m_defaultValue'>defaultValue</td><td>xsd:string</td><td>The default value of the system property.</td></tr><tr><td id='m_name'>name</td><td>xsd:string</td><td>The current system properties are:
+
+ <p>
+  <table cellspacing="0">
+      <tr>
+          <th>SystemProperty</th>
+          <th>Description</th>
+      </tr>
+      <tr>
+          <td>com.tintri.space.usedPercentAlertLowThreshold</td>
+          <td>After physical used space percent exceeds this threshold, the VMstore will send a daily User Alert for up to 7 consecutive days, after which a daily User Notice will be displayed on the UI, until the physical used space drops below this threshold. A valid value for this threshold is an integer between 0 and 100 (inclusive), that is also less than or equal to usedPercentAlertHighThreshold.</td>
+      </tr>
+      <tr>
+          <td>com.tintri.space.usedPercentAlertHighThreshold</td>
+          <td>After physical used space percent exceeds this threshold, the VMstore will send a daily User Alert until the physical used space drops below this threshold. A valid value for this threshold is an integer between 0 and 100 (inclusive), that is also greater than or equal to usedPercentAlertLowThreshold.</td>
+      </tr>
+      <tr>
+          <td>com.tintri.performance.reservesUsedPercentAlertThreshold</td>
+          <td>After used performance reserves percent exceeds this threshold, the VMstore will send a User Alert. Once past the threshold, if the used performance reserves continues to increase a User Alert will be sent once a week. The used performance reserves percent is allowed to exceed 100 percent. The impact of being over 100 percent is that latencies may increase, since all performance resources have been utilized. A valid value for this threshold is an integer >= 0.</td>
+      </tr>
+      <tr>
+          <td>com.tintri.space.usedPercentDisableSnapshotsThreshold</td>
+          <td>
+              After physical used space percent meets or exceeds this threshold, the VMstore will disable snapshot creation to prevent the VMstore from becoming full, and send a User Alert. Once physical used space percent drops below this threshold, snapshot creation will be allowed again. If physical used space remains stable below the threshold for a period of time (1 hr), the VMstore will send another User Alert to notify the user that things are stable and functioning normally. A valid value for this threshold is an integer between 0 and 100 (inclusive).
+              <ul>
+                  <li>VAAI and ODX snapshots (generally used for provisioning or migration operations) are not governed by this threshold. Only scheduled and manual Tintri snapshots are governed by this threshold.</li>
+                  <li>When creating a snapshot of a thick provisioned virtual machine, space needs to be allocated for the snapshot. If the current physical used space plus the space needed for the snapshot will cause the total physical used space to meet or exceed the threshold, the snapshot creation operation will fail.</li>
+              </ul>
+          </td>
+      </tr>
+      <tr>
+          <td>com.tintri.space.usedPercentDisableReplicationThreshold</td>
+          <td>After physical used space percent meets or exceeds this threshold, the VMstore will disable incoming snapshot replication to prevent the VMstore from becoming full, and send a User Alert. Once physical used space percent drops below the threshold, incoming snapshot replication will be allowed again. If physical used space remains stable below the threshold for a period of time (1 hr), the VMstore will send another User Alert to notify the user that things are stable and functioning normally. A valid value for this threshold is an integer between 0 and 100 (inclusive).</td>
+      </tr>
+  </table>
+ </p></td></tr><tr><td id='m_value'>value</td><td>xsd:string</td><td>The current value of the system property.</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: element | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

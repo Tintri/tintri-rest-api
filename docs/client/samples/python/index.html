@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<!--
+  This file is the index file for HTTP code examples in Python.  It needs
+  to be modified when files are added or removed from the code examples.
+-->
+<head>
+
+<style>
+table {
+	border-spacing: 10px;
+	border: 1px solid gray;
+	border-collapse: collapse;
+	font-family: calibri;
+	font-size: 16px;
+}
+
+td,th {
+	text-align: left;
+	padding: 7px;
+	border-top: 1px solid gray;
+}
+
+p {
+	font-family: calibri;
+	font-size: 16px;
+}
+
+li {
+	font-family: calibri;
+	font-size: 16px;
+}
+
+h1 {
+    font-family: calibri;
+    font-size: 36px;
+}
+
+h2 {
+    font-family: calibri;
+    font-size: 28px;
+    color: #303030;
+}
+
+</style>
+
+<script type="text/javascript">
+
+// Guarentees title and H1 heading are the same.
+function title_h1(title_string) {
+	document.write("<title>" + title_string + "</title>");
+	document.write("<h1>" +  title_string + "</h1>");
+}
+
+// make a local link
+function make_link(file_name) {
+	var href = "<a href=\"" + file_name + "\">" + file_name + "</a>";
+	return href;
+}
+
+// Output a table row.
+// Takes text for the first column and file name for the second and
+// third columns.
+function example_table_row(ex_text, file_name) {
+	document.write("<tr>");
+	document.write("    <td>" + ex_text + "</td>");
+	document.write("    <td>" + make_link(file_name + ".py") + "</td>");
+	document.write("</tr>");
+}
+
+</script>
+</head>
+
+<body>
+<script type="text/javascript">
+title_h1("Tintri HTTP Python Examples");
+</script>
+
+<p>
+The HTTP Python examples includes code examples on alerts, restoring
+a snapshot, cloning, failover and failback, statistics collection,
+replication, snapshots, and VM monitoring.  
+The examples will have to be modified to work
+in your environment.  The table below contains a short description, 
+and a link to the code example.
+
+<table>
+<tr>
+    <th>Description</th>
+    <th>Code Examples</th>
+</tr>
+<script type="text/javascript">
+var ex_text = "Demonstrates how to clone a VM.";
+example_table_row(ex_text, "CloneVmClient");
+
+ex_text = "Creates a Tintri VM Snapshot.";
+example_table_row(ex_text, "CreateSnapshotClient");
+
+ex_text = "Lists VMstore alerts.";
+example_table_row(ex_text, "GetAlertClient");
+
+ex_text = "Shows how to collect Dashboard and Datastore statistics.";
+example_table_row(ex_text, "GetTintriDashboard");
+
+ex_text = "Demonstrates how to obtain virtual disk information.";
+example_table_row(ex_text, "GetVirtualDisksClient");
+
+ex_text = "Shows how to collect VM information.";
+example_table_row(ex_text, "GetVmClient");
+
+ex_text = "Shows how to collect Tintri VM Snapshot information.";
+example_table_row(ex_text, "GetVmSnapShotClient");
+
+ex_text = "Shows the VM name and latest snapshot creation time stamp.";
+example_table_row(ex_text, "GetVmSnapshotCreationTime");
+
+ex_text = "Demonstrates how to configure Tintri replication. Covers " +
+          "creation and deletion.";
+example_table_row(ex_text, "ReplicationConfiguationClient");
+
+ex_text = "Shows how to create and delete Tintri replication paths.";
+example_table_row(ex_text, "ReplicationpathClient");
+
+ex_text = "Shows how to restore from a Tintri VM snapshot.";
+example_table_row(ex_text, "RestoreTintriVMClient");
+
+</script>
+
+</table>
+</body>
+</html>

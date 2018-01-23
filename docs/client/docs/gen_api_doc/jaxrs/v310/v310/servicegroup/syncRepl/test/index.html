@@ -1,0 +1,40 @@
+<HTML><HEAD><TITLE>Resource test</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../overview-summary.html'>Overview</a></th><th><a href='../../../../overview-index.html'>Index</a></th><th><a href='../../../../index.html'>Root resource</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3'>summary: resource | <a href='#methods-summary'>method</a></td><td class='NavBarCell3'>detail: <a href='#methods-details'>method</a></td></tr></table><h2>Path: <a href='../../../../index.html'>/</a> <a href='../../../index.html'>v310</a> / <a href='../../index.html'>servicegroup</a> / <a href='../index.html'>syncRepl</a> / test</h2><hr/><table class='info' id='methods-summary'><caption class='TableCaption'>Method Summary</caption><tbody><tr><th class='TableHeader'>Resource</th><th class='TableHeader'>Description</th></tr><tr><td><tt><a href='#POST'>POST /v310/servicegroup/syncRepl/test</a></tt></td><td>Test the Synchronous Replication configuration associated with the specified
+ <script> create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/ServiceGroup.html",
+ "ServiceGroup"); </script>. The synchronous replication configuration of this service group can not be null or error will be
+ returned. Please note when this test is run, it will only test the connection between the primary VMstore and the secondary VMstore as given in the configuration e.g. VMstore A as primary and VMstore B as secondary.
+ It will not test the connection after potential failover, e.g. B as primary and A as secondary.
+ If users want to test the fail over scenario they will need to call this API again with primary/secondary roles reversed.
+
+ With this API, TGC will execute the test operation on all the participating VMStores of the synchronous replication
+ configuration, and return the combined result. If an error is returned from one or more VMStores, then this error
+ will be propagated to the response test result.</td></tr></tbody></table><hr/><table class='info' id='methods-details'><caption class='TableCaption'>Method Detail</caption><tbody></tr><tr><td><a name='POST'></a><table class='examples'><tr><td><b>HTTP Example:</b><pre>POST /v310/servicegroup/syncRepl/test
+
+</pre></td><td><b>API Example:</b><p><tt>ServiceGroupResource.testSyncReplConfig({'$entity': <span class='comment'>/* svg
+            New or existing ServiceGroup to be tested, it should contain non-null SyncReplConfig otherwise error
+            will be thrown. */</span>});</tt></p></td></tr></table><p><dt><b>Description:</b></dt><dd>Test the Synchronous Replication configuration associated with the specified
+ <script> create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/ServiceGroup.html",
+ "ServiceGroup"); </script>. The synchronous replication configuration of this service group can not be null or error will be
+ returned. Please note when this test is run, it will only test the connection between the primary VMstore and the secondary VMstore as given in the configuration e.g. VMstore A as primary and VMstore B as secondary.
+ It will not test the connection after potential failover, e.g. B as primary and A as secondary.
+ If users want to test the fail over scenario they will need to call this API again with primary/secondary roles reversed.
+
+ With this API, TGC will execute the test operation on all the participating VMStores of the synchronous replication
+ configuration, and return the combined result. If an error is returned from one or more VMStores, then this error
+ will be propagated to the response test result.</dd><dl><dt><b>Since API version</b></dt><dd><tt>v310.61</tt></dd><dt><b>Tintri Api Server Support:</b></dt><dd><tt>All</tt></dd><dt><b>Input:</b></dt><dd><tt><a href='../../../../../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/ServiceGroup.html'>ServiceGroup</a></tt> - New or existing ServiceGroup to be tested, it should contain non-null SyncReplConfig otherwise error
+            will be thrown.</dd><dt><b>Output:</b></dt><dd><tt><a href='../../../../../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/syncrepl/SyncReplTestResult.html'>SyncReplTestResult</a></tt> - SyncReplState will tell us how the test result looks like.</dd><dt><b>Errors:</b></dt><table class='Errors'><tr><td><b>Error Code</b></td><td><b>Message</b></td><td><b>HTTP Response Code</b></td></tr><tr><td>ERR-API-9461</td><td>Failed to test the synchronous replication configuration. Please retry or contact Tintri support.</td><td>500</td></tr><tr><td>ERR-API-9462</td><td>Synchronous Replication operation is not supported on this model.</td><td>403</td></tr><tr><td>ERR-API-6011</td><td>Replication license missing. Please add replication license to this VMstore. Please contact Tintri Sales on how to acquire one. ErrorCode = '%s'</td><td>403</td></tr></table><dt><b>Produces:</b></dt><dd>application/json;qs=1, application/xml;qs=0.5</dd><dt><b>Consumes:</b></dt><dd>application/json;qs=1, application/xml;qs=0.5</dd></dl></td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../overview-summary.html'>Overview</a></th><th><a href='../../../../overview-index.html'>Index</a></th><th><a href='../../../../index.html'>Root resource</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3'>summary: resource | <a href='#methods-summary'>method</a></td><td class='NavBarCell3'>detail: <a href='#methods-details'>method</a></td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

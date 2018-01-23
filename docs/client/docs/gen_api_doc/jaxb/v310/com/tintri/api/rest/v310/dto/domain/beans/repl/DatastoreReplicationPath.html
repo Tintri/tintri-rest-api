@@ -1,0 +1,163 @@
+<HTML><HEAD><TITLE>XML element DatastoreReplicationPath</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: DatastoreReplicationPath</h2>Represents a datastore replication path. By populating different combinations of attributes, replication path to a
+ Vmstore or cloud destinations can be created. <br>
+ <b>Sample inputs:</b>
+ 
+ <ol>
+ <li>Replication path to VMstore <br>
+ 
+ <pre>
+ {@code
+  {
+    "typeId": "com.tintri.api.rest.v310.dto.domain.beans.repl.DatastoreReplicationPath",
+    "destinationIp": <String>,
+    "destinationPassphrase": <String>,
+    "destinationPort": <Number>,
+    "displayName": <String>,
+    "sourceIp": <String>,
+    "cloudReplDestination": null,
+    "throttle": {
+    "typeId": {
+      "com.tintri.api.rest.v310.dto.domain.beans.repl.DatastoreReplicationPathThrottle",
+      "isEnabled": <Boolean>,
+      "throughputNonThrottledMbps": <Number>,
+      "throughputThrottledMbps": <Number>,
+      "timeEnd": <String>,
+      "timeStart": <String>
+      }
+     }
+  }
+ }
+ </pre>
+ 
+ </li>
+ 
+ <li>Replication to AWS S3 cloud object store <br>
+ Only TGC can create a replication destination to AWS S3 cloud object store. <br>
+ 
+ <pre>
+ {@code
+  {
+    "typeId": "com.tintri.api.rest.v310.dto.domain.beans.repl.DatastoreReplicationPath",
+    "destinationIp": null,
+    "destinationPassphrase": null,
+    "destinationPort": 0,
+    "displayName": <String>,
+    "sourceIp": <String>,
+    "throttle": null,
+    "cloudReplDestination": {
+      "typeId": "com.tintri.api.rest.v310.dto.domain.beans.repl.CloudReplDestination",
+      "forceToOwnEnabled": <Boolean>,
+      "owningTgcHost": <String>,
+      "owningTgcUuid": <String>,
+      "provisionState": 'UNMANAGED' | 'NEW_PROVISION' | 'TAKEOVER_PROVISION' | 'UPDATE_PROVISION' | 'PROVISION_ERROR' | 'PROVISION_DONE',
+      "repositoryId": <String>,
+      "repositoryUrl": <String>,
+      "retireMekEnabled": <Boolean>,
+      "rotateAekEnabled": <Boolean>,
+      "userPassPhrase": <String>,
+      "awsInfo": {
+          "typeId": "com.tintri.api.rest.v310.dto.domain.beans.repl.AwsInfo",
+          "accessKey": <String>,
+          "region": <String>,
+          "secretKey": <String>,
+          }
+      "cleversafeInfo": null,
+      "encryptionKeyInfo": {
+          "typeId": "com.tintri.api.rest.v310.dto.domain.beans.repl.EncryptionKeyInfo",
+          "aekValue": <String>,
+          "aekVersion": <Number>,
+          "cipherTransformation": <String>,
+          "encKeySize": <Number>,
+          "mekVersion": <Number>,
+          }
+      }
+  }
+ }
+ </pre>
+ 
+ </li>
+ 
+ *
+ <li>Replication to IBM Cleversafe cloud object store <br>
+ Only TGC can create a replication destination to IBM Cleversafe object store. <br>
+ 
+ <pre>
+ {@code
+  {
+    "typeId": "com.tintri.api.rest.v310.dto.domain.beans.repl.DatastoreReplicationPath",
+    "destinationIp": null,
+    "destinationPassphrase": null,
+    "destinationPort": 0,
+    "displayName": <String>,
+    "sourceIp": <String>,
+    "throttle": null,
+    "cloudReplDestination": {
+      "typeId": "com.tintri.api.rest.v310.dto.domain.beans.repl.CloudReplDestination",
+      "forceToOwnEnabled": <Boolean>,
+      "owningTgcHost": <String>,
+      "owningTgcUuid": <String>,
+      "provisionState": 'UNMANAGED' | 'NEW_PROVISION' | 'TAKEOVER_PROVISION' | 'UPDATE_PROVISION' | 'PROVISION_ERROR' | 'PROVISION_DONE',
+      "repositoryId": <String>,
+      "repositoryUrl": <String>,
+      "retireMekEnabled": <Boolean>,
+      "rotateAekEnabled": <Boolean>,
+      "userPassPhrase": <String>,
+      "awsInfo": null,
+      "cleversafeInfo": {
+          "typeId": "com.tintri.api.rest.v310.dto.domain.beans.repl.CleversafeInfo",
+          "accessKey": <String>,
+           "dataEndPoint": <String>,
+           "adminEndPoint": <String>,
+           "secretKey": <String>,
+      }
+      "encryptionKeyInfo": {
+          "typeId": "com.tintri.api.rest.v310.dto.domain.beans.repl.EncryptionKeyInfo",
+          "aekValue": <String>,
+          "aekVersion": <Number>,
+          "cipherTransformation": <String>,
+          "encKeySize": <Number>,
+          "mekVersion": <Number>,
+          }
+      }
+  }
+ }
+ </pre>
+ 
+ </li><table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.repl.DatastoreReplicationPath",
+   "<a href='#m_destinationIp'>destinationIp</a>": &ltString&gt,
+   "<a href='#m_destinationPassphrase'>destinationPassphrase</a>": &ltString&gt,
+   "<a href='#m_destinationPort'>destinationPort</a>": &ltNumber&gt,
+   "<a href='#m_displayName'>displayName</a>": &ltString&gt,
+   "<a href='#m_id'>id</a>": &ltString&gt,
+   "<a href='#m_internalId'>internalId</a>": &ltNumber&gt,
+   "<a href='#m_sourceClusterMemberId'>sourceClusterMemberId</a>": &ltString&gt,
+   "<a href='#m_sourceIp'>sourceIp</a>": &ltString&gt,
+   "<a href='#m_cloudReplDestination'>cloudReplDestination</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/CloudReplDestination.html'>CloudReplDestination</a>,
+   "<a href='#m_throttle'>throttle</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/DatastoreReplicationPathThrottle.html'>DatastoreReplicationPathThrottle</a>,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_cloudReplDestination'>cloudReplDestination</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/CloudReplDestination.html'>CloudReplDestination</a></td><td>Cloud replication destination information</td></tr><tr><td id='m_throttle'>throttle</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/DatastoreReplicationPathThrottle.html'>DatastoreReplicationPathThrottle</a></td><td>The throttle schedule applied to this replication path.</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_destinationIp'>destinationIp</td><td>xsd:string</td><td>Remote IPv4 address of the datastore replication path.
+ This property must be null for cloud replication</td></tr><tr><td id='m_destinationPassphrase'>destinationPassphrase</td><td>xsd:string</td><td>Authorization key used on the remote end of this replication link.
+ This property must be null for cloud replication</td></tr><tr><td id='m_destinationPort'>destinationPort</td><td>xsd:int</td><td>Remote port of another datastore where replication data is received.
+ This property must be null for cloud replication</td></tr><tr><td id='m_displayName'>displayName</td><td>xsd:string</td><td>Name which would be displayed on UI.</td></tr><tr><td id='m_id'>id</td><td>xsd:string</td><td>This is the ID given by System Management to the replication link.</td></tr><tr><td id='m_internalId'>internalId</td><td>xsd:long</td><td>Internal filesystem ID used by Tintri.</td></tr><tr><td id='m_sourceClusterMemberId'>sourceClusterMemberId</td><td>xsd:string</td><td><b>TgcOnly </b>Source cluster member (VMstore) UUID</td></tr><tr><td id='m_sourceIp'>sourceIp</td><td>xsd:string</td><td>Local IPv4 address of the datastore replication path.</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>
