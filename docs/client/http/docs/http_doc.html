@@ -223,8 +223,13 @@ currently documented.  API clients will have to be modified to obtain new Tintri
 </tr>
 <tr>
     <td>v310.64</td>
-    <td>4.3.2.2</td>
+    <td>4.3.2.x</td>
     <td>3.5.0.x</td>
+</tr>
+<tr>
+    <td>v310.66</td>
+    <td>4.3.3.x</td>
+    <td>3.5.1.x</td>
 </tr>
 </table>
 
@@ -564,25 +569,61 @@ Only the properties that are in <i>properyNames</i> for the specified object in
 <tr>
     <td>GET</td>
     <td>/v310/datastore/{uuid}/systemProperty/{propertyName}</td>
-    <td>Get information on the specified system property given the property name</td>
+    <td>Returns information on the specified system property
     <td>VMstore Only</td>
 </tr>
 <tr>
     <td>PUT</td>
     <td>/v310/datastore/{uuid}/systemProperty</td>
-    <td>Updates the specified system property's custom value</td>
+    <td>Updates a system property's custom value</td>
     <td>VMstore Only</td>
 </tr>
 <tr>
     <td>DELETE</td>
-    <td>/v310/datastore/{uuid}/systemProperty/{propertyName}</td>
-    <td>Removes the specified system property's custom value, and restores the default value</td>
+    <td>/v310/datastore/{uuid}/systemProperty{propertyName}</td>
+    <td>Removes the specified system property's custom value</td>
     <td>VMstore Only</td>
+</tr>
+</table>
+
+<h2 id="new_apis">New APIs for v310.66</h2>
+<table>
+<tr>
+    <td>POST</td>
+    <td>/v310/alert/notificationPolicy</td>
+    <td>Creates a new notification policy</td>
+    <td>All</td>
+</tr>
+<tr>
+    <td>PUT</td>
+    <td>/v310/alert/notificationPolicy/{uuid}</td>
+    <td>Update an existing notification policy</td>
+    <td>All</td>
+</tr>
+<tr>
+    <td>DELETE</td>
+    <td>/v310/alert/notificationPolicy/{uuid}</td>
+    <td>Delete an existing notification policy</td>
+    <td>All</td>
+</tr>
+<tr>
+    <td>GET</td>
+    <td>/v310/alert/notificationPolicy/{uuid}</td>
+    <td>Get the notificaiton policy assoiciated with an ID</td>
+    <td>All</td>
+</tr>
+<tr>
+    <td>GET</td>
+    <td>/v310/alert/notificationPolicy</td>
+    <td>Get all notification policies</td>
+    <td>All</td>
 </tr>
 </table>
 
 <h2 id="known_issues">Known Issues</h2>
 <ol>
+  <li> Version v310.64 APIs are not in this release of v310.66.
+  </li>
   <li>Fields are not shown to be read only or read/write; therefore, it is indeterminable
       from the API documentation if a property can be changed.  If the property is not
       writable, an error will be returned; for example, "Update of property localAlias is

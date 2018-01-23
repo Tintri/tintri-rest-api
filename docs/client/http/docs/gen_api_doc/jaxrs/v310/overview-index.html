@@ -97,6 +97,38 @@ function create_link(jax_path, path_name) {
      <td><tt>All</tt><td> </td><td><tt>void</tt></td></td>
     </tr>
     <tr>
+     <td><a href="v310/alert/notificationPolicy/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/alert/notificationPolicy/index.html"><tt>/v310/alert/notificationPolicy</tt></a></td>
+     <td>Create a new notification policy.</td>
+     <td><tt>All - Since v310.66</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/NotificationPolicy.html">NotificationPolicy</a></tt> - the notification policy to be added to the vmstore.</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/NotificationPolicy.html">NotificationPolicy</a></tt> - the newly created notification policy.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/alert/notificationPolicy/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/alert/notificationPolicy/index.html"><tt>/v310/alert/notificationPolicy</tt></a></td>
+     <td>Get all notification policies or get notification policies filtered by the corresponding alert ID.</td>
+     <td><tt>All - Since v310.66</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/NotificationPolicy.html">NotificationPolicy</a>&gt;</tt> - List of <script> create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/NotificationPolicy.html",
+         "NotificationPolicy"); </script></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/alert/notificationPolicy/{uuid}/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/alert/notificationPolicy/{uuid}/index.html"><tt>/v310/alert/notificationPolicy/{uuid}</tt></a></td>
+     <td>Update an existing notification policy.</td>
+     <td><tt>All - Since v310.66</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/NotificationPolicy.html">NotificationPolicy</a></tt> - the notification policy to be updated</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/NotificationPolicy.html">NotificationPolicy</a></tt> - the updated notification policy.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/alert/notificationPolicy/{uuid}/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/alert/notificationPolicy/{uuid}/index.html"><tt>/v310/alert/notificationPolicy/{uuid}</tt></a></td>
+     <td>Delete the notification policy associated with the specified ID.</td>
+     <td><tt>All - Since v310.66</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/alert/notificationPolicy/{uuid}/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/alert/notificationPolicy/{uuid}/index.html"><tt>/v310/alert/notificationPolicy/{uuid}</tt></a></td>
+     <td>Get the notification policy associated with the specified ID.</td>
+     <td><tt>All - Since v310.66</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/NotificationPolicy.html">NotificationPolicy</a></tt> - <script> create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/NotificationPolicy.html",
+         "NotificationPolicy"); </script></td></td>
+    </tr>
+    <tr>
      <td><a href="v310/appliance/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/appliance/index.html"><tt>/v310/appliance</tt></a></td>
      <td>Gets Tintri Appliances.</td>
@@ -469,6 +501,24 @@ function create_link(jax_path, path_name) {
      <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceUpgradeInfo.html">ApplianceUpgradeInfo</a></tt> - The appliance upgrade information</td></td>
     </tr>
     <tr>
+     <td><a href="v310/autosupport/nightly/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/autosupport/nightly/index.html"><tt>/v310/autosupport/nightly</tt></a></td>
+     <td>Generate a report with summary information about the past 25 hours.</td>
+     <td><tt>All</tt><td> </td><td><tt>String</tt> - The filename of the generated report, which can be found within the 'phonehome' log subdirectory.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/autosupport/reportInfo/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/autosupport/reportInfo/index.html"><tt>/v310/autosupport/reportInfo</tt></a></td>
+     <td>Gets the Tintri appliance autosupport report creation information, which includes the time stamp, progress, description of each report creation steps.</td>
+     <td><tt>All - Since v310.31</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/TintriString.html">TintriString</a></tt> - The appliance autosupport report creation information</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/autosupport/support/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/autosupport/support/index.html"><tt>/v310/autosupport/support</tt></a></td>
+     <td>Generate a support bundle.</td>
+     <td><tt>All</tt><td> </td><td><tt>String</tt> - The filename of the generated report, which can be found within the 'phonehome' log subdirectory.</td></td>
+    </tr>
+    <tr>
      <td><a href="v310/clusterConfig/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/clusterConfig/index.html"><tt>/v310/clusterConfig</tt></a></td>
      <td>Returns current cluster configuration</td>
@@ -479,6 +529,14 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/clusterConfig/index.html"><tt>/v310/clusterConfig</tt></a></td>
      <td>Update current cluster configuration</td>
      <td><tt>TgcOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/ClusterConfiguration.html">ClusterConfiguration</a></tt> - The new ClusterConfiguration</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/computeResource/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/computeResource/index.html"><tt>/v310/computeResource</tt></a></td>
+     <td>Get configuration and performance data about compute resources in a paginated response.</td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/ComputeResource.html", "ComputeResource");
+ </script> items representing compute resources.</td></td>
     </tr>
     <tr>
      <td><a href="v310/datastore/index.html#GET"><tt>GET</tt></a></td>
@@ -503,6 +561,18 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/datastore/{uuid}/customizationSpec/{vcenterName}/index.html"><tt>/v310/datastore/{uuid}/customizationSpec/{vcenterName}</tt></a></td>
      <td>Gets the customization specifications of the datastore for the specified vCenter.</td>
      <td><tt>VMstoreOnly</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCustomizationSpec.html">VirtualMachineCustomizationSpec</a>&gt;</tt> - The list of virtual machone customaization specifications for the specified datastore and vCenter.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/deleteAllCloudReplication/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/deleteAllCloudReplication/index.html"><tt>/v310/datastore/{uuid}/deleteAllCloudReplication</tt></a></td>
+     <td>Deletes all per VM configurations that point to a cloud replication Link.</td>
+     <td><tt>All - Since v310.71</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/deleteAllReplication/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/deleteAllReplication/index.html"><tt>/v310/datastore/{uuid}/deleteAllReplication</tt></a></td>
+     <td>Deletes all per VM configurations that point to a asynchronous replication Link.</td>
+     <td><tt>All - Since v310.71</tt><td> </td><td><tt>void</tt></td></td>
     </tr>
     <tr>
      <td><a href="v310/datastore/{uuid}/fileShare/index.html#GET"><tt>GET</tt></a></td>
@@ -557,6 +627,12 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/datastore/{uuid}/fileShare/{fsName}/acl/{aceId}/index.html"><tt>/v310/datastore/{uuid}/fileShare/{fsName}/acl/{aceId}</tt></a></td>
      <td>Deletes the specified access control entry (ACE) from a FileShare.</td>
      <td><tt>VMstoreOnly - Since v310.11</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/fileShare/{fsName}/resetFileAcls/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/fileShare/{fsName}/resetFileAcls/index.html"><tt>/v310/datastore/{uuid}/fileShare/{fsName}/resetFileAcls</tt></a></td>
+     <td>Resets the permissions of all the files on the specified share</td>
+     <td><tt>VMstoreOnly - Since v310.71</tt><td><tt>boolean</tt> - 'TRUE' removes the existing (custom) file permissions on the specified share; 'FALSE' preserves the share's file permissions</td><td><tt>void</tt></td></td>
     </tr>
     <tr>
      <td><a href="v310/datastore/{uuid}/hostResources/index.html#GET"><tt>GET</tt></a></td>
@@ -619,6 +695,18 @@ function create_link(jax_path, path_name) {
      <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/nfsaccess/DatastoreNfsAccesses.html">DatastoreNfsAccesses</a></tt> - The full NFS access control settings to replace the current settings.</td><td><tt>void</tt></td></td>
     </tr>
     <tr>
+     <td><a href="v310/datastore/{uuid}/pauseAsyncSyncReplication/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/pauseAsyncSyncReplication/index.html"><tt>/v310/datastore/{uuid}/pauseAsyncSyncReplication</tt></a></td>
+     <td>Pause asynchronous and synchronous replication</td>
+     <td><tt>All - Since v310.71</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/pauseCloudReplication/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/pauseCloudReplication/index.html"><tt>/v310/datastore/{uuid}/pauseCloudReplication</tt></a></td>
+     <td>Pause cloud replication</td>
+     <td><tt>All - Since v310.71</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
      <td><a href="v310/datastore/{uuid}/qosInfo/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/datastore/{uuid}/qosInfo/index.html"><tt>/v310/datastore/{uuid}/qosInfo</tt></a></td>
      <td>Returns the system-wide QoS information such as total minimum IOPS allocated.</td>
@@ -640,7 +728,7 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/datastore/{uuid}/replicationInfo/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/datastore/{uuid}/replicationInfo/index.html"><tt>/v310/datastore/{uuid}/replicationInfo</tt></a></td>
      <td>Gets the replication properties.</td>
-     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/DatastoreReplicationInfo.html">DatastoreReplicationInfo</a></tt> - The replication imformation of the datastore.</td></td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/DatastoreReplicationInfo.html">DatastoreReplicationInfo</a></tt> - The system replication imformation of the datastore.</td></td>
     </tr>
     <tr>
      <td><a href="v310/datastore/{uuid}/replicationInfo/index.html#PUT"><tt>PUT</tt></a></td>
@@ -652,13 +740,13 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/datastore/{uuid}/replicationPath/index.html#POST"><tt>POST</tt></a></td>
      <td><a href="v310/datastore/{uuid}/replicationPath/index.html"><tt>/v310/datastore/{uuid}/replicationPath</tt></a></td>
      <td>Creates a new replication path and adds it to this datastore as an outgoing replication path.</td>
-     <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/DatastoreReplicationPath.html">DatastoreReplicationPath</a></tt> - The replication link to create.</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/DatastoreReplicationPath.html">DatastoreReplicationPath</a></tt> - The created datastore replication path.</td></td>
+     <td><tt>All</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/DatastoreReplicationPath.html">DatastoreReplicationPath</a></tt> - The replication link to create.</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/DatastoreReplicationPath.html">DatastoreReplicationPath</a></tt> - The created datastore replication path.</td></td>
     </tr>
     <tr>
      <td><a href="v310/datastore/{uuid}/replicationPath/index.html#PUT"><tt>PUT</tt></a></td>
      <td><a href="v310/datastore/{uuid}/replicationPath/index.html"><tt>/v310/datastore/{uuid}/replicationPath</tt></a></td>
      <td>Updates the specified replication link on the specified datastore instance by the incoming replication instance.</td>
-     <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/DatastoreReplicationPath.html">DatastoreReplicationPath</a>&gt;</tt> - A request wrapper containing the datastore replication path attributes to be modified set in the object and a properties set listing the attributes to be updated.</td><td><tt>void</tt></td></td>
+     <td><tt>All</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/DatastoreReplicationPath.html">DatastoreReplicationPath</a>&gt;</tt> - A request wrapper containing the datastore replication path attributes to be modified set in the object and a properties set listing the attributes to be updated.</td><td><tt>void</tt></td></td>
     </tr>
     <tr>
      <td><a href="v310/datastore/{uuid}/replicationPath/index.html#GET"><tt>GET</tt></a></td>
@@ -676,7 +764,7 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/datastore/{uuid}/replicationPath/{smReplLinkId}/index.html#DELETE"><tt>DELETE</tt></a></td>
      <td><a href="v310/datastore/{uuid}/replicationPath/{smReplLinkId}/index.html"><tt>/v310/datastore/{uuid}/replicationPath/{smReplLinkId}</tt></a></td>
      <td>Deletes the specified replication path on the specified datastore instance.</td>
-     <td><tt>VMstoreOnly</tt><td> </td><td><tt>void</tt></td></td>
+     <td><tt>All</tt><td> </td><td><tt>void</tt></td></td>
     </tr>
     <tr>
      <td><a href="v310/datastore/{uuid}/schedulesDefault/index.html#PUT"><tt>PUT</tt></a></td>
@@ -687,8 +775,8 @@ function create_link(jax_path, path_name) {
     <tr>
      <td><a href="v310/datastore/{uuid}/schedulesDistinct/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/datastore/{uuid}/schedulesDistinct/index.html"><tt>/v310/datastore/{uuid}/schedulesDistinct</tt></a></td>
-     <td>Gets a list of distinct snapshot schedules, including the system default snapshot schedules.</td>
-     <td><tt>VMstoreOnly</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSnapshotSchedule.html">VirtualMachineSnapshotSchedule</a>&gt;</tt> - A list of virtual mackine customization specifications for the datastore.</td></td>
+     <td>Gets a list of distinct snapshot schedules, max of 100, including the system default snapshot schedules.</td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSnapshotSchedule.html">VirtualMachineSnapshotSchedule</a>&gt;</tt> - A list of unique virtual machine snapshot schedules with a max of 100.</td></td>
     </tr>
     <tr>
      <td><a href="v310/datastore/{uuid}/smbSettings/index.html#GET"><tt>GET</tt></a></td>
@@ -787,6 +875,18 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/license/bulk/index.html"><tt>/v310/license/bulk</tt></a></td>
      <td>Adds one or more licenses.</td>
      <td><tt>TgcOnly - Since v310.51</tt><td><tt>String</tt> - is a string of one or more license keys separated by comma, space, or line break</td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/License.html">License</a>&gt;</tt> - the validated or failed licenses.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/license/eval/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/license/eval/index.html"><tt>/v310/license/eval</tt></a></td>
+     <td>Returns a list of all the evaluation licenses.</td>
+     <td><tt>All - Since v310.71</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/License.html">License</a>&gt;</tt> - the list of evaluation licenses.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/license/eval/{feature}/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/license/eval/{feature}/index.html"><tt>/v310/license/eval/{feature}</tt></a></td>
+     <td>Activates an evaluation license for a feature.</td>
+     <td><tt>All - Since v310.71</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/License.html">License</a></tt> - the validated license.</td></td>
     </tr>
     <tr>
      <td><a href="v310/license/licenseListDownloadable/index.html#POST"><tt>POST</tt></a></td>
@@ -966,6 +1066,40 @@ function create_link(jax_path, path_name) {
      <td><tt>TgcOnly - Since v310.31</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineQoSConfig.html">VirtualMachineQoSConfig</a></tt> - QoSConfig the QoS associated with the given service group</td></td>
     </tr>
     <tr>
+     <td><a href="v310/servicegroup/{id}/quota/statsHistoric/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/servicegroup/{id}/quota/statsHistoric/index.html"><tt>/v310/servicegroup/{id}/quota/statsHistoric</tt></a></td>
+     <td>Get all of the historic quota statistics slices for the service group.</td>
+     <td><tt>All - Since v310.71</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/Stats.html", "Stats");
+ </script> items containing a list of <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/QuotaStat.html", "QuotaStat");
+ </script>.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/{id}/quotaPolicy/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/servicegroup/{id}/quotaPolicy/index.html"><tt>/v310/servicegroup/{id}/quotaPolicy</tt></a></td>
+     <td>Returns the quota policy associated with the given service group.</td>
+     <td><tt>All - Since v310.71</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/quota/QuotaPolicy.html">QuotaPolicy</a></tt> - QuotaPolicy the quota policy associated with the given service group</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/{id}/quotaPolicy/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/servicegroup/{id}/quotaPolicy/index.html"><tt>/v310/servicegroup/{id}/quotaPolicy</tt></a></td>
+     <td>Create a quota policy for the given service group.</td>
+     <td><tt>All - Since v310.71</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/quota/QuotaPolicy.html">QuotaPolicy</a></tt> - quotaPolicy to be created</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/{id}/quotaPolicy/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/servicegroup/{id}/quotaPolicy/index.html"><tt>/v310/servicegroup/{id}/quotaPolicy</tt></a></td>
+     <td>Update the quota policy for the given service group.</td>
+     <td><tt>All - Since v310.71</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/quota/QuotaPolicy.html">QuotaPolicy</a></tt> - quotaPolicy containing new values</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/{id}/quotaPolicy/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/servicegroup/{id}/quotaPolicy/index.html"><tt>/v310/servicegroup/{id}/quotaPolicy</tt></a></td>
+     <td>Delete the quota policy associated with the given service group.</td>
+     <td><tt>All - Since v310.71</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/quota/QuotaPolicy.html">QuotaPolicy</a></tt> - QuotaPolicy the deleted quota policy.</td></td>
+    </tr>
+    <tr>
      <td><a href="v310/servicegroup/{id}/replConfig/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/servicegroup/{id}/replConfig/index.html"><tt>/v310/servicegroup/{id}/replConfig</tt></a></td>
      <td>Getter for the replication configuration associated with the service group.</td>
@@ -1031,16 +1165,22 @@ function create_link(jax_path, path_name) {
  </script>.</td></td>
     </tr>
     <tr>
+     <td><a href="v310/servicegroup/{uuid}/statsDownloadable/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/servicegroup/{uuid}/statsDownloadable/index.html"><tt>/v310/servicegroup/{uuid}/statsDownloadable</tt></a></td>
+     <td>Create a URL for retrieving the service group historical performance statistics report which is returned as output.</td>
+     <td><tt>TgcOnly - Since v310.71</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/svg/SvgStatsDownloadableReportFilter.html">SvgStatsDownloadableReportFilter</a></tt> - The filter for generating the report.</td><td><tt>String</tt> - The URL that the user can use to retrieve the historic service group statistics report.</td></td>
+    </tr>
+    <tr>
      <td><a href="v310/session/active/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/session/active/index.html"><tt>/v310/session/active</tt></a></td>
      <td>Returns a list of user sessions information that are currently logged in.</td>
-     <td><tt>VMstoreOnly - Since v310.51</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/UserSession.html">UserSession</a>&gt;</tt> - list of user sessions</td></td>
+     <td><tt>All - Since v310.51</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/UserSession.html">UserSession</a>&gt;</tt> - list of user sessions</td></td>
     </tr>
     <tr>
      <td><a href="v310/session/current/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/session/current/index.html"><tt>/v310/session/current</tt></a></td>
      <td>Returns the current user session information.</td>
-     <td><tt>VMstoreOnly - Since v310.51</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/UserSession.html">UserSession</a></tt> - current user session</td></td>
+     <td><tt>All - Since v310.51</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/UserSession.html">UserSession</a></tt> - current user session</td></td>
     </tr>
     <tr>
      <td><a href="v310/session/login/index.html#POST"><tt>POST</tt></a></td>
@@ -1067,10 +1207,16 @@ function create_link(jax_path, path_name) {
      <td><tt>VMstoreOnly</tt><td> </td><td><tt>String</tt> - Returns Tintri Role name associated with the credentials</td></td>
     </tr>
     <tr>
+     <td><a href="v310/session/{tintriSessionId}/invalidate/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/session/{tintriSessionId}/invalidate/index.html"><tt>/v310/session/{tintriSessionId}/invalidate</tt></a></td>
+     <td>Invalidate a session by a user belonging to &quot;Admin&quot; role.</td>
+     <td><tt>All - Since v310.71</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
      <td><a href="v310/snapshot/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/snapshot/index.html"><tt>/v310/snapshot</tt></a></td>
      <td>Fetches snapshot information based on the snapshot related query string parameters.</td>
-     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
  create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/Snapshot.html", "Snapshot");
  </script> items.</td></td>
     </tr>
@@ -1078,37 +1224,49 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/snapshot/index.html#POST"><tt>POST</tt></a></td>
      <td><a href="v310/snapshot/index.html"><tt>/v310/snapshot</tt></a></td>
      <td>Takes a manual snapshot for a list of VMs.</td>
-     <td><tt>VMstoreOnly</tt><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/snapshot/SnapshotSpec.html">SnapshotSpec</a>&gt;</tt></td><td><tt>List&lt;String&gt;</tt> - a list of Snapshot Tintri UUIDs</td></td>
+     <td><tt>All</tt><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/snapshot/SnapshotSpec.html">SnapshotSpec</a>&gt;</tt></td><td><tt>List&lt;String&gt;</tt> - a list of Snapshot Tintri UUIDs</td></td>
     </tr>
     <tr>
      <td><a href="v310/snapshot/index.html#DELETE"><tt>DELETE</tt></a></td>
      <td><a href="v310/snapshot/index.html"><tt>/v310/snapshot</tt></a></td>
-     <td>Removes snapshots that match given snapshot filter criteria in which vmUuid is a madatory field.</td>
-     <td><tt>VMstoreOnly</tt><td> </td><td><tt>String</tt> - formatted string response message about snapshot deletion.</td></td>
+     <td>Removes snapshots that match given snapshot filter criteria in which vmUuid is a mandatory field.</td>
+     <td><tt>All</tt><td> </td><td><tt>String</tt> - formatted string response message about snapshot deletion.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/snapshot/remote/{tintriUuid}/{instanceId}/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/snapshot/remote/{tintriUuid}/{instanceId}/index.html"><tt>/v310/snapshot/remote/{tintriUuid}/{instanceId}</tt></a></td>
+     <td>Removes remote snapshot resource identified by snapshot Tintri UUID, for example on cloud.</td>
+     <td><tt>All</tt><td> </td><td><tt>String</tt> - formatted string response message about snapshot deletion.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/snapshot/restore/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/snapshot/restore/index.html"><tt>/v310/snapshot/restore</tt></a></td>
+     <td>Restore a snapshot from cloud as specified by the snapshot restore specification.</td>
+     <td><tt>All - Since v310.71</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/snapshot/SnapshotRestoreSpec.html">SnapshotRestoreSpec</a></tt> - snapshot restore specification</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Task.html">Task</a></tt> - Task representing the progress of snapshot restore from cloud</td></td>
     </tr>
     <tr>
      <td><a href="v310/snapshot/{tintriSnapshotUuid}/disks/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/snapshot/{tintriSnapshotUuid}/disks/index.html"><tt>/v310/snapshot/{tintriSnapshotUuid}/disks</tt></a></td>
      <td>Fetches disks of a snapshot.</td>
-     <td><tt>VMstoreOnly - Since v310.21</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/VirtualDisk.html">VirtualDisk</a>&gt;</tt> - the VirtualDisk objects of snapshot.</td></td>
+     <td><tt>All - Since v310.21</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/VirtualDisk.html">VirtualDisk</a>&gt;</tt> - the VirtualDisk objects of snapshot.</td></td>
     </tr>
     <tr>
      <td><a href="v310/snapshot/{tintriUuid}/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/snapshot/{tintriUuid}/index.html"><tt>/v310/snapshot/{tintriUuid}</tt></a></td>
      <td>Fetches a snapshot by Tintri UUID.</td>
-     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/Snapshot.html">Snapshot</a></tt> - the particular snapshot as specified by snapshotId in the URI in the form of a Tintri UUID.</td></td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/Snapshot.html">Snapshot</a></tt> - the particular snapshot as specified by snapshotId in the URI in the form of a Tintri UUID.</td></td>
     </tr>
     <tr>
      <td><a href="v310/snapshot/{tintriUuid}/index.html#DELETE"><tt>DELETE</tt></a></td>
      <td><a href="v310/snapshot/{tintriUuid}/index.html"><tt>/v310/snapshot/{tintriUuid}</tt></a></td>
      <td>Removes snapshot resource identified by snapshot Tintri UUID.</td>
-     <td><tt>VMstoreOnly</tt><td> </td><td><tt>String</tt> - formatted string response message about snapshot deletion.</td></td>
+     <td><tt>All</tt><td> </td><td><tt>String</tt> - formatted string response message about snapshot deletion.</td></td>
     </tr>
     <tr>
      <td><a href="v310/task/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/task/index.html"><tt>/v310/task</tt></a></td>
      <td>Return a paginated set of Tasks</td>
-     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
  create_link("jaxb/v310/com/tintri/api/rest/v310/dto/Task.html", "Task");
  </script> items.</td></td>
     </tr>
@@ -1116,13 +1274,13 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/task/{id}/index.html#DELETE"><tt>DELETE</tt></a></td>
      <td><a href="v310/task/{id}/index.html"><tt>/v310/task/{id}</tt></a></td>
      <td>Cancel a job by jobId</td>
-     <td><tt>VMstoreOnly</tt><td> </td><td><tt>void</tt></td></td>
+     <td><tt>All</tt><td> </td><td><tt>void</tt></td></td>
     </tr>
     <tr>
      <td><a href="v310/task/{id}/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/task/{id}/index.html"><tt>/v310/task/{id}</tt></a></td>
      <td>Returns a job by Id</td>
-     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Task.html">Task</a></tt> - JobEntity</td></td>
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Task.html">Task</a></tt> - JobEntity</td></td>
     </tr>
     <tr>
      <td><a href="v310/task/{id}/acknowledge/index.html#PUT"><tt>PUT</tt></a></td>
@@ -1334,7 +1492,7 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/vm/{vmId}/hfSnapshotConfig/index.html#PUT"><tt>PUT</tt></a></td>
      <td><a href="v310/vm/{vmId}/hfSnapshotConfig/index.html"><tt>/v310/vm/{vmId}/hfSnapshotConfig</tt></a></td>
      <td>Update the VM high frequency snapshot configuration properties</td>
-     <td><tt>VMstoreOnly - Since v310.21</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/HighFrequencySnapshotConfig.html">HighFrequencySnapshotConfig</a>&gt;</tt> - The High Frequency Snapshot Configuration</td><td><tt>void</tt></td></td>
+     <td><tt>All - Since v310.21</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/HighFrequencySnapshotConfig.html">HighFrequencySnapshotConfig</a>&gt;</tt> - The High Frequency Snapshot Configuration</td><td><tt>void</tt></td></td>
     </tr>
     <tr>
      <td><a href="v310/vm/{vmId}/pin/index.html#PUT"><tt>PUT</tt></a></td>
@@ -1385,10 +1543,22 @@ function create_link(jax_path, path_name) {
      <td><tt>All - Since v310.21</tt><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html">VirtualMachineReplicationConfig</a>&gt;</tt> - List of VirtualMachineReplicationConfig objects, representing a new set of replication configurations to be applied to the VM.</td><td><tt>void</tt></td></td>
     </tr>
     <tr>
+     <td><a href="v310/vm/{vmId}/snapshotSchedule/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/vm/{vmId}/snapshotSchedule/index.html"><tt>/v310/vm/{vmId}/snapshotSchedule</tt></a></td>
+     <td>Create a new custom VM snapshot schedule</td>
+     <td><tt>All</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSnapshotSchedule.html">VirtualMachineSnapshotSchedule</a></tt> - the snapshot schedule to be created.</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSnapshotSchedule.html">VirtualMachineSnapshotSchedule</a></tt></td></td>
+    </tr>
+    <tr>
      <td><a href="v310/vm/{vmId}/snapshotSchedule/index.html#PUT"><tt>PUT</tt></a></td>
      <td><a href="v310/vm/{vmId}/snapshotSchedule/index.html"><tt>/v310/vm/{vmId}/snapshotSchedule</tt></a></td>
      <td>Update VM snapshot schedule properties</td>
      <td><tt>All</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSnapshotSchedule.html">VirtualMachineSnapshotSchedule</a>&gt;</tt> - the snapshot schedule</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/{vmId}/snapshotSchedule/{scheduleName}/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/vm/{vmId}/snapshotSchedule/{scheduleName}/index.html"><tt>/v310/vm/{vmId}/snapshotSchedule/{scheduleName}</tt></a></td>
+     <td>Delete a custom VM snapshot schedule</td>
+     <td><tt>All</tt><td> </td><td><tt>void</tt></td></td>
     </tr>
     <tr>
      <td><a href="v310/vm/{vmId}/statsDownloadable/index.html#POST"><tt>POST</tt></a></td>

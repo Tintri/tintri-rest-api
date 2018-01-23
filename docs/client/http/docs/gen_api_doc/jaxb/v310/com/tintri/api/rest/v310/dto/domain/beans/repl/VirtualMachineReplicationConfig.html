@@ -30,6 +30,7 @@ function create_link(jax_path, path_name) {
    "<a href='#m_replicationState'>replicationState</a>": &ltString&gt,
    "<a href='#m_sourceIpAddress'>sourceIpAddress</a>": &ltString&gt,
    "<a href='#m_tgcServiceGroupDefault'>tgcServiceGroupDefault</a>": &ltBoolean&gt,
+   "<a href='#m_backupScheduleInfo'>backupScheduleInfo</a>": [<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineBackupScheduleInfo.html'>VirtualMachineBackupScheduleInfo</a>],
    "<a href='#m_datastoreUuid'>datastoreUuid</a>": <a href='../../../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a>,
    "<a href='#m_error'>error</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/TintriError.html'>TintriError</a>,
    "<a href='#m_latestReplicatedSnapshot'>latestReplicatedSnapshot</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/Snapshot.html'>Snapshot</a>,
@@ -38,7 +39,7 @@ function create_link(jax_path, path_name) {
    "<a href='#m_vmUuid'>vmUuid</a>": <a href='../../../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a>,
 }
 </pre></td></tr></table><dl></dl>
-<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_datastoreUuid'>datastoreUuid</td><td><a href='../../../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a></td><td>Tintri UUID of the datastore where this replication configuration is defined.</td></tr><tr><td id='m_error'>error</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/TintriError.html'>TintriError</a></td><td>Detailed 
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_backupScheduleInfo'>backupScheduleInfo</td><td>xsd:list[<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineBackupScheduleInfo.html'>VirtualMachineBackupScheduleInfo</a>]</td><td>Schedules for which snapshots are replicated to cloud destination for this VM.</td></tr><tr><td id='m_datastoreUuid'>datastoreUuid</td><td><a href='../../../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a></td><td>Tintri UUID of the datastore where this replication configuration is defined.</td></tr><tr><td id='m_error'>error</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/TintriError.html'>TintriError</a></td><td>Detailed 
  <script>
  create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/TintriError.html","TintriError");
  </script>

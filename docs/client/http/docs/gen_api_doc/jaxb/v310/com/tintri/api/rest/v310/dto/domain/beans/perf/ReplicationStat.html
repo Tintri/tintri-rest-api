@@ -18,6 +18,7 @@ function create_link(jax_path, path_name) {
  configuration at a given time point.<table class='examples'><tr><td><br>
 <b>Data Structure</b><pre>{
    "typeId": "com.tintri.api.rest.v310.dto.domain.beans.perf.ReplicationStat",
+   "<a href='#m_bytesRemainingIncomingMB'>bytesRemainingIncomingMB</a>": &ltNumber&gt,
    "<a href='#m_bytesRemainingMB'>bytesRemainingMB</a>": &ltNumber&gt,
    "<a href='#m_oneshotProgressPercent'>oneshotProgressPercent</a>": &ltNumber&gt,
    "<a href='#m_oneshotTimeRemainingSeconds'>oneshotTimeRemainingSeconds</a>": &ltNumber&gt,
@@ -32,7 +33,8 @@ function create_link(jax_path, path_name) {
    "<a href='#m_timeRemainingSeconds'>timeRemainingSeconds</a>": &ltNumber&gt,
 }
 </pre></td></tr></table><dl></dl>
-<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_bytesRemainingMB'>bytesRemainingMB</td><td>xsd:double</td><td>Logical amount of aggregated data(MB) yet to be replicated over for that VM, for all applicable ongoing replications.</td></tr><tr><td id='m_oneshotProgressPercent'>oneshotProgressPercent</td><td>xsd:double</td><td>Percentage progress of oneshot replication</td></tr><tr><td id='m_oneshotTimeRemainingSeconds'>oneshotTimeRemainingSeconds</td><td>xsd:int</td><td>Approximate number of seconds remaining for oneshot to complete.</td></tr><tr><td id='m_pathCount'>pathCount</td><td>xsd:int</td><td>Number of replication links.</td></tr><tr><td id='m_replicationPathId'>replicationPathId</td><td>xsd:string</td><td>Replication link / replication destination to identify where the performance statistics
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_bytesRemainingIncomingMB'>bytesRemainingIncomingMB</td><td>xsd:double</td><td>Logical amount of incoming aggregated data(MB) yet to be replicated over for this VM, for all applicable ongoing
+ replications.</td></tr><tr><td id='m_bytesRemainingMB'>bytesRemainingMB</td><td>xsd:double</td><td>Logical amount of outgoing aggregated data(MB) yet to be replicated over for this VM, for all applicable ongoing replications.</td></tr><tr><td id='m_oneshotProgressPercent'>oneshotProgressPercent</td><td>xsd:double</td><td>Percentage progress of oneshot replication</td></tr><tr><td id='m_oneshotTimeRemainingSeconds'>oneshotTimeRemainingSeconds</td><td>xsd:int</td><td>Approximate number of seconds remaining for oneshot to complete.</td></tr><tr><td id='m_pathCount'>pathCount</td><td>xsd:int</td><td>Number of replication links.</td></tr><tr><td id='m_replicationPathId'>replicationPathId</td><td>xsd:string</td><td>Replication link / replication destination to identify where the performance statistics
  are fetched from.
  Note this attribute is populated only for the
  <script>

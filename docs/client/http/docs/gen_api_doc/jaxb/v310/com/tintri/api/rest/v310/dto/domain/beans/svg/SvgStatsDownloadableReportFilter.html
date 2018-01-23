@@ -1,0 +1,38 @@
+<HTML><HEAD><TITLE>XML element SvgStatsDownloadableReportFilter</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: element | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: SvgStatsDownloadableReportFilter</h2>Contains the filter properties for service group performance stats downloadable reports.
+ Properties specified in SvgStatsDownloadableReportFilter are used in creating
+ a URL that is used to download a report with the specified properties.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.svg.SvgStatsDownloadableReportFilter",
+   "<a href='#m_attachment'>attachment</a>": &ltString&gt,
+   "<a href='#m_attributes'>attributes</a>": 'SyncReplRole' | 'NotInSyncMs' | 'LogicalMBps' | 'LogicalMBpday' | 'PhysicalMBps' | 'PhysicalMBpday' | 'IncomingLogicalMBps' | 'IncomingPhysicalMBps' | 'LogicalBytesSentToDate' | 'LogicalBytesReceivedToDate' | 'PhysicalBytesSentToDate' | 'PhysicalBytesReceivedToDate' | 'LimitGiB' | 'SpaceUsedLiveGiB' | 'SpaceUsedLivePhysicalGiB' | 'SpaceUsedSnapshotsTintriGiB' | 'SpaceUsedSnapshotsTintriPhysicalGiB' | 'SpaceUsedGiB' | 'SpaceRemainingGiB' | 'SpaceProvisionedGiB' | 'SpaceUsedPhysicalGiB' | 'SpaceSavingFactor' | 'CompressionFactor',
+   "<a href='#m_format'>format</a>": 'CSV' | 'JSON',
+   "<a href='#m_since'>since</a>": &ltString&gt,
+   "<a href='#m_until'>until</a>": &ltString&gt,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_attachment'>attachment</td><td>xsd:string</td><td>Downloadable report name.</td></tr><tr><td id='m_attributes'>attributes</td><td>xsd:list[SyncReplRole | NotInSyncMs | LogicalMBps | LogicalMBpday | PhysicalMBps | PhysicalMBpday | IncomingLogicalMBps | IncomingPhysicalMBps | LogicalBytesSentToDate | LogicalBytesReceivedToDate | PhysicalBytesSentToDate | PhysicalBytesReceivedToDate | LimitGiB | SpaceUsedLiveGiB | SpaceUsedLivePhysicalGiB | SpaceUsedSnapshotsTintriGiB | SpaceUsedSnapshotsTintriPhysicalGiB | SpaceUsedGiB | SpaceRemainingGiB | SpaceProvisionedGiB | SpaceUsedPhysicalGiB | SpaceSavingFactor | CompressionFactor]</td><td>A list of attributes that are to be included in the report.<table class='info'><tr><td>SyncReplRole</td><td>The synchronous replication role of the service group at the time of data collection.</td></tr><tr><td>NotInSyncMs</td><td>The amount of time not in sync in milliseconds within this time slice when the node is primary.</td></tr><tr><td>LogicalMBps</td><td>The outgoing logical SyncRepl throughput, in megabytes per second.</td></tr><tr><td>LogicalMBpday</td><td>The outgoing logical SyncRepl throughput, in megabytes per day.</td></tr><tr><td>PhysicalMBps</td><td>The outgoing physical SyncRepl throughput, in megabytes per second.</td></tr><tr><td>PhysicalMBpday</td><td>The outgoing physical SyncRepl throughput, in megabytes per day.</td></tr><tr><td>IncomingLogicalMBps</td><td>The incoming logical SyncRepl throughput, in megabytes per second.</td></tr><tr><td>IncomingPhysicalMBps</td><td>The incoming physical SyncRepl throughput, in megabytes per second.</td></tr><tr><td>LogicalBytesSentToDate</td><td>Total number of logical bytes sent since the creation of the SyncRepl group.</td></tr><tr><td>LogicalBytesReceivedToDate</td><td>Total number of Logical bytes received since the creation of the SyncRepl group.</td></tr><tr><td>PhysicalBytesSentToDate</td><td>Total number of physical bytes sent since the creation of the SyncRepl group.</td></tr><tr><td>PhysicalBytesReceivedToDate</td><td>Total number of physical bytes received since the creation of the SyncRepl group.</td></tr><tr><td>LimitGiB</td><td>The Service Group's space limit in GiB.</td></tr><tr><td>SpaceUsedLiveGiB</td><td>The Service Group's live logical used space in GiB.</td></tr><tr><td>SpaceUsedLivePhysicalGiB</td><td>The Service Group's live physical used space in GiB.</td></tr><tr><td>SpaceUsedSnapshotsTintriGiB</td><td>The amount of logical space used by Tintri snapshots in GiB.</td></tr><tr><td>SpaceUsedSnapshotsTintriPhysicalGiB</td><td>The amount of physical space used by Tintri snapshots in GiB.</td></tr><tr><td>SpaceUsedGiB</td><td>The Service Group's logical used space in GiB.</td></tr><tr><td>SpaceRemainingGiB</td><td>The amount of logical remaining space in the Service Group in GiB.</td></tr><tr><td>SpaceProvisionedGiB</td><td>The Service Group's provisioned space in GiB.</td></tr><tr><td>SpaceUsedPhysicalGiB</td><td>The Service Group's physical used space in GiB.</td></tr><tr><td>SpaceSavingFactor</td><td>The amount of space savings obtained by applying space savings techniques on the logical
+ data to reduce space consumption down to physical space used. It is computed as a ratio of the logical bytes stored
+ and physical space used.</td></tr><tr><td>CompressionFactor</td><td>This is a measure of the space saved due to compression, and is computed as a ratio of the logical bytes stored
+ and the physical space used. A value of 1.0 means no savings due to compression. Higher values mean greater space savings.</td></tr></table></td></tr><tr><td id='m_format'>format</td><td>CSV | JSON</td><td>Downloadable report format.<table class='info'><tr><td>CSV</td><td>Comma Separated Values</td></tr><tr><td>JSON</td><td>JavaScript Object Notation</td></tr></table></td></tr><tr><td id='m_since'>since</td><td>xsd:string</td><td>The start time of the report data collection period specifed in
+ ISO8601 format: yyyy-MM-dd'T'HH:mm:ss.SSSZ.  If not specified,
+ defaults to the latest time point.
+ .</td></tr><tr><td id='m_until'>until</td><td>xsd:string</td><td>The end time of the report data collection period specifed in
+ ISO8601 format: yyyy-MM-dd'T'HH:mm:ss.SSSZ.  If not specified,
+ defaults to the latest time point.</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: element | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

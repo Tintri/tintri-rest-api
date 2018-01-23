@@ -22,14 +22,15 @@ function create_link(jax_path, path_name) {
    "<a href='#m_isEnabled'><del>isEnabled</del></a>": &ltBoolean&gt,
    "<a href='#m_preferredDestinationId'><del>preferredDestinationId</del></a>": &ltString&gt,
    "<a href='#m_replicationState'><del>replicationState</del></a>": &ltString&gt,
-   "<a href='#m_configurationIncoming'>configurationsIncoming</a>": [<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html'>VirtualMachineReplicationConfig</a>],
-   "<a href='#m_configurationOutgoing'>configurationsOutgoing</a>": [<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html'>VirtualMachineReplicationConfig</a>],
+   "<a href='#m_configurationsIncoming'>configurationsIncoming</a>": [<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html'>VirtualMachineReplicationConfig</a>],
+   "<a href='#m_configurationsOutgoing'>configurationsOutgoing</a>": [<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html'>VirtualMachineReplicationConfig</a>],
    "<a href='#m_error'><del>error</del></a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/TintriError.html'>TintriError</a>,
    "<a href='#m_replDestination'><del>replDestination</del></a>": &ltString&gt,
    "<a href='#m_replSource'>replSource</a>": &ltString&gt,
+   "<a href='#m_restoreIncomingConfigurations'>restoreIncomingConfigurations</a>": [<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html'>VirtualMachineReplicationConfig</a>],
 }
 </pre></td></tr></table><dl></dl>
-<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_configurationIncoming'>configurationIncoming (wrapped by configurationsIncoming)</td><td>xsd:list[<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html'>VirtualMachineReplicationConfig</a>]</td><td>Gets the incoming repl config list.</td></tr><tr><td id='m_configurationOutgoing'>configurationOutgoing (wrapped by configurationsOutgoing)</td><td>xsd:list[<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html'>VirtualMachineReplicationConfig</a>]</td><td>Gets the outgoing repl config list.</td></tr><tr><td id='m_error'>error</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/TintriError.html'>TintriError</a></td><td><b>Deprecated.</b>  since v310.61.  Please use
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_configurationsIncoming'>configurationsIncoming</td><td>xsd:list[<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html'>VirtualMachineReplicationConfig</a>]</td><td>Gets the incoming repl config list.</td></tr><tr><td id='m_configurationsOutgoing'>configurationsOutgoing</td><td>xsd:list[<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html'>VirtualMachineReplicationConfig</a>]</td><td>Gets the outgoing repl config list.</td></tr><tr><td id='m_error'>error</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/TintriError.html'>TintriError</a></td><td><b>Deprecated.</b>  since v310.61.  Please use
  <script>
  create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html#m_error","error");
  </script>
@@ -56,7 +57,8 @@ function create_link(jax_path, path_name) {
  Current implementation assumes that there is only one outgoing replication configuration.
  Return the display name of the replication path if there is an outgoing configuration and
  it is not disabled.</td></tr><tr><td id='m_replSource'>replSource</td><td>xsd:string</td><td>Current implementation assumes that there is only one incoming replication configuration.
- Return the source IP address if there is an incoming configuration and it is not disabled.</td></tr></tbody></table>
+ Return the source IP address if there is an incoming configuration and it is not disabled.</td></tr><tr><td id='m_restoreIncomingConfigurations'>restoreIncomingConfigurations</td><td>xsd:list[<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html'>VirtualMachineReplicationConfig</a>]</td><td>Incoming replication configurations associated with this VM. This represents the configuration used to restore
+ snapshot from cloud. Multiple restore configurations per VM are supported.</td></tr></tbody></table>
 
 <hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_isEnabled'>isEnabled</td><td>xsd:boolean</td><td><b>Deprecated.</b>  since v310.61.  Please use
  <script>
