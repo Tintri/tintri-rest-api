@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html> 
+<head>
+<link rel="shortcut icon" href="https://www.tintri.com/sites/default/files/favicon.ico" type="image/vnd.microsoft.icon" />
+
+<style>
+html, body {
+	margin: 15px;
+	padding: 0px;
+	height: 100%;
+}
+
+table {
+        border-spacing: 10px;
+        border: 1px solid gray;
+        border-collapse: collapse;
+        font-family: calibri;
+        font-size: 16px;
+}
+
+td,th {
+	text-align: left;
+	padding-right: 10px;
+	border-top: 1px solid gray;
+}
+
+pre {
+	display: block;
+	width: 800px;
+	overflow: auto;
+	padding: 0.5em 1em;
+	border: 1px solid;
+	background-color:rgb(240,240,240);
+}
+
+xmp {
+	display: block;
+	width: 800px;
+	overflow: auto;
+	padding: 0.5em 1em;
+	border: 1px solid;
+	background-color:rgb(242,242,242);
+}
+
+dt {
+	font-weight: bold;
+}
+
+p {
+	font-family: calibri;
+	font-size: 16px;
+}
+
+li {
+	font-family: calibri;
+	font-size: 16px;
+}
+
+h1 {
+    font-family: calibri;
+    font-size: 36px;
+}
+
+h2 {
+    font-family: calibri;
+    font-size: 28px;
+    color: #303030;
+}
+
+h3 {
+    font-family: calibri;
+    font-size: 22px;
+    color: #303030;
+}
+
+</style>
+<script type="text/javascript">
+
+// Guarentees title and H1 heading are the same.
+function title_h1(title_string) {
+	document.write("<title>" + title_string + "</title>");
+	document.write("<h1>" +  title_string + "</h1>");
+}
+
+// Resizes the iframe.
+function resizer(id)
+{
+
+var doc = document.getElementById(id).contentWindow.document;
+var body_ = doc.body;
+var html_ = doc.documentElement;
+
+var height = Math.max( body_.offsetHeight);
+var width  = Math.max( body_.scrollWidth, body_.offsetWidth, html_.clientWidth, html_.scrollWidth, html_.offsetWidth );
+
+document.getElementById(id).height = height;
+document.getElementById(id).width = width;
+
+}
+
+// Resizes the iframe.  (Save for referecne)
+function resizer_save(id)
+{
+
+var doc = document.getElementById(id).contentWindow.document;
+var body_ = doc.body;
+var html_ = doc.documentElement;
+
+var height = Math.max( body_.scrollHeight, body_.offsetHeight, html_.clientHeight, html_.scrollHeight, html_.offsetHeight );
+var width  = Math.max( body_.scrollWidth, body_.offsetWidth, html_.clientWidth, html_.scrollWidth, html_.offsetWidth );
+
+document.getElementById(id).height = height;
+document.getElementById(id).width = width;
+
+}
+
+
+// Resizes the iframe and move scroll to a specified spot.
+function resizer_set_spot(id, spot_id) {
+
+    var doc = document.getElementById(id).contentWindow.document;
+    var body_ = doc.body;
+    var html_ = doc.documentElement;
+    var spot = document.getElementById(spot_id);
+
+    var height = Math.max( body_.scrollHeight, body_.offsetHeight, html_.offsetHeight );
+    var width  = Math.max( body_.scrollWidth, body_.offsetWidth, html_.clientWidth, html_.scrollWidth, html_.offsetWidth );
+
+    document.getElementById(id).height = height;
+    document.getElementById(id).width = width;
+
+    document.getElementById(id).contentWindow.document.body.onclick=
+        function(spot_id) {
+
+            var spot_id_position_y = spot.offsetTop;
+            window.scrollTo(0, spot_id_position_y);
+        }
+}
+
+</script>
+</head>
+
+<body spellcheck="true">
+<script type="text/javascript">
+title_h1("Tintri REST APIs");
+</script>
+
+<p>
+This REST API reference is for those interested in developing automation
+workflows and other applications using Tintri VMstore. This document explains
+how developers can leverage REST APIs over HTTP.
+
+<h2 id="api_version">API Version</h2>
+<iframe name='api_version' src="gen_api_doc/apidocgenInfo.html" id="api_version" height="90px" width="500px" frameborder="0" style="overflow:hidden" scrolling="no"></iframe>
+
+<h2 id="general_info">General Information</h2>
+
+<h3>SSL only</h3>
+<p>
+Tintri requires that all requests are done over SSL.  All requests to port 80 are converted to port 443 for VMstore.
+
+<h3>UTF-8 Encoding</h3>
+<p>
+All strings passed to and from the Tintri APIs need to be UTF-8 encoded.
+
+<h3 id="api_compatibility">API Compatibility</h3>
+<p>
+Over time, the Tintri APIs will change.  Future versions may add new managed entitties or keys.
+To keep older clients working, the behavior and return values with given parameters will not change
+from the documented behavior except for undocumented request parameters or 
+additional response keys.
+<p>
+With this in mind, clients should avoid passing undocumented parameters and accept keys that are not
+currently documented.  API clients will have to be modified to obtain new Tintri features.
+
+<a id="compatibility_table">
+<table>
+<caption>API - TXOS - TGC Version Matrix</caption>
+<tr>
+    <th>API Version</th>
+    <th>TXOS Version</th>
+    <th>TGC Version</th>
+</tr>
+<tr>
+    <td>v310.1</td>
+    <td>3.1.0.x</td>
+    <td>---</td>
+</tr>
+<tr>
+    <td>v310.11</td>
+    <td>3.1.1.x</td>
+    <td>---</td>
+</tr>
+<tr>
+    <td>v310.21</td>
+    <td>3.2.1.x</td>
+    <td>2.0.0.1</td>
+</tr>
+<tr>
+    <td>v310.31</td>
+    <td>4.0.0.x</td>
+    <td>2.1.0.x</td>
+</tr>
+<tr>
+    <td>v310.41</td>
+    <td>4.1.0.x</td>
+    <td>2.1.0.x</td>
+</tr>
+<tr>
+    <td>v310.51</td>
+    <td>4.2.0.x</td>
+    <td>3.0.0.x</td>
+</tr>
+<tr>
+    <td>v310.53</td>
+    <td>4.2.1.x</td>
+    <td>3.0.1.x</td>
+</tr>
+<tr>
+    <td>v310.61</td>
+    <td>4.3.0.x</td>
+    <td>3.5.0.x</td>
+</tr>
+<tr>
+    <td>v310.64</td>
+    <td>4.3.2.x</td>
+    <td>3.5.0.x</td>
+</tr>
+<tr>
+    <td>v310.66</td>
+    <td>4.3.3.x</td>
+    <td>3.5.1.x</td>
+</tr>
+</table>
+
+<h3>Error Handling</h3>
+<p>
+Tintri uses the standard HTTP error code syntax.  The error codes
+are listed below:
+<table>
+<tr>
+    <th>HTTP Status Code</th>
+    <th>Tintri explanation</th>
+</tr>
+<tr>
+    <td>200</td>
+    <td>Successful API call with non empty result body.</td>
+</tr>
+<tr>
+    <td>204</td>
+    <td>Successful API call with empty result body.</td>
+</tr>
+<tr>
+    <td>400</td>
+    <td>Bad request - Request validation failed. Request content incorrect/invalid.</td>
+</tr>
+<tr>
+    <td>401</td>
+    <td>Non authorized API access - User needs to successfully login with needed privileges to perform the operation.</td>
+</tr>
+<tr>
+    <td>403</td>
+    <td>Forbidden - invalid credentials or licenses. Some APIs, like <code>/v310/vm/sync</code> require a license.</td>
+</tr>
+<tr>
+    <td>404</td>
+    <td>API not found.</td>
+</tr>
+<tr>
+    <td>405</td>
+    <td>Method not allowed.</td>
+</tr>
+<tr>
+    <td>409</td>
+    <td>Conflict - object already exists when creating object.</td>
+</tr>
+<tr>
+    <td>500</td>
+    <td>Internal Error - something went wrong in the server side processing.</td>
+</tr>
+<tr>
+    <td>501</td>
+    <td>Not Implemented - For example if supported by VMstore but not TGC.</td>
+</tr>
+<tr>
+    <td>503</td>
+    <td>Service unavailable - External service, like active directory, is unavailable. This is usually temporary and worth retrying later.</td>
+</tr>
+</table>
+
+<p>
+When an API error occurs, 
+<a href="gen_api_doc/jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/TintriError.html">TintriError</a>
+is returned. An example is below: 
+<xmp>
+{"typeId":"com.tintri.api.rest.v310.dto.domain.beans.TintriError",
+ "code":"ERR-API-8001",
+ "message":"Failed to find requested resource of type VirtualMachine with id: 'xxxxddd'",
+ "causeDetails":"",
+ "title":"Resource not found",
+}
+</xmp>
+
+<h3>RBAC</h3>
+<p>
+New users can be created. Each user when created is assigned a role.
+Currently, the roles are:
+<table>
+<tr>
+    <th>Role</th>
+    <th>Read</th>
+    <th>Write</th>
+    <th>User Management</th>
+</tr>
+<tr>
+    <td>Admin</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>Yes</td>
+</tr>
+<tr>
+    <td>System Admin</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>No</td>
+</tr>
+<tr>
+    <td>Read Only</td>
+    <td>Yes</td>
+    <td>No</td>
+    <td>No</td>
+</table>
+
+<p>
+The Read Only role is only allowed to read resources from the Tintri
+Appliance.  This means that all GET APIs are allowed.
+<p>
+The System Admin role is the Read Only role plus updating and creating
+resources except for user management.  This means that all GET, PUT, POST
+DELETE APIs are allowed except the user management DELETE, POST and PUT APIs.
+<p>
+The Admin role is the System Admin role plus updating and creating user
+management.  This means that all GET, POST, PUT, and DELETE APIs are allowed.
+<p>
+The admin user is a special user that cannot be deleted or modified.
+
+<h3>Filters</h3>
+<p>
+Filtering parameters are bassed on <a href="http://tools.ietf.org/html/rfc6570">RFC 6570</a>.
+
+<table>
+<tr>
+    <th>Format</th>
+    <td>?parm1=value&ampparam2=value2&ampparam3=value3…</td>
+</tr>
+<tr>
+    <th>Example</th>
+    <td>?type=SCHEDULE_SNAPSHOT&ampconsistency=CRASH_CONSISTENT&ampvmId=5CFC98F0-731C-2474-FE84-0BC2C3A28543-VIM-0000000000000020</td>
+</tr>
+</table>
+
+Please consult the individual APIs for filter input parameters.
+
+<h3>Pagination</h3>
+<p>
+Many of the Tintri APIs with GET methods return large numbers of objects.  For
+the conveinence of the client,
+a paged response is provided.  The paged response is in the form of a Page
+object which is composed as follows:
+
+<table class='info' id='Attributes'>
+<thead>
+<tr>
+    <th class='TableHeader'>Name</th>
+    <th class='TableHeader'>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td id='m_absoluteTotal'>absoluteTotal</td>
+    <td>The absolute number of objects within the managed enitity.  This number includes active and deleted
+        objects with no filtering.</td>
+</tr>
+<tr>
+    <td id='m_completedIn'>completedIn</td>
+    <td>Time in milliseconds indicating how long it took to serve the request.</td>
+</tr>
+<tr>
+    <td id='m_filteredTotal'>filteredTotal</td>
+    <td>The number of objects returned as specified by the filter.  If no filter was requested, then the value is the same as total.</td>
+</tr>
+<tr>
+    <td id='m_items'>items</td>
+    <td>The API specific items. For each API, items will contain different
+	information.</td>
+</tr>
+<tr>
+    <td id='m_lastUpdatedTime'>lastUpdatedTime</td>
+    <td>The time when the page was last updated.</td>
+</tr>
+<tr>
+    <td id='m_limit'>limit</td>
+    <td>The client requested limit for the number of items in a page. Default is 2000.</td>
+</tr>
+<tr>
+    <td id='m_next'>next</td>
+    <td>The URL query string to fetch the next page.</td>
+</tr>
+<tr>
+    <td id='m_offset'>offset</td>
+    <td>The client requested index of an object in the table. Possible formats include
+        numeric offset, UUID offset, and a substring name.</td>
+</tr>
+<tr>
+    <td id='m_offsetMatchFound'>offsetMatchFound</td>
+    <td>Indicates if the requested object/(s) is/are found.
+</tr>
+<tr>
+    <td id='m_overflow'>overflow</td>
+    <td>A flag giving notice the amount of data did not fit into the given specified or default offset.</td>
+</tr>
+<tr>
+    <td id='m_page'>page</td>
+    <td>The current page number</td>
+</tr>
+<tr>
+    <td id='m_pageTotal'>pageTotal</td>
+    <td>The total number of objects in the page.</td>
+</tr>
+<tr>
+    <td id='m_prev'>prev</td>
+    <td>The URL query string to fetch the previous page.</td>
+</tr>
+<tr>
+    <td id='m_total'>total</td>
+    <td>The number of active objects in the managed entity.</td>
+</tr>
+</tbody>
+</table>
+
+<h3>Session Login</h3>
+<p>
+Session login uses the session resource.  An HTTP POST with the user name,
+password, and role is sent.  A session cookie is returned and this cookie
+is used in all subsequent API invokations.
+<dl>
+<dt>URL structure</dt>
+<dd><pre>
+https://ttvm38.tintri.com/api/v310/session/login
+</pre></dd>
+<dt>Method</dt>
+<dd>POST</dd>
+<dt>Body</dt>
+<dd><pre>
+{"username":"admin",
+ "typeId":"com.tintri.api.rest.vcommon.dto.rbac.RestApiCredentials",
+ "password":"mypass"}
+</pre></dd>
+<dt>Returns</dt>
+<dd><pre>
+HTTP status 200.
+User role name
+</pre></dd>
+</dl>
+
+<h3>Session Logout</h3>
+<p>
+Session logout uses the session resource.  An HTTP GET is used with the session
+cookie provided in the session login. 
+<dl>
+<dt>URL structure</dt>
+<dd><pre>
+https://ttvm38.tintri.com/api/v310/session/logout
+</pre></dd>
+<dt>Method</dt>
+<dd>GET</dd>
+<dt>Returns</dt>
+<dd><pre>
+HTTP status 204
+</pre></dd>
+</dl>
+
+<a name="Updating"></a>
+<h3>Updating</h3>
+In REST, updates are done via HTTP PUTs. Some of the update APIs utilize 
+<a href="gen_api_doc/jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>
+and some use
+<a href="gen_api_doc/jaxb/v310/com/tintri/api/rest/v310/dto/MultipleSelectionRequest.html">MultipleSelectionRequest</a>
+as input.
+<p>
+Request allows for multiple properties of muliple objects to be updated at one time.
+The example below shows the JSON for updating the <i>acceptIncomingTraffic</i> property in
+<a href="gen_api_doc/jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/DatastoreReplicationPath.html">DatastoreReplicationPath</a>.
+
+<dl>
+<dt>URL structure</dt>
+<dd><pre>
+https://ttvm38.tintri.com/api/v310/datastore/default/replicationInfo
+</pre></dd>
+<dt>Method</dt>
+<dd>PUT</dd>
+<dt>Body</dt>
+<dd><pre>
+{'typeId': 'com.tintri.api.rest.v310.dto.Request',
+ 'objectsWithNewValues':
+    [{'typeId': 'com.tintri.api.rest.v310.dto.domain.beans.repl.DatastoreReplicationPath'
+      'acceptIncomingTraffic': 'False'
+     }],
+ 'propertiesToBeUpdated': ['acceptIncomingTraffic']
+}
+
+</pre></dd>
+<dt>Returns</dt>
+<dd><pre>
+HTTP status 204.
+</pre></dd>
+</dl>
+
+Only the properties that are in <i>propertiesToBeUpdated</i> for the specified objects in
+<i>objectsWithNewValues</i> will be updated.
+
+<p>
+MultipleSelectionRequest allows for multiple properties on one object for multiple resources at one time.
+The example below shows the JSON for updating the <i>minNormalizedIops</i>
+and <i>minNormalizedIops</i>properties in
+<a href="gen_api_doc/jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineQoSConfig.html">VirtualMachineQoSConfig</a> for the API
+<a href="gen_api_doc/jaxrs/v310/v310/vm/qosConfig/index.html"> update QOS config</a>.
+
+<dl>
+<dt>URL structure</dt>
+<dd><pre>
+https://ttvm38.tintri.com/api/v310/vm/qosConfig
+</pre></dd>
+<dt>Method</dt>
+<dd>PUT</dd>
+<dt>Body</dt>
+<dd><pre>
+{'typeId': 'com.tintri.api.rest.v310.dto.MultipleSelectionRequest',
+ 'ids':
+    ['A1D88A8A-8904-1E35-9DC2-589C317D31A6-VIM-00000000000001A5',
+     'A1D88A8A-8904-1E35-9DC2-589C317D31A6-VIM-0000000000000070'
+    ]
+ 'newValue': 
+    {'minNormalizedIops': '100',
+     'maxNormalizedIops': '248',
+     'typeId': 'com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineQoSConfig'
+    }
+ 'propertyNames': ['minNormalizedIops', 'maxNormalizedIops']
+}
+
+</pre></dd>
+<dt>Returns</dt>
+<dd><pre>
+HTTP status 204.
+</pre></dd>
+</dl>
+
+Only the properties that are in <i>properyNames</i> for the specified object in
+<i>newValue</i> for the <i>ids</i> will be updated.
+
+<h2 id="new_apis">New APIs for v310.64</h2>
+<table>
+<tr>
+    <td>GET</td>
+    <td>/v310/datastore/{uuid}/systemProperty</td>
+    <td>Returns a list of system properties and related information</td>
+    <td>VMstore Only</td>
+</tr>
+<tr>
+    <td>GET</td>
+    <td>/v310/datastore/{uuid}/systemProperty/{propertyName}</td>
+    <td>Returns information on the specified system property
+    <td>VMstore Only</td>
+</tr>
+<tr>
+    <td>PUT</td>
+    <td>/v310/datastore/{uuid}/systemProperty</td>
+    <td>Updates a system property's custom value</td>
+    <td>VMstore Only</td>
+</tr>
+<tr>
+    <td>DELETE</td>
+    <td>/v310/datastore/{uuid}/systemProperty{propertyName}</td>
+    <td>Removes the specified system property's custom value</td>
+    <td>VMstore Only</td>
+</tr>
+</table>
+
+<h2 id="new_apis">New APIs for v310.66</h2>
+<table>
+<tr>
+    <td>POST</td>
+    <td>/v310/alert/notificationPolicy</td>
+    <td>Creates a new notification policy</td>
+    <td>All</td>
+</tr>
+<tr>
+    <td>PUT</td>
+    <td>/v310/alert/notificationPolicy/{uuid}</td>
+    <td>Update an existing notification policy</td>
+    <td>All</td>
+</tr>
+<tr>
+    <td>DELETE</td>
+    <td>/v310/alert/notificationPolicy/{uuid}</td>
+    <td>Delete an existing notification policy</td>
+    <td>All</td>
+</tr>
+<tr>
+    <td>GET</td>
+    <td>/v310/alert/notificationPolicy/{uuid}</td>
+    <td>Get the notificaiton policy assoiciated with an ID</td>
+    <td>All</td>
+</tr>
+<tr>
+    <td>GET</td>
+    <td>/v310/alert/notificationPolicy</td>
+    <td>Get all notification policies</td>
+    <td>All</td>
+</tr>
+</table>
+
+<h2 id="known_issues">Known Issues</h2>
+<ol>
+  <li> Version v310.64 APIs are not in this release of v310.66.
+  </li>
+  <li>Fields are not shown to be read only or read/write; therefore, it is indeterminable
+      from the API documentation if a property can be changed.  If the property is not
+      writable, an error will be returned; for example, "Update of property localAlias is
+      not supported.".
+  </li>
+  <li>In the TGC server, the values from the following fields are not valid from
+      GET /v310/datastore:
+      <ul>
+        <li>stat.replicationIncoming.pathCount</li>
+        <li>stat.replicationIncoming.throughputPhysicalMBpsday</li>
+        <li>stat.flashMissMBpsPercent</li>
+        <li>stat.throughputCacheReadMBps</li>
+        <li>stat.timeEndMs</li>
+        <li>stat.timeStartMs</li>
+      </ul>
+  </li>
+  <li>In the TGC server, the field, storageContainers.hypervisorType is missing from GET /v310/datastore.
+  </li>
+  <li>In the TGC server, VirtualMachine.snapshot.latestReplicated is missing
+      from GET /v310/vm.
+  </li>
+  <li>In the TGC server, VirtualMachine.snapshot is missing the following fields
+      from GET /v310/vm.
+      <ul>
+        <li>latest.cloneReferenceCount</li>
+        <li>latest.createTime</li>
+        <li>latest.creatorName</li>
+        <li>latest.expirationTime</li>
+        <li>latest.id</li>
+        <li>latest.lastUpdatedtime</li>
+        <li>latest.localAlias</li>
+        <li>latest.replicaRetentionMinutes</li>
+        <li>latest.replicationId</li>
+        <li>latest.sizeChangedMB</li>
+        <li>latest.sizeChangedPhysicalMB</li>
+        <li>latest.timeDeleted</li>
+        <li>latest.vcenterInstanceUuid</li>
+        <li>latest.deletionPolicy</li>
+        <li>latest.snapshotComposition</li>
+        <li>latest.uuid</li>
+        <li>latest.vmUuid</li>
+      </ul>
+  </li>
+  <li>In the TGC server, ServiceGroup.members is empty from GET /v310/servicegroup.
+  </li>
+  <li>In the TGC server, GET /v310/servicegroup/members returns an error without members.
+      To obtain service group members, use the query string serviceGroupIds=&lt;service_group_ID&gt;
+      for the GET /v310/vm API.
+  </li>
+  <li>In the TGC server, GET /v310/servicegroup/members/static returns an error without static members.
+  </li>
+  <li>GET /v310/alert does not return next and prev in the Page DTO
+  </li>
+</ol>
+
+<h2 id="resources_header">Resources</h2>
+<p>
+The API resources are presented below.  The <i>Data Overview</i> button presents the Data Transfer
+Objects (DTOs) that are transfered between the Tintri server and the client.  The
+<i>API Overview</i> and <i>API Index</i> buttons present different views of the API endpoints.
+To use the endpoints in a browser or a tool like Postman, the Tintri server and /api need to
+prefix the endpoints presented below; for example: http://vmstore.tintri.com/api/v310/vm
+</p>
+
+<button onClick="parent.window.frames['resources'].location='gen_api_doc/jaxrs/v310/overview-summary.html'"><b>API Overview</b></button>
+
+<button onClick="parent.window.frames['resources'].location='gen_api_doc/jaxrs/v310/overview-index.html'"><b>API Index</b></button>
+
+<button onClick="parent.window.frames['resources'].location='gen_api_doc/jaxb/v310/overview-summary.html'"><b>Data Overview</b></button>
+
+<p>
+<iframe name='resources' src="gen_api_doc/jaxrs/v310/overview-index.html" id="resources"  onLoad="resizer_set_spot('resources', 'resources_header');" style="overflow:hidden" scrolling="no"</iframe>
+
+</body>
+</html>
+

@@ -1,0 +1,32 @@
+<HTML><HEAD><TITLE>Resource resume</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../overview-summary.html'>Overview</a></th><th><a href='../../../../../overview-index.html'>Index</a></th><th><a href='../../../../../index.html'>Root resource</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3'>summary: resource | <a href='#methods-summary'>method</a></td><td class='NavBarCell3'>detail: <a href='#methods-details'>method</a></td></tr></table><h2>Path: <a href='../../../../../index.html'>/</a> <a href='../../../../index.html'>v310</a> / <a href='../../../index.html'>servicegroup</a> / <a href='../../index.html'>{id}</a> / <a href='../index.html'>syncRepl</a> / resume</h2><dl><dt><b>Path parameters:</b></dt><dd><b>id</b> - Service Group ID</dd></dl><hr/><table class='info' id='methods-summary'><caption class='TableCaption'>Method Summary</caption><tbody><tr><th class='TableHeader'>Resource</th><th class='TableHeader'>Description</th></tr><tr><td><tt><a href='#POST'>POST /v310/servicegroup/{id}/syncRepl/resume</a></tt></td><td>Resume the specified synchronous replication configuration. This API will try to re-establish the synchronous replication from primary to secondary.
+ This request can be sent to either primary or secondary. If the ID of the service group is invalid, RESOURCE_NOT_FOUND error will be returned. Try to resume
+ a already resumed synchronous replication will return successfully with no operation.
+
+ TGC will first update the status of the synchronous replication configuration locally and then make attempts to resume the
+ synchronous replication configuration on all the participating VMStores. If the call fails on one or more VMStores, then a policy error
+ will be generated and TGC will retry executing these calls until success.</td></tr></tbody></table><hr/><table class='info' id='methods-details'><caption class='TableCaption'>Method Detail</caption><tbody></tr><tr><td><a name='POST'></a><table class='examples'><tr><td><b>HTTP Example:</b><pre>POST /v310/servicegroup/{id}/syncRepl/resume
+
+</pre></td><td><b>API Example:</b><p><tt>ServiceGroupResource.resumeSyncRepl({'id': <span class='comment'>/* svgId
+            Service Group ID */</span>});</tt></p></td></tr></table><p><dt><b>Description:</b></dt><dd>Resume the specified synchronous replication configuration. This API will try to re-establish the synchronous replication from primary to secondary.
+ This request can be sent to either primary or secondary. If the ID of the service group is invalid, RESOURCE_NOT_FOUND error will be returned. Try to resume
+ a already resumed synchronous replication will return successfully with no operation.
+
+ TGC will first update the status of the synchronous replication configuration locally and then make attempts to resume the
+ synchronous replication configuration on all the participating VMStores. If the call fails on one or more VMStores, then a policy error
+ will be generated and TGC will retry executing these calls until success.</dd><dl><dt><b>Since API version</b></dt><dd><tt>v310.61</tt></dd><dt><b>Tintri Api Server Support:</b></dt><dd><tt>All</tt></dd><dt><b>Output:</b></dt><dd><tt>void</tt></dd><dt><b>Errors:</b></dt><table class='Errors'><tr><td><b>Error Code</b></td><td><b>Message</b></td><td><b>HTTP Response Code</b></td></tr><tr><td>ERR-API-8001</td><td>Resource not found</td><td>404</td></tr><tr><td>ERR-API-9458</td><td>Failed to resume the synchronous replication configuration. Please retry or contact Tintri support.</td><td>500</td></tr><tr><td>ERR-API-9462</td><td>Synchronous Replication operation is not supported on this model.</td><td>403</td></tr><tr><td>ERR-API-6011</td><td>Replication license missing. Please add replication license to this VMstore. Please contact Tintri Sales on how to acquire one. ErrorCode = '%s'</td><td>403</td></tr></table><dt><b>Produces:</b></dt><dd>application/json;qs=1, application/xml;qs=0.5</dd><dt><b>Consumes:</b></dt><dd>application/json;qs=1, application/xml;qs=0.5</dd></dl></td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../overview-summary.html'>Overview</a></th><th><a href='../../../../../overview-index.html'>Index</a></th><th><a href='../../../../../index.html'>Root resource</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3'>summary: resource | <a href='#methods-summary'>method</a></td><td class='NavBarCell3'>detail: <a href='#methods-details'>method</a></td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

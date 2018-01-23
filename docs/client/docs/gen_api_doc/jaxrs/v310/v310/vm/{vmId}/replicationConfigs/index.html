@@ -1,0 +1,60 @@
+<HTML><HEAD><TITLE>Resource replicationConfigs</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../overview-summary.html'>Overview</a></th><th><a href='../../../../overview-index.html'>Index</a></th><th><a href='../../../../index.html'>Root resource</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3'>summary: resource | <a href='#methods-summary'>method</a></td><td class='NavBarCell3'>detail: <a href='#methods-details'>method</a></td></tr></table><h2>Path: <a href='../../../../index.html'>/</a> <a href='../../../index.html'>v310</a> / <a href='../../index.html'>vm</a> / <a href='../index.html'>{vmId}</a> / replicationConfigs</h2><dl><dt><b>Path parameters:</b></dt><dd><b>vmId</b> - </dd></dl><hr/><table class='info' id='methods-summary'><caption class='TableCaption'>Method Summary</caption><tbody><tr><th class='TableHeader'>Resource</th><th class='TableHeader'>Description</th></tr><tr><td><tt><a href='#PUT'>PUT /v310/vm/{vmId}/replicationConfigs</a></tt></td><td>Update the outgoing replication configurations for the VM specified by the given vmId
+ to the new replication configurations, specified in the API input.
+ This API will compare the old set of existing replication configurations and new set of replication configurations.  
+ Any replication configuration that exists in the new set, but is not found in the old set, will be added.  
+ Likewise, any replication configuration that is found in the old set, but is not found in the new set, will be removed. 
+ Replication configurations existing in both sets will be modified.
+ 
+ This API does not allow setting isSystemDefault attribute of any replication configuration to true. If there is a 
+ need to re-enable system default replication on a VM, please use 
+ 
+ <script>
+ create_link("jaxrs/v310/v310/vm/updateReplicationConfigToDefault/index.html", "updateReplicationConfigToDefault");
+ </script>
+ API.
+ 
+ When configuring many outgoing replication configurations, DatastoreReplicationPath with a valid id is required for all replication configurations.
+ Replication path ID of a DatastoreReplicationPath is used to uniquely identify a replication configuration in the system.  Also, all replication configurations are
+ required to be all enabled or disabled.  Disable/enable of outgoing replication configuration of the VM is currently not supported.
+ 
+ When configuring one outgoing replication configuration, DatastoreReplicationPath can be null only when the replication configuration is disabled.
+ With this property, VM will not be eligible for system default replication, hence it will be completely unprotected.</td></tr></tbody></table><hr/><table class='info' id='methods-details'><caption class='TableCaption'>Method Detail</caption><tbody></tr><tr><td><a name='PUT'></a><table class='examples'><tr><td><b>HTTP Example:</b><pre>PUT /v310/vm/{vmId}/replicationConfigs
+
+</pre></td><td><b>API Example:</b><p><tt>VirtualMachineResource.updateReplicationConfigs({'vmId': <span class='comment'>/* Update the outgoing replication configurations for the VM specified by the given vmId
+ to the new replication configurations, specified in the API input. */</span>,<br/>&nbsp;&nbsp;'$entity': <span class='comment'>/* newReplConfigs List of VirtualMachineReplicationConfig objects, representing a new set of replication configurations to be applied to the VM. */</span>});</tt></p></td></tr></table><p><dt><b>Description:</b></dt><dd>Update the outgoing replication configurations for the VM specified by the given vmId
+ to the new replication configurations, specified in the API input.
+ This API will compare the old set of existing replication configurations and new set of replication configurations.  
+ Any replication configuration that exists in the new set, but is not found in the old set, will be added.  
+ Likewise, any replication configuration that is found in the old set, but is not found in the new set, will be removed. 
+ Replication configurations existing in both sets will be modified.
+ 
+ This API does not allow setting isSystemDefault attribute of any replication configuration to true. If there is a 
+ need to re-enable system default replication on a VM, please use 
+ 
+ <script>
+ create_link("jaxrs/v310/v310/vm/updateReplicationConfigToDefault/index.html", "updateReplicationConfigToDefault");
+ </script>
+ API.
+ 
+ When configuring many outgoing replication configurations, DatastoreReplicationPath with a valid id is required for all replication configurations.
+ Replication path ID of a DatastoreReplicationPath is used to uniquely identify a replication configuration in the system.  Also, all replication configurations are
+ required to be all enabled or disabled.  Disable/enable of outgoing replication configuration of the VM is currently not supported.
+ 
+ When configuring one outgoing replication configuration, DatastoreReplicationPath can be null only when the replication configuration is disabled.
+ With this property, VM will not be eligible for system default replication, hence it will be completely unprotected.</dd><dl><dt><b>Since API version</b></dt><dd><tt>v310.21</tt></dd><dt><b>Tintri Api Server Support:</b></dt><dd><tt>All</tt></dd><dt><b>Input:</b></dt><dd><tt>List&lt;<a href='../../../../../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html'>VirtualMachineReplicationConfig</a>&gt;</tt> - List of VirtualMachineReplicationConfig objects, representing a new set of replication configurations to be applied to the VM.</dd><dt><b>Output:</b></dt><dd><tt>void</tt></dd><dt><b>Errors:</b></dt><table class='Errors'><tr><td><b>Error Code</b></td><td><b>Message</b></td><td><b>HTTP Response Code</b></td></tr><tr><td>ERR-API-3111</td><td>Invalid replication config request.</td><td>400</td></tr></table><dt><b>Produces:</b></dt><dd>application/json;qs=1, application/xml;qs=0.5</dd><dt><b>Consumes:</b></dt><dd>application/json;qs=1, application/xml;qs=0.5</dd></dl></td></tr></tbody></table><hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../overview-summary.html'>Overview</a></th><th><a href='../../../../overview-index.html'>Index</a></th><th><a href='../../../../index.html'>Root resource</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3'>summary: resource | <a href='#methods-summary'>method</a></td><td class='NavBarCell3'>detail: <a href='#methods-details'>method</a></td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>
