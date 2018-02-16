@@ -33,20 +33,20 @@ function create_link(jax_path, path_name) {
       </tr>
       <tr>
           <td>com.tintri.space.usedPercentAlertLowThreshold</td>
-          <td>After physical used space percent exceeds this threshold, the VMstore will send a daily User Alert for up to 7 consecutive days, after which a daily User Notice will be displayed on the UI, until the physical used space drops below this threshold. The valid range for this threshold is between 0 and 100 (inclusive), and it must be less than or equal to usedPercentAlertHighThreshold.</td>
+          <td>After physical used space percent exceeds this threshold, the VMstore will send a daily User Alert for up to 7 consecutive days, after which a daily User Notice will be displayed on the UI, until the physical used space drops below this threshold. A valid value for this threshold is an integer between 0 and 100 (inclusive), that is also less than or equal to usedPercentAlertHighThreshold.</td>
       </tr>
       <tr>
           <td>com.tintri.space.usedPercentAlertHighThreshold</td>
-          <td>After physical used space percent exceeds this threshold, the VMstore will send a daily User Alert until the physical used space drops below this threshold. The valid range for this threshold is between 0 and 100 (inclusive), and it must be greater than or equal to usedPercentAlertLowThreshold.</td>
+          <td>After physical used space percent exceeds this threshold, the VMstore will send a daily User Alert until the physical used space drops below this threshold. A valid value for this threshold is an integer between 0 and 100 (inclusive), that is also greater than or equal to usedPercentAlertLowThreshold.</td>
       </tr>
       <tr>
           <td>com.tintri.performance.reservesUsedPercentAlertThreshold</td>
-          <td>After used performance reserves percent exceeds this threshold, the VMstore will send a User Alert. Once past the threshold, if the used performance reserves continues to increase a User Alert will be sent once a week. The used performance reserves percent is allowed to exceed 100 percent. The impact of being over 100 percent is that latencies may increase, since all performance resources have been utilized. The valid range for this threshold is any number >= 0.</td>
+          <td>After used performance reserves percent exceeds this threshold, the VMstore will send a User Alert. Once past the threshold, if the used performance reserves continues to increase a User Alert will be sent once a week. The used performance reserves percent is allowed to exceed 100 percent. The impact of being over 100 percent is that latencies may increase, since all performance resources have been utilized. A valid value for this threshold is an integer >= 0.</td>
       </tr>
       <tr>
           <td>com.tintri.space.usedPercentDisableSnapshotsThreshold</td>
           <td>
-              After physical used space percent meets or exceeds this threshold, the VMstore will disable snapshot creation to prevent the VMstore from becoming full, and send a User Alert. Once physical used space percent drops below this threshold, snapshot creation will be allowed again. If physical used space remains stable below the threshold for a period of time (1 hr), the VMstore will send another User Alert to notify the user that things are stable and functioning normally. The valid range for this threshold is between 0 and 100 (inclusive).
+              After physical used space percent meets or exceeds this threshold, the VMstore will disable snapshot creation to prevent the VMstore from becoming full, and send a User Alert. Once physical used space percent drops below this threshold, snapshot creation will be allowed again. If physical used space remains stable below the threshold for a period of time (1 hr), the VMstore will send another User Alert to notify the user that things are stable and functioning normally. A valid value for this threshold is an integer between 0 and 100 (inclusive).
               <ul>
                   <li>VAAI and ODX snapshots (generally used for provisioning or migration operations) are not governed by this threshold. Only scheduled and manual Tintri snapshots are governed by this threshold.</li>
                   <li>When creating a snapshot of a thick provisioned virtual machine, space needs to be allocated for the snapshot. If the current physical used space plus the space needed for the snapshot will cause the total physical used space to meet or exceed the threshold, the snapshot creation operation will fail.</li>
@@ -55,7 +55,7 @@ function create_link(jax_path, path_name) {
       </tr>
       <tr>
           <td>com.tintri.space.usedPercentDisableReplicationThreshold</td>
-          <td>After physical used space percent meets or exceeds this threshold, the VMstore will disable incoming snapshot replication to prevent the VMstore from becoming full, and send a User Alert. Once physical used space percent drops below the threshold, incoming snapshot replication will be allowed again. If physical used space remains stable below the threshold for a period of time (1 hr), the VMstore will send another User Alert to notify the user that things are stable and functioning normally. The valid range for this threshold is between 0 and 100 (inclusive).</td>
+          <td>After physical used space percent meets or exceeds this threshold, the VMstore will disable incoming snapshot replication to prevent the VMstore from becoming full, and send a User Alert. Once physical used space percent drops below the threshold, incoming snapshot replication will be allowed again. If physical used space remains stable below the threshold for a period of time (1 hr), the VMstore will send another User Alert to notify the user that things are stable and functioning normally. A valid value for this threshold is an integer between 0 and 100 (inclusive).</td>
       </tr>
   </table>
  </p></td></tr><tr><td id='m_value'>value</td><td>xsd:string</td><td>The current value of the system property.</td></tr></tbody></table>

@@ -1,0 +1,85 @@
+<HTML><HEAD><TITLE>XML element CloudReplDestination</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: CloudReplDestination</h2>Represents cloud replication destination. Current supported cloud destinations are AWS and Cleversafe. Only one of
+ the cloud destinations is expected to be not-null.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.repl.CloudReplDestination",
+   "<a href='#m_forceToOwnEnabled'>forceToOwnEnabled</a>": &ltBoolean&gt,
+   "<a href='#m_owningTgcHost'>owningTgcHost</a>": &ltString&gt,
+   "<a href='#m_owningTgcUuid'>owningTgcUuid</a>": &ltString&gt,
+   "<a href='#m_provisionState'>provisionState</a>": 'UNMANAGED' | 'NEW_PROVISION' | 'TAKEOVER_PROVISION' | 'UPDATE_PROVISION' | 'PROVISION_ERROR' | 'PROVISION_DONE',
+   "<a href='#m_repositoryId'>repositoryId</a>": &ltString&gt,
+   "<a href='#m_repositoryUrl'>repositoryUrl</a>": &ltString&gt,
+   "<a href='#m_retireMekEnabled'>retireMekEnabled</a>": &ltBoolean&gt,
+   "<a href='#m_rotateAekEnabled'>rotateAekEnabled</a>": &ltBoolean&gt,
+   "<a href='#m_userPassPhrase'>userPassPhrase</a>": &ltString&gt,
+   "<a href='#m_userPassPhraseNew'>userPassPhraseNew</a>": &ltString&gt,
+   "<a href='#m_awsInfo'>awsInfo</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/AwsInfo.html'>AwsInfo</a>,
+   "<a href='#m_cleversafeInfo'>cleversafeInfo</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/CleversafeInfo.html'>CleversafeInfo</a>,
+   "<a href='#m_encryptionKeyInfo'>encryptionKeyInfo</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/EncryptionKeyInfo.html'>EncryptionKeyInfo</a>,
+   "<a href='#m_provisionError'>provisionError</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/TintriError.html'>TintriError</a>,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_awsInfo'>awsInfo</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/AwsInfo.html'>AwsInfo</a></td><td>AWS information</td></tr><tr><td id='m_cleversafeInfo'>cleversafeInfo</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/CleversafeInfo.html'>CleversafeInfo</a></td><td>Cleversafe information</td></tr><tr><td id='m_encryptionKeyInfo'>encryptionKeyInfo</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/EncryptionKeyInfo.html'>EncryptionKeyInfo</a></td><td>An object that encapsulates necessary information about data encryptions</td></tr><tr><td id='m_provisionError'>provisionError</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/TintriError.html'>TintriError</a></td><td><b>TgcOnly </b>If provisionState is either UNMANAGED or PROVISION_ERROR, this TintriError object will 
+ provide further detail about what the error is.</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_forceToOwnEnabled'>forceToOwnEnabled</td><td>xsd:boolean</td><td><b>TgcOnly </b>If set, it allows TGC to take over an existing cloud repository, no matter who owned it before, to recover the
+ latest Authentication Encryption Key (AEK) that may have been lost.
+ 
+ In order to recover the AEK, user must provide the exact same pass phrase that was last used with this
+ destination.</td></tr><tr><td id='m_owningTgcHost'>owningTgcHost</td><td>xsd:string</td><td>Host name of the TGC that currently owns and manages this CloudReplDestination. If the VMstore is currently
+ managed by a different TGC, the VMstore may not be able continue replicating to or restoring from that
+ CloudReplDestination.</td></tr><tr><td id='m_owningTgcUuid'>owningTgcUuid</td><td>xsd:string</td><td>UUID of the TGC that currently owns and manages the CloudReplDestination. If the VMstore is currently managed by
+ a different TGC, the VMstore may not be able continue replicating to or restoring from that CloudReplDestination.</td></tr><tr><td id='m_provisionState'>provisionState</td><td>UNMANAGED | NEW_PROVISION | TAKEOVER_PROVISION | UPDATE_PROVISION | PROVISION_ERROR | PROVISION_DONE</td><td><b>TgcOnly </b>Provisioning state of a cloud replication destination.<table class='info'><tr><td>UNMANAGED</td><td>Cloud replication destination is not currently owned by this TGC, ownership is unknown, or this TGC is not authorized to manage the cloud replication destination.</td></tr><tr><td>NEW_PROVISION</td><td>User is configuring a new cloud replication destination.</td></tr><tr><td>TAKEOVER_PROVISION</td><td>User is asking this TGC to take ownership of the cloud replication destination.</td></tr><tr><td>UPDATE_PROVISION</td><td>User is modifying cloud replication destination attributes -- passphrase rotation for example.</td></tr><tr><td>PROVISION_ERROR</td><td>An error has occurred during the creation or update of the cloud replication destination.</td></tr><tr><td>PROVISION_DONE</td><td>Cloud replication destination is ready for use.</td></tr></table></td></tr><tr><td id='m_repositoryId'>repositoryId</td><td>xsd:string</td><td>Repository ID for cloud destination. Recommended format: <user-defined-string>-TINTRI-GUID<br>
+ A valid ID must follow these rules:<br>
+ <li> Be globally unique.
+ <li> Length between 3 and 50 characters.
+ <li> Only numbers, lower-case characters, periods and dashes are allowed.
+ <li> The ID may not end with a dash, have consecutive periods, or use dashes adjacent to periods.
+ <li> The ID may not be formatted as an IP address (Ex. 10.201.112.9).</td></tr><tr><td id='m_repositoryUrl'>repositoryUrl</td><td>xsd:string</td><td>The URL that represents the destination and that user can verify and browse. For example, user could view
+ what's been stored at the destination by entering an AWS repositoryUrl below into a web browser,
+ 
+ https://console.aws.amazon.com/s3/home?region=us-west-1#&bucket=aws-bucket-1-aaa-guid-1111-snapshotmetadatabucket
+ &prefix=test</td></tr><tr><td id='m_retireMekEnabled'>retireMekEnabled</td><td>xsd:boolean</td><td><b>TgcOnly </b>User indicates whether to retire the current Media Encryption Key (MEK). Retiring a MEK means to stop using that
+ MEK for any future snapshot encryption. Going forward, a new MEK is to be created.
+ 
+ This flag is ignored when configuring a new cloud destination.
+ 
+ This is a future feature.</td></tr><tr><td id='m_rotateAekEnabled'>rotateAekEnabled</td><td>xsd:boolean</td><td><b>TgcOnly </b>User indicates whether to update (rotate) the current AEK. If it is set, user must also provide both
+ <code>userPassPhrase</code> and <code>userPassPhraseNew</code>.</td></tr><tr><td id='m_userPassPhrase'>userPassPhrase</td><td>xsd:string</td><td><b>TgcOnly </b>User would need to provide a pass phrase in 2 occasions:
+ 
+ (1) When configuring a new cloud destination; (2) When rotating the current AEK for an existing destination. (3)
+ When claiming or reclaiming the ownership of a destination that may be created and managed by others.
+ 
+ If it is to rotate an AEK, user would also need to set <code>rotateAekEnabled</code> and provide a new pass
+ phrase in <code>userPassPhraseNew</code>.
+ 
+ A pass phrase is not a password. It's more like a password hint. With it, user can ask TGC to recover an AEK, and
+ therefore the Media Encryption Key (MEK), should the AEK ever be lost.
+ 
+ An AEK on a VMstore can be lost if all of the VMstores that have been configured for the same cloud repository
+ are damaged together with the TGC. When configuring a new TGC to re-use that existing cloud destination, user
+ would have to provide the same pass phrase that was used so that TGC can re-generate the same AEK. This is also
+ referred as AEK recovery during a destination take over.
+ 
+ User is recommended to keep the pass phrases in a secure and resilient location such as a password manager.</td></tr><tr><td id='m_userPassPhraseNew'>userPassPhraseNew</td><td>xsd:string</td><td><b>TgcOnly </b>When TGC user wants to rotate the current AEK, the user would need to provide a new pass phrase along with the
+ current one that has been in use.
+ 
+ This value is used only if flag <code>changeAekEnabled</code> is set.
+ 
+ User must remember this new pass phrase once it's been accepted.</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

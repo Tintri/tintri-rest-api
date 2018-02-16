@@ -32,7 +32,7 @@ function create_link(jax_path, path_name) {
    "<a href='#m_name'>name</a>": &ltString&gt,
    "<a href='#m_retentionDestinationMinutes'>retentionDestinationMinutes</a>": &ltNumber&gt,
    "<a href='#m_retentionSourceMinutes'>retentionSourceMinutes</a>": &ltNumber&gt,
-   "<a href='#m_type'>type</a>": 'HOURLY' | 'DAILY' | 'WEEKLY' | 'MONTHLY' | 'QUARTERLY',
+   "<a href='#m_type'>type</a>": 'HOURLY' | 'DAILY' | 'WEEKLY' | 'MONTHLY' | 'QUARTERLY' | 'CUSTOM',
    "<a href='#m_version'>version</a>": &ltString&gt,
    "<a href='#m_tgcServiceGroupDefault'>tgcServiceGroupDefault</a>": &ltBoolean&gt,
 }
@@ -135,11 +135,17 @@ function create_link(jax_path, path_name) {
      <td>first day</td>
      <td>Keep 100 days</td>
    </tr>
- </table></td></tr><tr><td id='m_initialDefaultRetentionMinutes'>initialDefaultRetentionMinutes</td><td>xsd:int</td><td>The intial defautlt retention time in minutes.</td></tr><tr><td id='m_isSystemDefaultSchedule'>isSystemDefaultSchedule</td><td>xsd:boolean</td><td>Returns true if the schedule name matches any of the default schedule names.</td></tr><tr><td id='m_name'>name</td><td>xsd:string</td><td>User assigned name which by default schedule type. If there is already a schedule of that name, an auto-increment like 'Daily(2)' is performed. 
- The user can overwrite the name by using the virtual machine snapshotSchedule API. The name is unique for a given VM.</td></tr><tr><td id='m_retentionDestinationMinutes'>retentionDestinationMinutes</td><td>xsd:int</td><td>The length of time in minutes the snapshot replica on the replication destination is to be retained.
+ </table></td></tr><tr><td id='m_initialDefaultRetentionMinutes'>initialDefaultRetentionMinutes</td><td>xsd:int</td><td>The intial defautlt retention time in minutes.</td></tr><tr><td id='m_isSystemDefaultSchedule'>isSystemDefaultSchedule</td><td>xsd:boolean</td><td>Returns true if the schedule name matches any of the default schedule names.</td></tr><tr><td id='m_name'>name</td><td>xsd:string</td><td>For hourly, daily, weekly, monthly, quarterly schedule type, the schedule name is assigned by the system.
+ They are Hourly, Daily, Weekly, Monthly, Quarterly accordingly.
+
+ For custom schedule type, the schedule name is assigned by the user.  The name of a schedule of type custom
+ has the following restrictions:
+     1. It cannot be the same as the system assigned names, ie. hourly, daily, weekly, monthly, quarterly (case insensitive)
+     2. It cannot contain '_' character.
+     3. For a given VM, schedule names are expected to be unique.</td></tr><tr><td id='m_retentionDestinationMinutes'>retentionDestinationMinutes</td><td>xsd:int</td><td>The length of time in minutes the snapshot replica on the replication destination is to be retained.
  This number is used to calculate replica snapshot
  expiration value when the snapshot is sent from source to the destination.
- On destination side, the snapshot stays until the expiration value.</td></tr><tr><td id='m_retentionSourceMinutes'>retentionSourceMinutes</td><td>xsd:int</td><td>How long, in minutes, a snapshot generated as per this schedule is to be retained.</td></tr><tr><td id='m_type'>type</td><td>HOURLY | DAILY | WEEKLY | MONTHLY | QUARTERLY</td><td>Schedule type to indicate whether it is hourly, daily, weekly, monthly or quarterly.<table class='info'><tr><td>HOURLY</td><td>Time points when snapshot is taken span over a period of one hour.</td></tr><tr><td>DAILY</td><td>Time points when snapshot is taken span over a period of one day
+ On destination side, the snapshot stays until the expiration value.</td></tr><tr><td id='m_retentionSourceMinutes'>retentionSourceMinutes</td><td>xsd:int</td><td>How long, in minutes, a snapshot generated as per this schedule is to be retained.</td></tr><tr><td id='m_type'>type</td><td>HOURLY | DAILY | WEEKLY | MONTHLY | QUARTERLY | CUSTOM</td><td>Schedule type to indicate whether it is hourly, daily, weekly, monthly, quarterly or custom<table class='info'><tr><td>HOURLY</td><td>Time points when snapshot is taken span over a period of one hour.</td></tr><tr><td>DAILY</td><td>Time points when snapshot is taken span over a period of one day
  i.e. 24 hours.</td></tr><tr><td>WEEKLY</td><td>Time points when snapshot is taken span over a period of one week.</td></tr><tr><td>MONTHLY</td><td>Time points when snapshot is taken span over a period of one month.</td></tr><tr><td>QUARTERLY</td><td>Time points when snapshot is taken span over a period of one quarter
- of a year.</td></tr></table></td></tr><tr><td id='m_version'>version</td><td>xsd:string</td><td>Snapshot schedule version</td></tr></tbody></table>
+ of a year.</td></tr><tr><td>CUSTOM</td><td>User defined custom schedule. Snapshot is taken based on cron expressions</td></tr></table></td></tr><tr><td id='m_version'>version</td><td>xsd:string</td><td>Snapshot schedule version</td></tr></tbody></table>
 <hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>
