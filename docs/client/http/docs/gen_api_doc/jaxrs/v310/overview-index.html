@@ -429,6 +429,36 @@ function create_link(jax_path, path_name) {
      <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/snmp/ApplianceSnmpUser.html">ApplianceSnmpUser</a></tt> - This contains the SNMP user configuration.</td><td><tt>void</tt></td></td>
     </tr>
     <tr>
+     <td><a href="v310/appliance/{uuid}/stagingAreaInfo/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/stagingAreaInfo/index.html"><tt>/v310/appliance/{uuid}/stagingAreaInfo</tt></a></td>
+     <td>Gets the Tintri appliance staging area information, which includes details about the space, software uploaded etc.</td>
+     <td><tt>TgcOnly - Since v310.81</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceStagingAreaInfo.html">ApplianceStagingAreaInfo</a></tt> - The appliance Staging Area information</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/index.html"><tt>/v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares</tt></a></td>
+     <td>Gets the Tintri appliance staging area available software information, which includes details of the software uploaded etc.</td>
+     <td><tt>TgcOnly - Since v310.81</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceStagingAvailableSoftware.html">ApplianceStagingAvailableSoftware</a>&gt;</tt> - The appliance staging area available software information</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/cancelupgrade/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/cancelupgrade/index.html"><tt>/v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/cancelupgrade</tt></a></td>
+     <td>Cancel the VMstore software upgrade.</td>
+     <td><tt>TgcOnly - Since v310.81</tt><td><tt>List&lt;String&gt;</tt> - . List of upgrade of appliance UUIDs that needs to be cancelled.</td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Task.html">Task</a>&gt;</tt> - a list of tasks, one per appliance</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/{softwareuuid}/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/{softwareuuid}/index.html"><tt>/v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/{softwareuuid}</tt></a></td>
+     <td>Delete the specified TxOS software from the staging area.</td>
+     <td><tt>TgcOnly - Since v310.81</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Response.html">Response</a></tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/{softwareuuid}/startupgrade/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/{softwareuuid}/startupgrade/index.html"><tt>/v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/{softwareuuid}/startupgrade</tt></a></td>
+     <td>Upgrades the TXOS software to the specified VMstores.</td>
+     <td><tt>TgcOnly - Since v310.81</tt><td><tt>List&lt;String&gt;</tt> - List of appliance UUIDs that needs to be upgraded.</td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Task.html">Task</a>&gt;</tt> - a list of tasks, one per appliance</td></td>
+    </tr>
+    <tr>
      <td><a href="v310/appliance/{uuid}/support/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/appliance/{uuid}/support/index.html"><tt>/v310/appliance/{uuid}/support</tt></a></td>
      <td>Gets the Tintri appliance autosupport settings.</td>
