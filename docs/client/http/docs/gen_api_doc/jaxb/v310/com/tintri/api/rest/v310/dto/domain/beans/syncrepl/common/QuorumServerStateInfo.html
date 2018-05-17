@@ -1,0 +1,51 @@
+<HTML><HEAD><TITLE>XML element QuorumServerStateInfo</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: QuorumServerStateInfo</h2>Represents synchronous replication witness state information.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.syncrepl.common.QuorumServerStateInfo",
+   "<a href='#m_quorumServerState'>quorumServerState</a>": 'NOT_CONFIGURED' | 'CONNECTED' | 'DISCONNECTED' | 'UNKNOWN' | 'PRIMARY_DISCONNECTED' | 'SECONDARY_DISCONNECTED' | 'PRIMARY_UNKNOWN' | 'SECONDARY_UNKNOWN',
+   "<a href='#m_quorumServerError'>quorumServerError</a>": <a href='../../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/syncrepl/common/SyncReplError.html'>SyncReplError</a>,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_quorumServerError'>quorumServerError</td><td><a href='../../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/syncrepl/common/SyncReplError.html'>SyncReplError</a></td><td>The detail error information of the synchronous replication witness.</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_quorumServerState'>quorumServerState</td><td>NOT_CONFIGURED | CONNECTED | DISCONNECTED | UNKNOWN | PRIMARY_DISCONNECTED | SECONDARY_DISCONNECTED | PRIMARY_UNKNOWN | SECONDARY_UNKNOWN</td><td>This attribute represents the state of the synchronous replication witness. The default value is NOT_CONFIGURED.
+ On TGC, it could be one of the following eight states:
+
+ NOT_CONFIGURED,
+ CONNECTED
+ DISCONNECTED
+ UNKNOWN
+ PRIMARY_DISCONNECTED
+ SECONDARY_DISCONNECTED
+ PRIMARY_UNKNOWN
+ SECONDARY_UNKNOWN
+
+ On VMstore, only the first four states apply:
+
+ NOT_CONFIGURED,
+ CONNECTED
+ DISCONNECTED
+ UNKNOWN<table class='info'><tr><td>NOT_CONFIGURED</td><td>On TGC, this means Synchronous Replication has not been configured for Automatic Failover.
+ A Quorum Server has not been configured on one or both VMstores.
+ On VMstore, this means no Quorum Server has been configured on this VMstore.</td></tr><tr><td>CONNECTED</td><td>On TGC, this means both VMstores are connected to the Quorum Server.
+ On VMstore, this means this VMstore is connected to the Quorum Server.</td></tr><tr><td>DISCONNECTED</td><td>On TGC, this means both VMstores are disconnected to the Quorum Server.
+ On VMstore, this means this VMstore is connected to the Quorum Server.</td></tr><tr><td>UNKNOWN</td><td>On TGC, this means information regarding Quorum Server is not available from either VMstore.
+ On VMstore, this means that the information is unavailable from the file system.</td></tr><tr><td>PRIMARY_DISCONNECTED</td><td>TGC only: the current primary VMstore is disconnected from the Quorum Server.
+ Not used on VMstore API.</td></tr><tr><td>SECONDARY_DISCONNECTED</td><td>TGC only: the current secondary VMstore is disconnected from the Quorum Server.
+ Not used on VMstore API.</td></tr><tr><td>PRIMARY_UNKNOWN</td><td>TGC only: the current Primary VMstore information regarding Quorum Server is not available.</td></tr><tr><td>SECONDARY_UNKNOWN</td><td>TGC only: the current Secondary VMstore information regarding Quorum Server is not available.</td></tr></table></td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>
