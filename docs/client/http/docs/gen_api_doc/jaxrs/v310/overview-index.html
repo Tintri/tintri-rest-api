@@ -279,6 +279,12 @@ function create_link(jax_path, path_name) {
      <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceFailedComponents.html">ApplianceFailedComponents</a></tt> - The failed hardware parts</td></td>
     </tr>
     <tr>
+     <td><a href="v310/appliance/{uuid}/fileDirInfo/{path}/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/fileDirInfo/{path}/index.html"><tt>/v310/appliance/{uuid}/fileDirInfo/{path}</tt></a></td>
+     <td>Fetch the file system information associated with the entity specificed by path.</td>
+     <td><tt>VMstoreOnly - Since v310.91</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/filesystem/FileSystemInfo.html">FileSystemInfo</a></tt> - The FileSytemInfo associated with the entity.</td></td>
+    </tr>
+    <tr>
      <td><a href="v310/appliance/{uuid}/hafailover/index.html#POST"><tt>POST</tt></a></td>
      <td><a href="v310/appliance/{uuid}/hafailover/index.html"><tt>/v310/appliance/{uuid}/hafailover</tt></a></td>
      <td>API to perform HA failover.</td>
@@ -1004,7 +1010,7 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/servicegroup/syncRepl/pause/index.html#POST"><tt>POST</tt></a></td>
      <td><a href="v310/servicegroup/syncRepl/pause/index.html"><tt>/v310/servicegroup/syncRepl/pause</tt></a></td>
      <td>On VMStore, this will pause all synchronous replication configurations at the system level.</td>
-     <td><tt>All - Since v310.61</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/syncrepl/common/SyncReplPauseResumeRequest.html">SyncReplPauseResumeRequest</a></tt></td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/TintriError.html">TintriError</a>&gt;</tt></td></td>
+     <td><tt>All - Since v310.61</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/syncrepl/common/SyncReplPauseResumeRequest.html">SyncReplPauseResumeRequest</a></tt> - On VMStore, this input must be ignored. TGC will specify the uuid parameter in the input request, to identify the VMStore on which all the synchronous replication configurations should be paused.</td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/TintriError.html">TintriError</a>&gt;</tt></td></td>
     </tr>
     <tr>
      <td><a href="v310/servicegroup/syncRepl/resume/index.html#POST"><tt>POST</tt></a></td>
@@ -1036,7 +1042,7 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/servicegroup/{id}/members/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/servicegroup/{id}/members/index.html"><tt>/v310/servicegroup/{id}/members</tt></a></td>
      <td>Return the service group members associcated with the specified ID..</td>
-     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script> create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/svg/ServiceGroupMember.html",
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script> create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/svg/ServiceGroupMember.html",
          "ServiceGroupMember"); </script> items.</td></td>
     </tr>
     <tr>
@@ -1459,6 +1465,18 @@ function create_link(jax_path, path_name) {
      <td><tt>VMstoreOnly - Since v310.21</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/MultipleSelectionRequest.html">MultipleSelectionRequest</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineQoSConfig.html">VirtualMachineQoSConfig</a>&gt;</tt> - the VirtualMachineQoSConfig MultipleSelectionRequest</td><td><tt>void</tt></td></td>
     </tr>
     <tr>
+     <td><a href="v310/vm/relocate/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/vm/relocate/index.html"><tt>/v310/vm/relocate</tt></a></td>
+     <td>Relocate a group virtual machines to another datastore.</td>
+     <td><tt>TgcOnly - Since v310.91</tt><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineRelocateSpec.html">VirtualMachineRelocateSpec</a>&gt;</tt> - The list of relocate specifications</td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Task.html">Task</a>&gt;</tt> - List 
+       <task>
+         The list of tasks the user will use to monitor their progress. 
+        <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/Task.html", "Task");
+ </script> object that can be used to track the progress of the operation. 
+       </task></td></td>
+    </tr>
+    <tr>
      <td><a href="v310/vm/replicationConfig/index.html#POST"><tt>POST</tt></a></td>
      <td><a href="v310/vm/replicationConfig/index.html"><tt>/v310/vm/replicationConfig</tt></a></td>
      <td><b>Deprecated.</b> Create a new replication configuration for the specified VMs.</td>
@@ -1469,6 +1487,13 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/vm/sync/index.html"><tt>/v310/vm/sync</tt></a></td>
      <td>Synchronize a Virtual Machine to one of its snapshots.</td>
      <td><tt>VMstoreOnly - Since v310.21.</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSyncSpec.html">VirtualMachineSyncSpec</a></tt></td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Task.html">Task</a></tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/testRelocateVms/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/vm/testRelocateVms/index.html"><tt>/v310/vm/testRelocateVms</tt></a></td>
+     <td>Validate the relocate VMs request for whether the provided VMs can be migrated to the specified destination datastore.</td>
+     <td><tt>TgcOnly - Since v310.91</tt><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineRelocateSpec.html">VirtualMachineRelocateSpec</a>&gt;</tt></td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/TestRelocateVmsInfo.html">TestRelocateVmsInfo</a>&gt;</tt> - List 
+       <testrelocatevmsinfo></testrelocatevmsinfo></td></td>
     </tr>
     <tr>
      <td><a href="v310/vm/thinProvision/index.html#PUT"><tt>PUT</tt></a></td>
@@ -1535,6 +1560,14 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/vm/{vmId}/qosConfig/index.html"><tt>/v310/vm/{vmId}/qosConfig</tt></a></td>
      <td>Update QoS per VM.</td>
      <td><tt>All - Since v310.21</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineQoSConfig.html">VirtualMachineQoSConfig</a>&gt;</tt> - the VirtualMachineQoSConfig Request</td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/vm/{vmId}/relocate/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/vm/{vmId}/relocate/index.html"><tt>/v310/vm/{vmId}/relocate</tt></a></td>
+     <td>Relocate a virtual machine to another datastore.</td>
+     <td><tt>All - Since v310.41</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineRelocateSpec.html">VirtualMachineRelocateSpec</a></tt></td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Task.html">Task</a></tt> - Task <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/Task.html", "Task");
+ </script> object that can be used to track the progress of the operation.</td></td>
     </tr>
     <tr>
      <td><a href="v310/vm/{vmId}/replicationConfig/index.html#DELETE"><tt>DELETE</tt></a></td>
