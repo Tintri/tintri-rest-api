@@ -14,7 +14,7 @@ function create_link(jax_path, path_name) {
 </SCRIPT>
 <LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </HEAD>
-<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: element | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: SyncReplVmstoreInfo</h2>VMStore participant information in a Synchronous Replication configuration.<table class='examples'><tr><td><br>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: SyncReplVmstoreInfo</h2>VMStore participant information in a Synchronous Replication configuration.<table class='examples'><tr><td><br>
 <b>Data Structure</b><pre>{
    "typeId": "com.tintri.api.rest.v310.dto.domain.beans.syncrepl.common.SyncReplVmstoreInfo",
    "<a href='#m_applianceUuid'>applianceUuid</a>": &ltString&gt,
@@ -22,14 +22,20 @@ function create_link(jax_path, path_name) {
    "<a href='#m_createAsPrimary'>createAsPrimary</a>": &ltBoolean&gt,
    "<a href='#m_host'>host</a>": &ltString&gt,
    "<a href='#m_ipAddress'>ipAddress</a>": &ltString&gt,
+   "<a href='#m_lastUpdatedTime'>lastUpdatedTime</a>": <a href='../../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_localAlias'>localAlias</a>": &ltString&gt,
    "<a href='#m_portNumber'>portNumber</a>": &ltString&gt,
    "<a href='#m_vmstoreTintriUuid'>vmstoreTintriUuid</a>": &ltString&gt,
+   "<a href='#m_uuid'>uuid</a>": <a href='../../../../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a>,
 }
 </pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_uuid'>uuid</td><td><a href='../../../../../../../../../../com/tintri/api/rest/vcommon/dto/Uuid.html'>Uuid</a></td><td>Unique Tintri UUID for the object</td></tr></tbody></table>
+
 <hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_applianceUuid'>applianceUuid</td><td>xsd:string</td><td><b>TgcOnly </b>Appliance UUID of the VMStore participant in the ServiceGroup.</td></tr><tr><td id='m_authKey'>authKey</td><td>xsd:string</td><td>Authkey, a.k.a passphrase, used for synchronous replication purpose.</td></tr><tr><td id='m_createAsPrimary'>createAsPrimary</td><td>xsd:boolean</td><td>True if this VMStore is the primary participant of a new synchronous replication configuration, false otherwise.
  This attribute must be set to true or false during the 
  <script>
      create_link("jaxrs/v310/servicegroup/createServiceGroup/index.html", "create SyncRepl config operation");
- </script> only. This attribute will not be returned in any GET ServiceGroup operations.</td></tr><tr><td id='m_host'>host</td><td>xsd:string</td><td><b>TgcOnly </b>Appliance host name of the VMStore participant in the ServiceGroup.</td></tr><tr><td id='m_ipAddress'>ipAddress</td><td>xsd:string</td><td>IP address of this participant in synchronous replication configuration.</td></tr><tr><td id='m_portNumber'>portNumber</td><td>xsd:string</td><td>Port number used for synchronous replication communication purpose.
+ </script> only. This attribute will not be returned in any GET ServiceGroup operations.</td></tr><tr><td id='m_host'>host</td><td>xsd:string</td><td><b>TgcOnly </b>Appliance host name of the VMStore participant in the ServiceGroup.</td></tr><tr><td id='m_ipAddress'>ipAddress</td><td>xsd:string</td><td>IP address of this end point in synchronous replication configuration.</td></tr><tr><td id='m_lastUpdatedTime'>lastUpdatedTime</td><td><a href='../../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Last time the entity is updated in the format YYYY-MM-DDThh:mm:ss.ms-/+zz:zz</td></tr><tr><td id='m_localAlias'>localAlias</td><td>xsd:string</td><td>Alias used for the entity instance in this Tintri API server.
+ If an alias is not set, then localAlias is not returned.</td></tr><tr><td id='m_portNumber'>portNumber</td><td>xsd:string</td><td>Port number used for synchronous replication communication purpose.
  16-bit unsigned integer ranging from 1024 to 32767, inclusive.</td></tr><tr><td id='m_vmstoreTintriUuid'>vmstoreTintriUuid</td><td>xsd:string</td><td><b>TgcOnly </b>TGC generated Tintri UUID of the VMStore partipant in the ServiceGroup.</td></tr></tbody></table>
-<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: element | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

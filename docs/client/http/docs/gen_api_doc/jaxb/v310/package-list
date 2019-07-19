@@ -1,3 +1,4 @@
+com.tintri.api.rest.v310.dto.domain.beans.filesystem
 com.tintri.api.rest.v310.dto
 com.tintri.api.rest.v310.dto.domain.beans.snmp
 com.tintri.api.rest.v310.dto.domain.beans.hardware
