@@ -943,6 +943,24 @@ function create_link(jax_path, path_name) {
      <td><tt>All</tt><td> </td><td><tt>void</tt></td></td>
     </tr>
     <tr>
+     <td><a href="v310/quorumServer/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/quorumServer/index.html"><tt>/v310/quorumServer</tt></a></td>
+     <td>Adds a quorumServer</td>
+     <td><tt>TgcOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/QuorumServerInfo.html">QuorumServerInfo</a></tt></td><td><tt>String</tt> - If successful returns Tintri UUID of the newly created quorum server, else error message.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/quorumServer/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/quorumServer/index.html"><tt>/v310/quorumServer</tt></a></td>
+     <td>Returns a list of all the quorum servers.</td>
+     <td><tt>TgcOnly</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/QuorumServerInfo.html">QuorumServerInfo</a>&gt;</tt> - the found quorum servers.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/quorumServer/{id}/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/quorumServer/{id}/index.html"><tt>/v310/quorumServer/{id}</tt></a></td>
+     <td>Removes a quorum server identified by the given id.</td>
+     <td><tt>TgcOnly</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
      <td><a href="v310/replTopology/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/replTopology/index.html"><tt>/v310/replTopology</tt></a></td>
      <td>Gets the replication links.</td>
@@ -1024,6 +1042,18 @@ function create_link(jax_path, path_name) {
      <td>Test the Synchronous Replication configuration associated with the specified <script> create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/ServiceGroup.html",
  "ServiceGroup"); </script>.</td>
      <td><tt>All - Since v310.61</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/ServiceGroup.html">ServiceGroup</a></tt> - New or existing ServiceGroup to be tested, it should contain non-null SyncReplConfig otherwise error will be thrown.</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/syncrepl/SyncReplTestResult.html">SyncReplTestResult</a></tt> - SyncReplState will tell us how the test result looks like.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/syncRepl/test/quorumServer/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/servicegroup/syncRepl/test/quorumServer/index.html"><tt>/v310/servicegroup/syncRepl/test/quorumServer</tt></a></td>
+     <td>Test the synchronous replication quorum server status represented by the given parameter.</td>
+     <td><tt>All - Since v310.95</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/QuorumServerInfo.html">QuorumServerInfo</a></tt></td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/syncrepl/SyncReplTestResult.html">SyncReplTestResult</a></tt> -</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/servicegroup/syncRepl/test/quorumServer/{vmStoreUuid}/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/servicegroup/syncRepl/test/quorumServer/{vmStoreUuid}/index.html"><tt>/v310/servicegroup/syncRepl/test/quorumServer/{vmStoreUuid}</tt></a></td>
+     <td>Test the quorum server connection status represented by the given VMstore UUID.</td>
+     <td><tt>TgcOnly - Since v310.95</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/QuorumServerInfo.html">QuorumServerInfo</a></tt></td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/syncrepl/SyncReplTestResult.html">SyncReplTestResult</a></tt> -</td></td>
     </tr>
     <tr>
      <td><a href="v310/servicegroup/{id}/index.html#GET"><tt>GET</tt></a></td>
@@ -1465,18 +1495,6 @@ function create_link(jax_path, path_name) {
      <td><tt>VMstoreOnly - Since v310.21</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/MultipleSelectionRequest.html">MultipleSelectionRequest</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineQoSConfig.html">VirtualMachineQoSConfig</a>&gt;</tt> - the VirtualMachineQoSConfig MultipleSelectionRequest</td><td><tt>void</tt></td></td>
     </tr>
     <tr>
-     <td><a href="v310/vm/relocate/index.html#PUT"><tt>PUT</tt></a></td>
-     <td><a href="v310/vm/relocate/index.html"><tt>/v310/vm/relocate</tt></a></td>
-     <td>Relocate a group virtual machines to another datastore.</td>
-     <td><tt>TgcOnly - Since v310.91</tt><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineRelocateSpec.html">VirtualMachineRelocateSpec</a>&gt;</tt> - The list of relocate specifications</td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Task.html">Task</a>&gt;</tt> - List 
-       <task>
-         The list of tasks the user will use to monitor their progress. 
-        <script>
- create_link("jaxb/v310/com/tintri/api/rest/v310/dto/Task.html", "Task");
- </script> object that can be used to track the progress of the operation. 
-       </task></td></td>
-    </tr>
-    <tr>
      <td><a href="v310/vm/replicationConfig/index.html#POST"><tt>POST</tt></a></td>
      <td><a href="v310/vm/replicationConfig/index.html"><tt>/v310/vm/replicationConfig</tt></a></td>
      <td><b>Deprecated.</b> Create a new replication configuration for the specified VMs.</td>
@@ -1487,13 +1505,6 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/vm/sync/index.html"><tt>/v310/vm/sync</tt></a></td>
      <td>Synchronize a Virtual Machine to one of its snapshots.</td>
      <td><tt>VMstoreOnly - Since v310.21.</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineSyncSpec.html">VirtualMachineSyncSpec</a></tt></td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Task.html">Task</a></tt></td></td>
-    </tr>
-    <tr>
-     <td><a href="v310/vm/testRelocateVms/index.html#PUT"><tt>PUT</tt></a></td>
-     <td><a href="v310/vm/testRelocateVms/index.html"><tt>/v310/vm/testRelocateVms</tt></a></td>
-     <td>Validate the relocate VMs request for whether the provided VMs can be migrated to the specified destination datastore.</td>
-     <td><tt>TgcOnly - Since v310.91</tt><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineRelocateSpec.html">VirtualMachineRelocateSpec</a>&gt;</tt></td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/TestRelocateVmsInfo.html">TestRelocateVmsInfo</a>&gt;</tt> - List 
-       <testrelocatevmsinfo></testrelocatevmsinfo></td></td>
     </tr>
     <tr>
      <td><a href="v310/vm/thinProvision/index.html#PUT"><tt>PUT</tt></a></td>
@@ -1665,7 +1676,7 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/vmstore/index.html#POST"><tt>POST</tt></a></td>
      <td><a href="v310/vmstore/index.html"><tt>/v310/vmstore</tt></a></td>
      <td>Add a VMstore to the Tintri Global Center cluster.</td>
-     <td><tt>TgcOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/VmStore.html">VmStore</a></tt> - The VMstore and its properties.</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/VmStore.html">VmStore</a></tt> - VMStore with the new Tintri UUID assigned by the sytem.</td></td>
+     <td><tt>TgcOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/VmStore.html">VmStore</a></tt> - The VMstore and its properties.</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/VmStore.html">VmStore</a></tt> - VMstore with the new Tintri UUID assigned by the system.</td></td>
     </tr>
     <tr>
      <td><a href="v310/vmstore/vmstoreListDownloadable/index.html#POST"><tt>POST</tt></a></td>
