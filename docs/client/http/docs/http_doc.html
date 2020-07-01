@@ -76,7 +76,7 @@ h3 {
 </style>
 <script type="text/javascript">
 
-// Guarentees title and H1 heading are the same.
+// Guarantees title and H1 heading are the same.
 function title_h1(title_string) {
 	document.write("<title>" + title_string + "</title>");
 	document.write("<h1>" +  title_string + "</h1>");
@@ -98,7 +98,7 @@ document.getElementById(id).width = width;
 
 }
 
-// Resizes the iframe.  (Save for referecne)
+// Resizes the iframe.  (Save for reference)
 function resizer_save(id)
 {
 
@@ -165,7 +165,7 @@ All strings passed to and from the Tintri APIs need to be UTF-8 encoded.
 
 <h3 id="api_compatibility">API Compatibility</h3>
 <p>
-Over time, the Tintri APIs will change.  Future versions may add new managed entitties or keys.
+Over time, the Tintri APIs will change.  Future versions may add new managed entities or keys.
 To keep older clients working, the behavior and return values with given parameters will not change
 from the documented behavior except for undocumented request parameters or 
 additional response keys.
@@ -252,9 +252,9 @@ currently documented.  API clients will have to be modified to obtain new Tintri
     <td>4.1.x</td>
 </tr>
 <tr>
-    <td>v310.95</td>
-    <td>4.5.2</td>
-    <td>4.2.x</td>
+    <td>v310.101</td>
+    <td>5.0.0</td>
+    <td>5.0.x</td>
 </tr>
 </table>
 
@@ -371,12 +371,12 @@ The admin user is a special user that cannot be deleted or modified.
 
 <h3>Filters</h3>
 <p>
-Filtering parameters are bassed on <a href="http://tools.ietf.org/html/rfc6570">RFC 6570</a>.
+Filtering parameters are based on <a href="http://tools.ietf.org/html/rfc6570">RFC 6570</a>.
 
 <table>
 <tr>
     <th>Format</th>
-    <td>?parm1=value&ampparam2=value2&ampparam3=value3…</td>
+    <td>?parm1=value&ampparam2=value2&ampparam3=value3?</td>
 </tr>
 <tr>
     <th>Example</th>
@@ -389,7 +389,7 @@ Please consult the individual APIs for filter input parameters.
 <h3>Pagination</h3>
 <p>
 Many of the Tintri APIs with GET methods return large numbers of objects.  For
-the conveinence of the client,
+the convenience of the client,
 a paged response is provided.  The paged response is in the form of a Page
 object which is composed as follows:
 
@@ -403,7 +403,7 @@ object which is composed as follows:
 <tbody>
 <tr>
     <td id='m_absoluteTotal'>absoluteTotal</td>
-    <td>The absolute number of objects within the managed enitity.  This number includes active and deleted
+    <td>The absolute number of objects within the managed entity.  This number includes active and deleted
         objects with no filtering.</td>
 </tr>
 <tr>
@@ -467,7 +467,7 @@ object which is composed as follows:
 <p>
 Session login uses the session resource.  An HTTP POST with the user name,
 password, and role is sent.  A session cookie is returned and this cookie
-is used in all subsequent API invokations.
+is used in all subsequent API invocations.
 <dl>
 <dt>URL structure</dt>
 <dd><pre>
@@ -513,7 +513,7 @@ and some use
 <a href="gen_api_doc/jaxb/v310/com/tintri/api/rest/v310/dto/MultipleSelectionRequest.html">MultipleSelectionRequest</a>
 as input.
 <p>
-Request allows for multiple properties of muliple objects to be updated at one time.
+Request allows for multiple properties of multiple objects to be updated at one time.
 The example below shows the JSON for updating the <i>acceptIncomingTraffic</i> property in
 <a href="gen_api_doc/jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/DatastoreReplicationPath.html">DatastoreReplicationPath</a>.
 
@@ -634,7 +634,7 @@ Only the properties that are in <i>properyNames</i> for the specified object in
 <tr>
     <td>GET</td>
     <td>/v310/alert/notificationPolicy/{uuid}</td>
-    <td>Get the notificaiton policy assoiciated with an ID</td>
+    <td>Get the notification policy associated with an ID</td>
     <td>All</td>
 </tr>
 <tr>
@@ -795,25 +795,25 @@ Only the properties that are in <i>properyNames</i> for the specified object in
     </tr>
 </table>
 
-<h2 id="new_apis">New APIs for v310.95</h2>
+<h2 id="new_apis">New APIs for v310.101</h2>
 <table>
     <tr>
-        <td>POST</td>
-        <td>/v310/servicegroup/syncRepl/test/quorumServer</td>
-        <td>Test the synchronous replication quorum server status represented by the given parameter.</td>
-        <td>All</td>
-    </tr>
-    <tr>
-        <td>POST</td>
-        <td>/v310/servicegroup/syncRepl/test/quorumServer/{vmStoreUuid}</td>
-        <td>Test the quorum server connection status represented by the given VMstore UUID.</td>
-        <td>TgcOnly</td>
+        <td>PUT</td>
+        <td>/v310/internal/generic/endpoint/{id}/objects</td>
+        <td>Update/Create objects under a generic endpoint.</td>
+        <td>VMstoreOnly</td>
     </tr>
     <tr>
         <td>PUT</td>
-        <td>/v310/vm/testRelocateVms</td>
-        <td>Validate the relocate VMs request for whether the provided VMs can be migrated to the specified destination datastore.</td>
-        <td>TgcOnly</td>
+        <td>/v310/internal/generic/endpoint/{id}/objects/delete</td>
+        <td>Delete objects under a generic endpoint.</td>
+        <td>VMstoreOnly</td>
+    </tr>
+    <tr>
+        <td>PUT</td>
+        <td>/v310/internal/generic/endpoint/{id}/objects/replace</td>
+        <td>Replace existing objects with the new list of objects.</td>
+        <td>VMstoreOnly</td>
     </tr>
 </table>
 
@@ -879,7 +879,7 @@ Only the properties that are in <i>properyNames</i> for the specified object in
 <h2 id="resources_header">Resources</h2>
 <p>
 The API resources are presented below.  The <i>Data Overview</i> button presents the Data Transfer
-Objects (DTOs) that are transfered between the Tintri server and the client.  The
+Objects (DTOs) that are transferred between the Tintri server and the client.  The
 <i>API Overview</i> and <i>API Index</i> buttons present different views of the API endpoints.
 To use the endpoints in a browser or a tool like Postman, the Tintri server and /api need to
 prefix the endpoints presented below; for example: http://vmstore.tintri.com/api/v310/vm
@@ -896,4 +896,3 @@ prefix the endpoints presented below; for example: http://vmstore.tintri.com/api
 
 </body>
 </html>
-

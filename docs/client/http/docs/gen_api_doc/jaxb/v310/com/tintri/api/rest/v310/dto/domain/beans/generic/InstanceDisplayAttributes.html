@@ -1,0 +1,43 @@
+<HTML><HEAD><TITLE>XML element InstanceDisplayAttributes</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: InstanceDisplayAttributes</h2>These attributes are optional, the client can include those that are applicable. These attributes
+ do not impact object behavior, they only fill in various fields or set visual attributes for 
+ the object in OneUI. <br>
+ Eventually these attributes should be deprecated, since they are only necessary in TGC now
+ that OneUI is becoming our primary UI.<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.generic.InstanceDisplayAttributes",
+   "<a href='#m_hasExternalSnapshots'>hasExternalSnapshots</a>": &ltBoolean&gt,
+   "<a href='#m_hostname'>hostname</a>": &ltString&gt,
+   "<a href='#m_isOwnerOfBaseExtents'>isOwnerOfBaseExtents</a>": &ltBoolean&gt,
+   "<a href='#m_managerDisplayName'>managerDisplayName</a>": &ltString&gt,
+   "<a href='#m_memoryProvisionedMB'>memoryProvisionedMB</a>": &ltNumber&gt,
+   "<a href='#m_numCpu'>numCpu</a>": &ltNumber&gt,
+   "<a href='#m_path'>path</a>": &ltString&gt,
+   "<a href='#m_poweredOn'>poweredOn</a>": &ltBoolean&gt,
+   "<a href='#m_template'>template</a>": &ltBoolean&gt,
+   "<a href='#m_storageContainers'>storageContainers</a>": [<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/generic/InstanceDisplayAttributes.StorageContainer.html'>StorageContainer</a>],
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_storageContainers'>storageContainers</td><td>xsd:list[<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/generic/InstanceDisplayAttributes.StorageContainer.html'>StorageContainer</a>]</td><td>Storage containers associated with the object. This could be
+ a datastore, a share, etc.</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_hasExternalSnapshots'>hasExternalSnapshots</td><td>xsd:boolean</td><td>Does this object have snapshots (at the integration level)?</td></tr><tr><td id='m_hostname'>hostname</td><td>xsd:string</td><td>Name of the host associated with this object.</td></tr><tr><td id='m_isOwnerOfBaseExtents'>isOwnerOfBaseExtents</td><td>xsd:boolean</td><td>Does this object own sub-objects that are shared with other objects?</td></tr><tr><td id='m_managerDisplayName'>managerDisplayName</td><td>xsd:string</td><td>The name of the manager for this object.</td></tr><tr><td id='m_memoryProvisionedMB'>memoryProvisionedMB</td><td>xsd:int</td><td>How much memory (in MB) is associated with this object? If null or omitted will be blank.</td></tr><tr><td id='m_numCpu'>numCpu</td><td>xsd:int</td><td>How many cpus are associated with this object? If null or omitted will be blank.</td></tr><tr><td id='m_path'>path</td><td>xsd:string</td><td>The path to this object in the integration space. Generally includes the manager
+ for the object as the root, then any logical groupings used by the integration (logical folders, tenants, groups, etc.)
+ Generally delimited by " > ". For example: <br>
+ My obj manager > My obj organization > My obj group</td></tr><tr><td id='m_poweredOn'>poweredOn</td><td>xsd:boolean</td><td>Is the object powered on?</td></tr><tr><td id='m_template'>template</td><td>xsd:boolean</td><td>Is this object a "template"?</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>
