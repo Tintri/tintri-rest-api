@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html> 
+<html>
 <head>
 <link rel="shortcut icon" href="https://www.tintri.com/sites/default/files/favicon.ico" type="image/vnd.microsoft.icon" />
 
@@ -167,7 +167,7 @@ All strings passed to and from the Tintri APIs need to be UTF-8 encoded.
 <p>
 Over time, the Tintri APIs will change.  Future versions may add new managed entities or keys.
 To keep older clients working, the behavior and return values with given parameters will not change
-from the documented behavior except for undocumented request parameters or 
+from the documented behavior except for undocumented request parameters or
 additional response keys.
 <p>
 With this in mind, clients should avoid passing undocumented parameters and accept keys that are not
@@ -256,6 +256,11 @@ currently documented.  API clients will have to be modified to obtain new Tintri
     <td>4.6.0.x</td>
     <td>5.0.x</td>
 </tr>
+<tr>
+    <td>v310.102</td>
+    <td>4.6.1.x</td>
+    <td>5.0.x</td>
+</tr>
 </table>
 
 <h3>Error Handling</h3>
@@ -314,9 +319,9 @@ are listed below:
 </table>
 
 <p>
-When an API error occurs, 
+When an API error occurs,
 <a href="gen_api_doc/jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/TintriError.html">TintriError</a>
-is returned. An example is below: 
+is returned. An example is below:
 <xmp>
 {"typeId":"com.tintri.api.rest.v310.dto.domain.beans.TintriError",
  "code":"ERR-API-8001",
@@ -491,7 +496,7 @@ User role name
 <h3>Session Logout</h3>
 <p>
 Session logout uses the session resource.  An HTTP GET is used with the session
-cookie provided in the session login. 
+cookie provided in the session login.
 <dl>
 <dt>URL structure</dt>
 <dd><pre>
@@ -507,7 +512,7 @@ HTTP status 204
 
 <a name="Updating"></a>
 <h3>Updating</h3>
-In REST, updates are done via HTTP PUTs. Some of the update APIs utilize 
+In REST, updates are done via HTTP PUTs. Some of the update APIs utilize
 <a href="gen_api_doc/jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>
 and some use
 <a href="gen_api_doc/jaxb/v310/com/tintri/api/rest/v310/dto/MultipleSelectionRequest.html">MultipleSelectionRequest</a>
@@ -565,7 +570,7 @@ https://ttvm38.tintri.com/api/v310/vm/qosConfig
     ['A1D88A8A-8904-1E35-9DC2-589C317D31A6-VIM-00000000000001A5',
      'A1D88A8A-8904-1E35-9DC2-589C317D31A6-VIM-0000000000000070'
     ]
- 'newValue': 
+ 'newValue':
     {'minNormalizedIops': '100',
      'maxNormalizedIops': '248',
      'typeId': 'com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineQoSConfig'

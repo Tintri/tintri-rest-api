@@ -345,6 +345,12 @@ function create_link(jax_path, path_name) {
      <td><tt>VMstoreOnly - Since v310.11</tt><td> </td><td><tt>void</tt></td></td>
     </tr>
     <tr>
+     <td><a href="v310/appliance/{uuid}/restartSnmp/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/restartSnmp/index.html"><tt>/v310/appliance/{uuid}/restartSnmp</tt></a></td>
+     <td>Restart the snmp-agent.</td>
+     <td><tt>All - Since v310.121</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
      <td><a href="v310/appliance/{uuid}/restartWebServer/index.html#POST"><tt>POST</tt></a></td>
      <td><a href="v310/appliance/{uuid}/restartWebServer/index.html"><tt>/v310/appliance/{uuid}/restartWebServer</tt></a></td>
      <td>Restart the web server.</td>
@@ -1253,6 +1259,12 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/session/active/index.html"><tt>/v310/session/active</tt></a></td>
      <td>Returns a list of user sessions information that are currently logged in.</td>
      <td><tt>All - Since v310.51</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/UserSession.html">UserSession</a>&gt;</tt> - list of user sessions</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/session/active/tintricenter/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/session/active/tintricenter/index.html"><tt>/v310/session/active/tintricenter</tt></a></td>
+     <td>Returns a list of user sessions belongs to user=tintricenter.</td>
+     <td><tt>VMstoreOnly - Since v310.111</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/UserSession.html">UserSession</a>&gt;</tt> - list of tintricenter sessions</td></td>
     </tr>
     <tr>
      <td><a href="v310/session/current/index.html#GET"><tt>GET</tt></a></td>
