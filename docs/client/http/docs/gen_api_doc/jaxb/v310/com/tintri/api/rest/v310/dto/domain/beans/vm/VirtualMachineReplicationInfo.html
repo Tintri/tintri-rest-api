@@ -20,6 +20,7 @@ function create_link(jax_path, path_name) {
 <b>Data Structure</b><pre>{
    "typeId": "com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineReplicationInfo",
    "<a href='#m_isEnabled'><del>isEnabled</del></a>": &ltBoolean&gt,
+   "<a href='#m_lastUpdatedTime'>lastUpdatedTime</a>": <a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
    "<a href='#m_preferredDestinationId'><del>preferredDestinationId</del></a>": &ltString&gt,
    "<a href='#m_replicationState'><del>replicationState</del></a>": &ltString&gt,
    "<a href='#m_configurationsIncoming'>configurationsIncoming</a>": [<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/repl/VirtualMachineReplicationConfig.html'>VirtualMachineReplicationConfig</a>],
@@ -70,7 +71,7 @@ function create_link(jax_path, path_name) {
  </script>
  
  See configurationsOutgoing.isDisabled for enabled/disabled state of the first outgoing
- replication destination</td></tr><tr><td id='m_preferredDestinationId'>preferredDestinationId</td><td>xsd:string</td><td><b>Deprecated.</b>  scnce v310.61. In one to one replication scenario, if a Tintri clone's parent (the immediate ancestor) is replicated to a destination, the preferred destination would be that of the parent for better space efficiency.
+ replication destination</td></tr><tr><td id='m_lastUpdatedTime'>lastUpdatedTime</td><td><a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Time stamp when the object is last updated.</td></tr><tr><td id='m_preferredDestinationId'>preferredDestinationId</td><td>xsd:string</td><td><b>Deprecated.</b>  scnce v310.61. In one to one replication scenario, if a Tintri clone's parent (the immediate ancestor) is replicated to a destination, the preferred destination would be that of the parent for better space efficiency.
  If the parent is configured to replicate to multiple destinations, one of the parent's destinations will be selected as the preferred destination.
  Given the limitation in one to many scenario, this attribute is deprecated.  There is currently no replacement for this attribute.
 
