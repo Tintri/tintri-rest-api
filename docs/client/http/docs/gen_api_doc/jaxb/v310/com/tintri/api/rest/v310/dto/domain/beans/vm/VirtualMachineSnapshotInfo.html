@@ -24,7 +24,6 @@ function create_link(jax_path, path_name) {
    "<a href='#m_cloneFromSnapshot'><del>cloneFromSnapshot</del></a>": &ltString&gt,
    "<a href='#m_highFrequencySnapshotState'>highFrequencySnapshotState</a>": &ltString&gt,
    "<a href='#m_isSystemDefaultSchedule'>isSystemDefaultSchedule</a>": &ltBoolean&gt,
-   "<a href='#m_lastUpdatedTime'>lastUpdatedTime</a>": <a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
    "<a href='#m_latestReplicatedSnapshotTime'>latestReplicatedSnapshotTime</a>": <a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
    "<a href='#m_schedulesInternal'>schedulesInternal</a>": &ltString&gt,
    "<a href='#m_base'><del>base</del></a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/Snapshot.html'>Snapshot</a>,
@@ -45,7 +44,7 @@ function create_link(jax_path, path_name) {
  'Disabled' if the VM is not configured or the number of minutes
  an alert will be generated if it breaches the user specified threshold.
  i.e. 'Alert after 5 minutes'</td></tr><tr><td id='m_isSystemDefaultSchedule'>isSystemDefaultSchedule</td><td>xsd:boolean</td><td>'True' indicates that the snapshot schedule is the system default. 
- 'False' indicates a custom snapshot schedule is in affect.</td></tr><tr><td id='m_lastUpdatedTime'>lastUpdatedTime</td><td><a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Time stamp when the object is last updated.</td></tr><tr><td id='m_latestReplicatedSnapshotTime'>latestReplicatedSnapshotTime</td><td><a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Obtains the latest replicated snapshot of all outgoing destination time in milliseconds from Jan 1, 1970. 
+ 'False' indicates a custom snapshot schedule is in affect.</td></tr><tr><td id='m_latestReplicatedSnapshotTime'>latestReplicatedSnapshotTime</td><td><a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Obtains the latest replicated snapshot of all outgoing destination time in milliseconds from Jan 1, 1970. 
  If there is no outgoing replication configured, it is time of last incoming replicated snapshot.</td></tr><tr><td id='m_schedulesInternal'>schedulesInternal</td><td>xsd:string</td><td>Get an internal representation of the snapshot schedules.
  
  This attribute is meant to be used internally for sorting and filtering on Tintri 

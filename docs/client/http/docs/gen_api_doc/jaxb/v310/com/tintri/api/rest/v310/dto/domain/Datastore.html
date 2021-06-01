@@ -20,7 +20,6 @@ function create_link(jax_path, path_name) {
    "typeId": "com.tintri.api.rest.v310.dto.domain.Datastore",
    "<a href='#m_displayName'>displayName</a>": &ltString&gt,
    "<a href='#m_isDataFromAppliance'>isDataFromAppliance</a>": &ltBoolean&gt,
-   "<a href='#m_lastUpdatedComponent'>lastUpdatedComponent</a>": &ltString&gt,
    "<a href='#m_lastUpdatedTime'>lastUpdatedTime</a>": <a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
    "<a href='#m_localAlias'>localAlias</a>": &ltString&gt,
    "<a href='#m_snapshotHighFrequencyVmsCount'>snapshotHighFrequencyVmsCount</a>": &ltNumber&gt,
@@ -46,7 +45,7 @@ function create_link(jax_path, path_name) {
 <hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_displayName'>displayName</td><td>xsd:string</td><td>This name to be used to display in a UI.</td></tr><tr><td id='m_isDataFromAppliance'>isDataFromAppliance</td><td>xsd:boolean</td><td>Set to true if the current data in the datastore was fetched from the
  appliance. If the appliance is not accessible set it to false to
  indicate that the data contained in the datastore is from local system
- management databases.</td></tr><tr><td id='m_lastUpdatedComponent'>lastUpdatedComponent</td><td>xsd:string</td><td>The latest component name updated based on lastUpdatedTIme.</td></tr><tr><td id='m_lastUpdatedTime'>lastUpdatedTime</td><td><a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Last time the entity is updated in the format YYYY-MM-DDThh:mm:ss.ms-/+zz:zz</td></tr><tr><td id='m_localAlias'>localAlias</td><td>xsd:string</td><td>Alias used for the entity instance in this Tintri API server.
+ management databases.</td></tr><tr><td id='m_lastUpdatedTime'>lastUpdatedTime</td><td><a href='../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Last time the entity is updated in the format YYYY-MM-DDThh:mm:ss.ms-/+zz:zz</td></tr><tr><td id='m_localAlias'>localAlias</td><td>xsd:string</td><td>Alias used for the entity instance in this Tintri API server.
  If an alias is not set, then localAlias is not returned.</td></tr><tr><td id='m_snapshotHighFrequencyVmsCount'>snapshotHighFrequencyVmsCount</td><td>xsd:int</td><td>Returns the current number of VMs using RPO (high frequency) snapshots</td></tr><tr><td id='m_snapshotHighFrequencyVmsMax'>snapshotHighFrequencyVmsMax</td><td>xsd:int</td><td>Returns the maximum number of VMs permitted to take high frequency snapshots.</td></tr><tr><td id='m_vaaiThickSupportDisabled'>vaaiThickSupportDisabled</td><td>xsd:string</td><td>Option to ensure the VMStore treats all new VMWare VAAI
  provisioned VMs as Thin-provisioned. A "true" value indicates that VMStore file system
  will always use thin provisioning to get maximum space savings.
