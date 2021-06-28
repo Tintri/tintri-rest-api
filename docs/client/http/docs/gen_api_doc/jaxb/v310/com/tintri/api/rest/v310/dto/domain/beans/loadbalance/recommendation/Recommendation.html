@@ -17,32 +17,32 @@ function create_link(jax_path, path_name) {
 <BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: Recommendation</h2>Describes the conditions of a VMstore Pool based on the analysis performed by the Recommendation Engine.
 
  The Recommendation contains some of the following concepts:
- <table class=info>
+ <table class=info >
+ <caption>Recommendation</caption>
  <tr>
-    <th>Description</th>
-    <th>Property</th>
+ <th>Description</th>
+ <th>Property</th>
  </tr>
  <tr>
-   <td>current issues in the Recommendation</td>
-   <td>issues</td>
+ <td>current issues in the Recommendation</td>
+ <td>issues</td>
  </tr>
  <tr>
-   <td>actions that can be done to alleviate or mitigate the issues</td>
-   <td>actionGroups</td>
+ <td>actions that can be done to alleviate or mitigate the issues</td>
+ <td>actionGroups</td>
  </tr>
  <tr>
-   <td>improvements expected if the recommendation is accepted</td>
-   <td>expectedOutcomes</td>
+ <td>improvements expected if the recommendation is accepted</td>
+ <td>expectedOutcomes</td>
  </tr>
  <tr>
-   <td>state of the recommendation including the progress applying the recommendation</td>
-   <td>state</td>
+ <td>state of the recommendation including the progress applying the recommendation</td>
+ <td>state</td>
  </tr>
  </table>
 
- Tintri Global Center will generate the Recommendation for a VMstore pool on a regular
- schedule, currently 6 am and 6 pm local time.
- The Recommendation is generated even if there are no issues detected.<table class='examples'><tr><td><br>
+ Tintri Global Center will generate the Recommendation for a VMstore pool on a regular schedule, currently 6 am and 6
+ pm local time. The Recommendation is generated even if there are no issues detected.<table class='examples'><tr><td><br>
 <b>Data Structure</b><pre>{
    "typeId": "com.tintri.api.rest.v310.dto.domain.beans.loadbalance.recommendation.Recommendation",
    "<a href='#m_acceptedTime'>acceptedTime</a>": <a href='../../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,

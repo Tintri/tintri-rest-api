@@ -19,7 +19,7 @@ function create_link(jax_path, path_name) {
    "typeId": "com.tintri.api.rest.v310.dto.domain.beans.file.RenameOperation",
    "<a href='#m_overwrite'>overwrite</a>": &ltBoolean&gt,
    "<a href='#m_destination'>destination</a>": [&ltString&gt],
-   "<a href='#m_protocol'>protocol</a>": 'NFS' | 'SMB' | 'UNKNOWN',
+   "<a href='#m_protocol'>protocol</a>": 'NFS' | 'SMB' | 'ASM' | 'UNKNOWN',
    "<a href='#m_source'>source</a>": [&ltString&gt],
 }
 </pre></td></tr></table><dl></dl>
@@ -27,8 +27,8 @@ function create_link(jax_path, path_name) {
  If overwrite is set, any existing destination files will be overwritten. If overwrite 
  is not set, then the op will fail if any of the destionation paths already exist. The 
  operation will always fail if there exists a directory in any of the destionation paths or
- if the parent directory of any of the destinations does not exist.</td></tr><tr><td id='m_protocol'>protocol</td><td>NFS | SMB | UNKNOWN</td><td>Data path protocol used for this rename's files.
- All files in a given rename must have the same protocol.<table class='info'><tr><td>NFS</td><td>Network File System protocol</td></tr><tr><td>SMB</td><td>Server Message Block protocol</td></tr><tr><td>UNKNOWN</td><td>Invalid type</td></tr></table></td></tr><tr><td id='m_source'>source</td><td>xsd:list[xsd:string]</td><td>Source file paths to use. See FileObject for a description of path requirements.
+ if the parent directory of any of the destinations does not exist.</td></tr><tr><td id='m_protocol'>protocol</td><td>NFS | SMB | ASM | UNKNOWN</td><td>Data path protocol used for this rename's files.
+ All files in a given rename must have the same protocol.<table class='info'><tr><td>NFS</td><td>Network File System protocol</td></tr><tr><td>SMB</td><td>Server Message Block protocol</td></tr><tr><td>ASM</td><td>ASM, introduced in v310.121.</td></tr><tr><td>UNKNOWN</td><td>Invalid type</td></tr></table></td></tr><tr><td id='m_source'>source</td><td>xsd:list[xsd:string]</td><td>Source file paths to use. See FileObject for a description of path requirements.
  If any of these paths are empty, the operation will fail with ResourceNotFound.</td></tr></tbody></table>
 
 <hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_overwrite'>overwrite</td><td>xsd:boolean</td><td>Should we overwrite destination files if they exist?</td></tr></tbody></table>

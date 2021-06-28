@@ -20,11 +20,11 @@ function create_link(jax_path, path_name) {
    "typeId": "com.tintri.api.rest.v310.dto.domain.beans.generic.FileObject",
    "<a href='#m_path'>path</a>": &ltString&gt,
    "<a href='#m_snapshotPath'>snapshotPath</a>": &ltString&gt,
-   "<a href='#m_protocol'>protocol</a>": 'NFS' | 'SMB' | 'UNKNOWN',
+   "<a href='#m_protocol'>protocol</a>": 'NFS' | 'SMB' | 'ASM' | 'UNKNOWN',
 }
 </pre></td></tr></table><dl></dl>
-<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_protocol'>protocol</td><td>NFS | SMB | UNKNOWN</td><td>Data path protocol used for this file's operations. 
- All files in a given InstanceObject must have the same protocol.<table class='info'><tr><td>NFS</td><td>Network File System protocol</td></tr><tr><td>SMB</td><td>Server Message Block protocol</td></tr><tr><td>UNKNOWN</td><td>Invalid type</td></tr></table></td></tr></tbody></table>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_protocol'>protocol</td><td>NFS | SMB | ASM | UNKNOWN</td><td>Data path protocol used for this file's operations. 
+ All files in a given InstanceObject must have the same protocol.<table class='info'><tr><td>NFS</td><td>Network File System protocol</td></tr><tr><td>SMB</td><td>Server Message Block protocol</td></tr><tr><td>ASM</td><td>ASM, introduced in v310.121.</td></tr><tr><td>UNKNOWN</td><td>Invalid type</td></tr></table></td></tr></tbody></table>
 
 <hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_path'>path</td><td>xsd:string</td><td>Path of the file. The path must be a normalized path, which does not contain '.' or '..' It must begin with '/'.
  There should only be one file with a given path in a given InstanceObject.<br> 

@@ -315,6 +315,12 @@ function create_link(jax_path, path_name) {
      <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceLacp.html">ApplianceLacp</a></tt> - The LACP configuration</td></td>
     </tr>
     <tr>
+     <td><a href="v310/appliance/{uuid}/lldp/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/lldp/index.html"><tt>/v310/appliance/{uuid}/lldp</tt></a></td>
+     <td>Returns the LLDP info for both controllers.</td>
+     <td><tt>VMstoreOnly - Since v310.121</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceLldpInfo.html">ApplianceLldpInfo</a>&gt;</tt> - the LLDP info for both controllers.</td></td>
+    </tr>
+    <tr>
      <td><a href="v310/appliance/{uuid}/maintenanceMode/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/appliance/{uuid}/maintenanceMode/index.html"><tt>/v310/appliance/{uuid}/maintenanceMode</tt></a></td>
      <td>Gets maintenance mode.</td>
@@ -348,13 +354,19 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/appliance/{uuid}/rebootSecondary/index.html#POST"><tt>POST</tt></a></td>
      <td><a href="v310/appliance/{uuid}/rebootSecondary/index.html"><tt>/v310/appliance/{uuid}/rebootSecondary</tt></a></td>
      <td>API to perform secondary reboot operation</td>
-     <td><tt>VMstoreOnly - Since v310.103</tt><td> </td><td><tt>void</tt></td></td>
+     <td><tt>VMstoreOnly - Since v310.121</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/restartAuthd/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/restartAuthd/index.html"><tt>/v310/appliance/{uuid}/restartAuthd</tt></a></td>
+     <td>Restart the AuthenticationService (authd).</td>
+     <td><tt>All - Since v310.121</tt><td> </td><td><tt>void</tt></td></td>
     </tr>
     <tr>
      <td><a href="v310/appliance/{uuid}/restartSnmp/index.html#POST"><tt>POST</tt></a></td>
      <td><a href="v310/appliance/{uuid}/restartSnmp/index.html"><tt>/v310/appliance/{uuid}/restartSnmp</tt></a></td>
      <td>Restart the snmp-agent.</td>
-     <td><tt>All - Since v310.103</tt><td> </td><td><tt>void</tt></td></td>
+     <td><tt>All - Since v310.121</tt><td> </td><td><tt>void</tt></td></td>
     </tr>
     <tr>
      <td><a href="v310/appliance/{uuid}/restartWebServer/index.html#POST"><tt>POST</tt></a></td>
@@ -1006,6 +1018,16 @@ function create_link(jax_path, path_name) {
      <td><tt>All</tt><td> </td><td><tt>Collection&lt;<a href="../../jaxb/v310/com/tintri/api/rest/vcommon/dto/rbac/GenericRestApiRole.html">GenericRestApiRole</a>&gt;</tt> - a collection of external groups from external directory service.</td></td>
     </tr>
     <tr>
+     <td><a href="v310/role/external/filter/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/role/external/filter/index.html"><tt>/v310/role/external/filter</tt></a></td>
+     <td>Returns a paginated collection of external groups containing the <b>name</b> query parameter up to the <b>limit</b> query parameter.</td>
+     <td><tt>All - Since v310.121</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated external groups <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/UserRoleFilterSpec.html", "UserRoleSpec");
+ </script> with list of items <script>
+ create_link("jaxb/v310/com/tintri/api/rest/vcommon/dto/rbac/GenericRestApiRole.html", "UserRole");
+ </script></td></td>
+    </tr>
+    <tr>
      <td><a href="v310/role/external/{id}/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/role/external/{id}/index.html"><tt>/v310/role/external/{id}</tt></a></td>
      <td>Returns an access control Role that matches the external group ID.</td>
@@ -1270,7 +1292,7 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/session/active/tintricenter/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/session/active/tintricenter/index.html"><tt>/v310/session/active/tintricenter</tt></a></td>
      <td>Returns a list of user sessions belongs to user=tintricenter.</td>
-     <td><tt>VMstoreOnly - Since v310.103</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/UserSession.html">UserSession</a>&gt;</tt> - list of tintricenter sessions</td></td>
+     <td><tt>VMstoreOnly - Since v310.111</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/UserSession.html">UserSession</a>&gt;</tt> - list of tintricenter sessions</td></td>
     </tr>
     <tr>
      <td><a href="v310/session/current/index.html#GET"><tt>GET</tt></a></td>
@@ -1325,7 +1347,7 @@ function create_link(jax_path, path_name) {
     <tr>
      <td><a href="v310/snapshot/index.html#DELETE"><tt>DELETE</tt></a></td>
      <td><a href="v310/snapshot/index.html"><tt>/v310/snapshot</tt></a></td>
-     <td>Removes snapshots that match given snapshot filter criteria in which vmUuid is a mandatory field.</td>
+     <td>Removes snapshots that belongs to a VM, which vmUuid is a mandatory field.</td>
      <td><tt>All</tt><td> </td><td><tt>String</tt> - formatted string response message about snapshot deletion.</td></td>
     </tr>
     <tr>
