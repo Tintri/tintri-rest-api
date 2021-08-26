@@ -624,9 +624,9 @@ function create_link(jax_path, path_name) {
     </tr>
     <tr>
      <td><a href="v310/datastore/{uuid}/customizationSpec/{vcenterName}/index.html#GET"><tt>GET</tt></a></td>
-     <td><a href="v310/datastore/{uuid}/customizationSpec/{vcenterName}/index.html"><tt>/v310/datastore/{uuid}/customizationSpec/{vcenterName}</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/customizationSpec/{vcenterName}/index.html"><tt>/v310/datastore/{uuid}/customizationSpec/{vcenterName}?refresh=…</tt></a></td>
      <td>Gets the customization specifications of the datastore for the specified vCenter.</td>
-     <td><tt>VMstoreOnly</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCustomizationSpec.html">VirtualMachineCustomizationSpec</a>&gt;</tt> - The list of virtual machone customaization specifications for the specified datastore and vCenter.</td></td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCustomizationSpec.html">VirtualMachineCustomizationSpec</a>&gt;</tt> - The list of virtual machine customization specifications for the specified datastore and vCenter.</td></td>
     </tr>
     <tr>
      <td><a href="v310/datastore/{uuid}/deleteAllCloudReplication/index.html#DELETE"><tt>DELETE</tt></a></td>
@@ -922,7 +922,7 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/datastore/{uuid}/testReplicationPath/index.html#POST"><tt>POST</tt></a></td>
      <td><a href="v310/datastore/{uuid}/testReplicationPath/index.html"><tt>/v310/datastore/{uuid}/testReplicationPath</tt></a></td>
      <td>Tests the specified replication link on the specified datastore instance.</td>
-     <td><tt>VMstoreOnly - Since v310.41</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/TestReplicationPath.html">TestReplicationPath</a>&gt;</tt> - The replication link to test.</td><td><tt>String</tt> - The result of the test. An empty string on success. If only encrypton is being tested then the reason for the failure is returned.</td></td>
+     <td><tt>All - Since v310.41</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/repl/TestReplicationPath.html">TestReplicationPath</a>&gt;</tt> - The replication link to test.</td><td><tt>String</tt> - The result of the test. An empty string on success. If only encrypton is being tested then the reason for the failure is returned.</td></td>
     </tr>
     <tr>
      <td><a href="v310/datastore/{uuid}/testSmbConfig/index.html#PUT"><tt>PUT</tt></a></td>
@@ -1386,7 +1386,21 @@ function create_link(jax_path, path_name) {
      <td>Return a paginated set of Tasks</td>
      <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
  create_link("jaxb/v310/com/tintri/api/rest/v310/dto/Task.html", "Task");
- </script> items.</td></td>
+ </script> items. <br /> <br /> <b>TGC Examples using refresh query parameter:</b> 
+       <ol> 
+        <li>Fetch tasks from all VMstores managed by TGC <br /> <pre>
+  /api/v310/task?refresh=true
+ </pre> </li> 
+        <li>Fetch tasks from a VMstore with TGC TintriUUID: TIN-87f37d16-8d9a-415e-8c98-d15cca6e4a37 <br /> <pre>
+  /api/v310/task?refresh=true&amp;vmstoreTintriIds=TIN-87f37d16-8d9a-415e-8c98-d15cca6e4a37
+ </pre> </li> 
+        <li>Fetch tasks from two VMstores with TGC TintriUUIDs: TIN-87f37d16-8d9a-415e-8c98-d15cca6e4a37 and TIN-5f41fd4f-f5de-4eae-a131-98645a3ca4f2<br /> <pre>
+  /api/v310/task?refresh=true&amp;vmstoreTintriIds=TIN-87f37d16-8d9a-415e-8c98-d15cca6e4a37,TIN-5f41fd4f-f5de-4eae-a131-98645a3ca4f2
+ </pre> </li> 
+        <li>Fetch a specific task using VMstore's task ID: cloneVM@07-01-18:43:03.653 <br /> <pre>
+  /api/v310/task?refresh=true&amp;vmstoreTaskId=cloneVM@07-01-18:43:03.653&amp;vmstoreTintriIds=TIN-87f37d16-8d9a-415e-8c98-d15cca6e4a37
+ </pre> </li> 
+       </ol></td></td>
     </tr>
     <tr>
      <td><a href="v310/task/{id}/index.html#DELETE"><tt>DELETE</tt></a></td>

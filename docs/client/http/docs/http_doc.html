@@ -266,6 +266,11 @@ currently documented.  API clients will have to be modified to obtain new Tintri
     <td>5.1.0.x</td>
     <td>5.2.x</td>
 </tr>
+<tr>
+    <td>v310.131</td>
+    <td>5.2.0.x</td>
+    <td>5.3.x</td>
+</tr>
 </table>
 
 <h3>Error Handling</h3>
@@ -817,13 +822,6 @@ Only the properties that are in <i>properyNames</i> for the specified object in
 
 <h2 id="known_issues">Known Issues</h2>
 <ol>
-  <li> Version v310.64 APIs are not in this release of v310.66.
-  </li>
-  <li>Fields are not shown to be read only or read/write; therefore, it is indeterminable
-      from the API documentation if a property can be changed.  If the property is not
-      writable, an error will be returned; for example, "Update of property localAlias is
-      not supported.".
-  </li>
   <li>In the TGC server, the values from the following fields are not valid from
       GET /v310/datastore:
       <ul>
@@ -862,13 +860,9 @@ Only the properties that are in <i>properyNames</i> for the specified object in
         <li>latest.vmUuid</li>
       </ul>
   </li>
-  <li>In the TGC server, ServiceGroup.members is empty from GET /v310/servicegroup.
-  </li>
   <li>In the TGC server, GET /v310/servicegroup/members returns an error without members.
       To obtain service group members, use the query string serviceGroupIds=&lt;service_group_ID&gt;
       for the GET /v310/vm API.
-  </li>
-  <li>In the TGC server, GET /v310/servicegroup/members/static returns an error without static members.
   </li>
   <li>GET /v310/alert does not return next and prev in the Page DTO
   </li>
