@@ -110,6 +110,12 @@ function create_link(jax_path, path_name) {
          "NotificationPolicy"); </script></td></td>
     </tr>
     <tr>
+     <td><a href="v310/alert/notificationPolicy/allowedUserAlertIds/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/alert/notificationPolicy/allowedUserAlertIds/index.html"><tt>/v310/alert/notificationPolicy/allowedUserAlertIds</tt></a></td>
+     <td>Returns a sorted list of user alert ID that allowed for Alert Notification Policy.</td>
+     <td><tt>All - Since v310.141</tt><td> </td><td><tt>List&lt;String&gt;</tt> -</td></td>
+    </tr>
+    <tr>
      <td><a href="v310/alert/notificationPolicy/{uuid}/index.html#PUT"><tt>PUT</tt></a></td>
      <td><a href="v310/alert/notificationPolicy/{uuid}/index.html"><tt>/v310/alert/notificationPolicy/{uuid}</tt></a></td>
      <td>Update an existing notification policy.</td>
@@ -269,8 +275,14 @@ function create_link(jax_path, path_name) {
     <tr>
      <td><a href="v310/appliance/{uuid}/expand/index.html#POST"><tt>POST</tt></a></td>
      <td><a href="v310/appliance/{uuid}/expand/index.html"><tt>/v310/appliance/{uuid}/expand</tt></a></td>
-     <td>Expands the storage capacity of the Tintri appliance after successful HA failover, the additional capacity will be added to realstore's single large RAID group.</td>
+     <td><b>Deprecated.</b> Expands the storage capacity of the Tintri appliance after successful HA failover, the additional capacity will be added to realstore's single large RAID group.</td>
      <td><tt>All - Since v310.53</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceCapacityErrorInfo.html">ApplianceCapacityErrorInfo</a></tt> - Error info if the Appliance capacity expansion request was not successfull otherwise null.</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/expand/async/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/expand/async/index.html"><tt>/v310/appliance/{uuid}/expand/async</tt></a></td>
+     <td>Expands the storage capacity of the Tintri appliance after successful HA failover, the additional capacity will be added to realstore's single large RAID group.</td>
+     <td><tt>VMstoreOnly - Since v310.141</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Task.html">Task</a></tt> - Task - status of the operation</td></td>
     </tr>
     <tr>
      <td><a href="v310/appliance/{uuid}/failedComponents/index.html#GET"><tt>GET</tt></a></td>
@@ -363,6 +375,12 @@ function create_link(jax_path, path_name) {
      <td><tt>All - Since v310.121</tt><td> </td><td><tt>void</tt></td></td>
     </tr>
     <tr>
+     <td><a href="v310/appliance/{uuid}/restartDb/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/restartDb/index.html"><tt>/v310/appliance/{uuid}/restartDb</tt></a></td>
+     <td>Restarts the application database.</td>
+     <td><tt>VMstoreOnly - Since v310.141</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
      <td><a href="v310/appliance/{uuid}/restartSnmp/index.html#POST"><tt>POST</tt></a></td>
      <td><a href="v310/appliance/{uuid}/restartSnmp/index.html"><tt>/v310/appliance/{uuid}/restartSnmp</tt></a></td>
      <td>Restart the snmp-agent.</td>
@@ -379,6 +397,12 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/appliance/{uuid}/rotateEncryptionKey/index.html"><tt>/v310/appliance/{uuid}/rotateEncryptionKey</tt></a></td>
      <td>Rotates the disk encryption key.</td>
      <td><tt>VMstoreOnly</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/rpcReport/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/rpcReport/index.html"><tt>/v310/appliance/{uuid}/rpcReport</tt></a></td>
+     <td>Generates a report of external RPC connection to filesystem in /var/log/tintri/rpc-connections-external.txt</td>
+     <td><tt>VMstoreOnly - Since v310.141</tt><td> </td><td><tt>void</tt></td></td>
     </tr>
     <tr>
      <td><a href="v310/appliance/{uuid}/shutdown/index.html#POST"><tt>POST</tt></a></td>
@@ -919,6 +943,19 @@ function create_link(jax_path, path_name) {
      <td><tt>VMstoreOnly - Since v310.64</tt><td> </td><td><tt>void</tt></td></td>
     </tr>
     <tr>
+     <td><a href="v310/datastore/{uuid}/tag/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/tag/index.html"><tt>/v310/datastore/{uuid}/tag</tt></a></td>
+     <td>Returns hypervisor tags in paginated form as specified by filter parameters in request.</td>
+     <td><tt>All - Since v310.141</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> -</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/tag/{tagId}/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/tag/{tagId}/index.html"><tt>/v310/datastore/{uuid}/tag/{tagId}</tt></a></td>
+     <td>Returns hypervisor tag information for tag with given tagId.</td>
+     <td><tt>All - Since v310.141</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/TagCollection.html">TagCollection</a>&gt;</tt> - List 
+       <tagcollection></tagcollection></td></td>
+    </tr>
+    <tr>
      <td><a href="v310/datastore/{uuid}/testReplicationPath/index.html#POST"><tt>POST</tt></a></td>
      <td><a href="v310/datastore/{uuid}/testReplicationPath/index.html"><tt>/v310/datastore/{uuid}/testReplicationPath</tt></a></td>
      <td>Tests the specified replication link on the specified datastore instance.</td>
@@ -1118,7 +1155,7 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/servicegroup/{id}/members/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/servicegroup/{id}/members/index.html"><tt>/v310/servicegroup/{id}/members</tt></a></td>
      <td>Return the service group members associcated with the specified ID..</td>
-     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script> create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/svg/ServiceGroupMember.html",
+     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script> create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/svg/ServiceGroupMember.html",
          "ServiceGroupMember"); </script> items.</td></td>
     </tr>
     <tr>
@@ -1543,7 +1580,7 @@ function create_link(jax_path, path_name) {
     <tr>
      <td><a href="v310/vm/filterScope/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/vm/filterScope/index.html"><tt>/v310/vm/filterScope</tt></a></td>
-     <td>Returns all filter properties</td>
+     <td>Returns available filter properties.</td>
      <td><tt>TgcOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/FilterScope.html">FilterScope</a></tt> - FilterScope</td></td>
     </tr>
     <tr>

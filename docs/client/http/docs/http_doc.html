@@ -271,6 +271,11 @@ currently documented.  API clients will have to be modified to obtain new Tintri
     <td>5.2.0.x</td>
     <td>5.3.x</td>
 </tr>
+<tr>
+    <td>v310.141</td>
+    <td>5.3.0.x</td>
+    <td>5.3.x</td>
+</tr>
 </table>
 
 <h3>Error Handling</h3>
@@ -820,53 +825,45 @@ Only the properties that are in <i>properyNames</i> for the specified object in
     </tr>
 </table>
 
-<h2 id="known_issues">Known Issues</h2>
-<ol>
-  <li>In the TGC server, the values from the following fields are not valid from
-      GET /v310/datastore:
-      <ul>
-        <li>stat.replicationIncoming.pathCount</li>
-        <li>stat.replicationIncoming.throughputPhysicalMBpsday</li>
-        <li>stat.flashMissMBpsPercent</li>
-        <li>stat.throughputCacheReadMBps</li>
-        <li>stat.timeEndMs</li>
-        <li>stat.timeStartMs</li>
-      </ul>
-  </li>
-  <li>In the TGC server, the field, storageContainers.hypervisorType is missing from GET /v310/datastore.
-  </li>
-  <li>In the TGC server, VirtualMachine.snapshot.latestReplicated is missing
-      from GET /v310/vm.
-  </li>
-  <li>In the TGC server, VirtualMachine.snapshot is missing the following fields
-      from GET /v310/vm.
-      <ul>
-        <li>latest.cloneReferenceCount</li>
-        <li>latest.createTime</li>
-        <li>latest.creatorName</li>
-        <li>latest.expirationTime</li>
-        <li>latest.id</li>
-        <li>latest.lastUpdatedtime</li>
-        <li>latest.localAlias</li>
-        <li>latest.replicaRetentionMinutes</li>
-        <li>latest.replicationId</li>
-        <li>latest.sizeChangedMB</li>
-        <li>latest.sizeChangedPhysicalMB</li>
-        <li>latest.timeDeleted</li>
-        <li>latest.vcenterInstanceUuid</li>
-        <li>latest.deletionPolicy</li>
-        <li>latest.snapshotComposition</li>
-        <li>latest.uuid</li>
-        <li>latest.vmUuid</li>
-      </ul>
-  </li>
-  <li>In the TGC server, GET /v310/servicegroup/members returns an error without members.
-      To obtain service group members, use the query string serviceGroupIds=&lt;service_group_ID&gt;
-      for the GET /v310/vm API.
-  </li>
-  <li>GET /v310/alert does not return next and prev in the Page DTO
-  </li>
-</ol>
+<h2 id="new_apis">New APIs for v310.141</h2>
+<table>
+    <tr>
+        <td>GET</td>
+        <td>/v310/datastore/{uuid}/tag</td>
+        <td>Returns hypervisor tags in paginated form as specified by filter parameters in request.</td>
+        <td>All</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td>/v310/datastore/{uuid}/tag/{tagId}</td>
+        <td>Returns hypervisor tag information for given {tagId}.</td>
+        <td>All</td>
+    </tr>
+    <tr>
+        <td>POST</td>
+        <td>/v310/appliance/{uuid}/rpcReport</td>
+        <td>Generates a report of external RPC connections to filesystem in /var/log/tintri/rpc-connections-external.txt</td>
+        <td>VMstoreOnly</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td>/v310/alert/notificationPolicy/allowedUserAlertIds</td>
+        <td>Returns a sorted list of user alert IDs that are allowed for Alert Notification Policy. The sort order is ascending.</td>
+        <td>All</td>
+    </tr>
+    <tr>
+        <td>POST</td>
+        <td>/v310/appliance/{uuid}/expand/async</td>
+        <td>Expands the storage capacity of the Tintri appliance in asynchronous way. Progress can be monitored using /v310/task/{task-id} api.</td>
+        <td>VMstoreOnly</td>
+    </tr>
+    <tr>
+        <td>POST</td>
+        <td>/v310/appliance/{uuid}/restartDb</td>
+        <td>Restarts the application database.</td>
+        <td>VMstoreOnly</td>
+    </tr>
+</table>
 
 <h2 id="resources_header">Resources</h2>
 <p>
