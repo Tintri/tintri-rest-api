@@ -276,6 +276,11 @@ currently documented.  API clients will have to be modified to obtain new Tintri
     <td>5.3.0.x</td>
     <td>5.3.x</td>
 </tr>
+<tr>
+    <td>v310.151</td>
+    <td>5.4.0.x</td>
+    <td>5.4.x</td>
+</tr>
 </table>
 
 <h3>Error Handling</h3>
@@ -862,6 +867,34 @@ Only the properties that are in <i>properyNames</i> for the specified object in
         <td>/v310/appliance/{uuid}/restartDb</td>
         <td>Restarts the application database.</td>
         <td>VMstoreOnly</td>
+    </tr>
+</table>
+
+<h2 id="new_apis">New APIs for v310.151</h2>
+<table>
+    <tr>
+        <td>GET</td>
+        <td>/v310/appliance/authProvider</td>
+        <td>Returns the current Identity Providers configurations. Used to create the authorize request to the Id provider as part of the Authorization Code Grant workflow</td>
+        <td>TgcOnly</td>
+    </tr>
+    <tr>
+        <td>POST</td>
+        <td>/v310/appliance/authProvider</td>
+        <td>Create the Authentication Provider which contains the OAuth 2 configurations used to SSO authenticate the user.</td>
+        <td>TgcOnly</td>
+    </tr>
+    <tr>
+        <td>PUT</td>
+        <td>/v310/appliance/authProvider</td>
+        <td>Update the Auth Provider.  All provided fields will be used to update the object.</td>
+        <td>TgcOnly</td>
+    </tr>
+    <tr>
+        <td>DELETE</td>
+        <td>/v310/appliance/authProvider</td>
+        <td>Delete the auth provider</td>
+        <td>TgcOnly</td>
     </tr>
 </table>
 
