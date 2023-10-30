@@ -20,9 +20,11 @@ function create_link(jax_path, path_name) {
    "<a href='#m_authCode'>authCode</a>": &ltString&gt,
    "<a href='#m_test'>test</a>": &ltBoolean&gt,
    "<a href='#m_accessToken'>accessToken</a>": &ltString&gt,
+   "<a href='#m_idToken'>idToken</a>": &ltString&gt,
 }
 </pre></td></tr></table><dl></dl>
-<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_accessToken'>accessToken</td><td>xsd:string</td><td>The access token. This value is not set by the user but is gotten from the token endpoint for use in creating a user session.</td></tr></tbody></table>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_accessToken'>accessToken</td><td>xsd:string</td><td>The access token. This value is not set by the user but is gotten from the token endpoint for use in creating a user session.</td></tr><tr><td id='m_idToken'>idToken</td><td>xsd:string</td><td>The id token. This value is not set by the user but is gotten from the token endpoint for use in creating a user session.
+ <p></td></tr></tbody></table>
 
 <hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_authCode'>authCode</td><td>xsd:string</td><td>The <a href="https://datatracker.ietf.org/doc/html/rfc6749#section-3.2.1">authorization code</a> response sent to
  the redirect uri as part of the Authorization Code Grant workflow.</td></tr><tr><td id='m_test'>test</td><td>xsd:boolean</td><td>True user authentication without creating a session, used to test the login endpoint

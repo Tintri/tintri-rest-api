@@ -1,0 +1,58 @@
+<HTML><HEAD><TITLE>XML element TceDeploymentConfig</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: TceDeploymentConfig</h2>Cloud configurations needed to complete a Tce Virtual Machine Deployment workflow.
+ Get request body cloud settings using the
+ <script>
+  create_link("jaxrs/v310/v310/vmstore/TceDeployment/account/index.html#POST", "/TceDeployment/account")
+ </script>
+  endpoint.
+
+ <br>
+ <b>Sample inputs:</b>
+ <ol>
+ <li> Create Tce Deployment Workflow full OOB <br>
+ POST /v310/vmstore/TceDeployment<br>
+ Body:<br><table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.TceDeploymentConfig",
+   "<a href='#m_accountId'>accountId</a>": &ltString&gt,
+   "<a href='#m_completeOob'>completeOob</a>": &ltBoolean&gt,
+   "<a href='#m_tintriTagValue'>tintriTagValue</a>": &ltString&gt,
+   "<a href='#m_vmstoreUuid'>vmstoreUuid</a>": &ltString&gt,
+   "<a href='#m_adminSubnet'>adminSubnet</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/NameIdPair.html'>NameIdPair</a>,
+   "<a href='#m_applianceSettings'>applianceSettings</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/v1/tcoms/ApplianceSettings.html'>ApplianceSettings</a>,
+   "<a href='#m_dataSubnet'>dataSubnet</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/NameIdPair.html'>NameIdPair</a>,
+   "<a href='#m_imageId'>imageId</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/NameIdPair.html'>NameIdPair</a>,
+   "<a href='#m_keyPair'>keyPair</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/NameIdPair.html'>NameIdPair</a>,
+   "<a href='#m_securityGroup'>securityGroup</a>": <a href='../../../../../../../com/tintri/api/rest/v310/dto/NameIdPair.html'>NameIdPair</a>,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_adminSubnet'>adminSubnet</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/NameIdPair.html'>NameIdPair</a></td><td>The subnet associated with Tintri Cloud Engine's admin network interface.</td></tr><tr><td id='m_applianceSettings'>applianceSettings</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/v1/tcoms/ApplianceSettings.html'>ApplianceSettings</a></td><td>TCOMs OOB data</td></tr><tr><td id='m_dataSubnet'>dataSubnet</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/NameIdPair.html'>NameIdPair</a></td><td>The subnet associated with Tintri Cloud Engine's data network interface.</td></tr><tr><td id='m_imageId'>imageId</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/NameIdPair.html'>NameIdPair</a></td><td>AMI of the Tintri Cloud Engine (TCE)
+ </p>
+ TGC's AMI filter requires the AMI to have a TintriTCE tag. Any value may be used.</td></tr><tr><td id='m_keyPair'>keyPair</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/NameIdPair.html'>NameIdPair</a></td><td>The key pair used for ssh access to the instance</td></tr><tr><td id='m_securityGroup'>securityGroup</td><td><a href='../../../../../../../com/tintri/api/rest/v310/dto/NameIdPair.html'>NameIdPair</a></td><td>The cloud security group defining the input/output access rules for the
+ virtual vmstore</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_accountId'>accountId</td><td>xsd:string</td><td>Hashed cloud credentials
+ accountId = hash( accessKey, secretKey, region )</td></tr><tr><td id='m_completeOob'>completeOob</td><td>xsd:boolean</td><td>Expresses the user's intent: if "true", add the Tce after completing OOB; if "false", stop before completing OOB by adding TCOMS only.
+ <p>
+ Default: false</td></tr><tr><td id='m_tintriTagValue'>tintriTagValue</td><td>xsd:string</td><td>The user provided tag value.
+ Overrides web.xml com.tintri.cloud.tag.Tce.general.value for this Tce deployment</td></tr><tr><td id='m_vmstoreUuid'>vmstoreUuid</td><td>xsd:string</td><td>Uuid of an existing Virtual VMstore.
+ <p>
+ If provided the Tce Deployment workflow will assume you already
+ added a Virtual VMstore with TCOMS only and will
+ proceed to complete the OOB process.</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

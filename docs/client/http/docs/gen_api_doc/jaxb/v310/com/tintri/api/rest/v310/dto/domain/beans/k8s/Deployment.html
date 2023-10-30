@@ -1,0 +1,43 @@
+<HTML><HEAD><TITLE>XML element Deployment</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: Deployment</h2>Represents a k8s Deployment<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.k8s.Deployment",
+   "<a href='#m_clusterName'>clusterName</a>": &ltString&gt,
+   "<a href='#m_creationTime'>creationTime</a>": <a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_hypervisorName'>hypervisorName</a>": &ltString&gt,
+   "<a href='#m_labelSelector'>labelSelector</a>": &ltString&gt,
+   "<a href='#m_lastUpdatedTime'>lastUpdatedTime</a>": <a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_name'>name</a>": &ltString&gt,
+   "<a href='#m_namespace'>namespace</a>": &ltString&gt,
+   "<a href='#m_paused'>paused</a>": &ltBoolean&gt,
+   "<a href='#m_replicas'>replicas</a>": &ltNumber&gt,
+   "<a href='#m_uuid'>uuid</a>": &ltString&gt,
+   "<a href='#m_vmInstanceUuid'>vmInstanceUuid</a>": &ltString&gt,
+   "<a href='#m_vmName'>vmName</a>": &ltString&gt,
+   "<a href='#m_vmTintriUuid'>vmTintriUuid</a>": &ltString&gt,
+   "<a href='#m_annotations'>annotations</a>": java.util.Map,
+   "<a href='#m_labels'>labels</a>": java.util.Map,
+   "<a href='#m_podUuids'>podUuids</a>": [&ltString&gt],
+   "<a href='#m_status'>status</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/k8s/DeploymentStatus.html'>DeploymentStatus</a>,
+   "<a href='#m_updateStrategy'>updateStrategy</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/k8s/DeploymentUpdateStrategy.html'>DeploymentUpdateStrategy</a>,
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_annotations'>annotations</td><td>java.util.Map</td><td>Annotations assigned to the k8s entity</td></tr><tr><td id='m_labels'>labels</td><td>java.util.Map</td><td>Labels assigned to the k8s entity</td></tr><tr><td id='m_podUuids'>podUuids</td><td>xsd:list[xsd:string]</td><td>Uuids of pods that are selected by the deployment</td></tr><tr><td id='m_status'>status</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/k8s/DeploymentStatus.html'>DeploymentStatus</a></td><td>Deployment status</td></tr><tr><td id='m_updateStrategy'>updateStrategy</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/k8s/DeploymentUpdateStrategy.html'>DeploymentUpdateStrategy</a></td><td>Deployment update strategy</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_clusterName'>clusterName</td><td>xsd:string</td><td>k8s cluster name of the entity</td></tr><tr><td id='m_creationTime'>creationTime</td><td><a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Deployment creation time</td></tr><tr><td id='m_hypervisorName'>hypervisorName</td><td>xsd:string</td><td>Name of hypervisor managing the worker VM</td></tr><tr><td id='m_labelSelector'>labelSelector</td><td>xsd:string</td><td>Label selector expression for selecting pods</td></tr><tr><td id='m_lastUpdatedTime'>lastUpdatedTime</td><td><a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Last update date/time</td></tr><tr><td id='m_name'>name</td><td>xsd:string</td><td>Entity name</td></tr><tr><td id='m_namespace'>namespace</td><td>xsd:string</td><td>Entity namespace</td></tr><tr><td id='m_paused'>paused</td><td>xsd:boolean</td><td>Indicates whether a deployment is paused</td></tr><tr><td id='m_replicas'>replicas</td><td>xsd:int</td><td>Number of replicas for the deployment</td></tr><tr><td id='m_uuid'>uuid</td><td>xsd:string</td><td>Entity's uuid</td></tr><tr><td id='m_vmInstanceUuid'>vmInstanceUuid</td><td>xsd:string</td><td>Instance uuid of the worker node VM</td></tr><tr><td id='m_vmName'>vmName</td><td>xsd:string</td><td>Name of the worker/control node VM</td></tr><tr><td id='m_vmTintriUuid'>vmTintriUuid</td><td>xsd:string</td><td>Tintri uuid of the worker node VM</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>

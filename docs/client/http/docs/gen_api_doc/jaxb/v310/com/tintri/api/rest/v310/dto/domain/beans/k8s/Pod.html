@@ -1,0 +1,42 @@
+<HTML><HEAD><TITLE>XML element Pod</TITLE>
+<SCRIPT>
+
+// Create a static link.
+// jax_path:  should start with 'jaxrs' or 'jaxb'.  There is NO checking
+// path_name: is the name of the link
+function create_link(jax_path, path_name) {
+    var curr_path = window.location.href;
+    var path = curr_path.split(/jaxb|jaxr/)[0];
+
+    var static_url = path + jax_path;
+    document.write('<a href="' + static_url + '">' + path_name + '</a>');
+}
+</SCRIPT>
+<LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</HEAD>
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: Pod</h2>Represents a k8s Pod<table class='examples'><tr><td><br>
+<b>Data Structure</b><pre>{
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.k8s.Pod",
+   "<a href='#m_clusterName'>clusterName</a>": &ltString&gt,
+   "<a href='#m_creationTime'>creationTime</a>": <a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_hypervisorName'>hypervisorName</a>": &ltString&gt,
+   "<a href='#m_lastUpdatedTime'>lastUpdatedTime</a>": <a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_name'>name</a>": &ltString&gt,
+   "<a href='#m_namespace'>namespace</a>": &ltString&gt,
+   "<a href='#m_owner'>owner</a>": &ltString&gt,
+   "<a href='#m_ownerKind'>ownerKind</a>": &ltString&gt,
+   "<a href='#m_ownerUuid'>ownerUuid</a>": &ltString&gt,
+   "<a href='#m_uuid'>uuid</a>": &ltString&gt,
+   "<a href='#m_vmInstanceUuid'>vmInstanceUuid</a>": &ltString&gt,
+   "<a href='#m_vmName'>vmName</a>": &ltString&gt,
+   "<a href='#m_vmTintriUuid'>vmTintriUuid</a>": &ltString&gt,
+   "<a href='#m_annotations'>annotations</a>": java.util.Map,
+   "<a href='#m_labels'>labels</a>": java.util.Map,
+   "<a href='#m_status'>status</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/k8s/PodStatus.html'>PodStatus</a>,
+   "<a href='#m_volumes'>volumes</a>": [<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/k8s/Volume.html'>Volume</a>],
+}
+</pre></td></tr></table><dl></dl>
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_annotations'>annotations</td><td>java.util.Map</td><td>Annotations assigned to the k8s entity</td></tr><tr><td id='m_labels'>labels</td><td>java.util.Map</td><td>Labels assigned to the k8s entity</td></tr><tr><td id='m_status'>status</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/k8s/PodStatus.html'>PodStatus</a></td><td>Pod status</td></tr><tr><td id='m_volumes'>volumes</td><td>xsd:list[<a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/k8s/Volume.html'>Volume</a>]</td><td>Volumes attached to the pod</td></tr></tbody></table>
+
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_clusterName'>clusterName</td><td>xsd:string</td><td>k8s cluster name of the entity</td></tr><tr><td id='m_creationTime'>creationTime</td><td><a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Pod creation time</td></tr><tr><td id='m_hypervisorName'>hypervisorName</td><td>xsd:string</td><td>Name of hypervisor managing the worker VM</td></tr><tr><td id='m_lastUpdatedTime'>lastUpdatedTime</td><td><a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Last update date/time</td></tr><tr><td id='m_name'>name</td><td>xsd:string</td><td>Entity name</td></tr><tr><td id='m_namespace'>namespace</td><td>xsd:string</td><td>Entity namespace</td></tr><tr><td id='m_owner'>owner</td><td>xsd:string</td><td>Pod owner</td></tr><tr><td id='m_ownerKind'>ownerKind</td><td>xsd:string</td><td>Type of pod owner. E.g. 'ReplicaSet'</td></tr><tr><td id='m_ownerUuid'>ownerUuid</td><td>xsd:string</td><td>Uuid of the pod owner. If owner kind is 'ReplicaSet', it is uuid of the ReplicaSet</td></tr><tr><td id='m_uuid'>uuid</td><td>xsd:string</td><td>Entity's uuid</td></tr><tr><td id='m_vmInstanceUuid'>vmInstanceUuid</td><td>xsd:string</td><td>Instance uuid of the worker node VM</td></tr><tr><td id='m_vmName'>vmName</td><td>xsd:string</td><td>Name of the worker/control node VM</td></tr><tr><td id='m_vmTintriUuid'>vmTintriUuid</td><td>xsd:string</td><td>Tintri uuid of the worker node VM</td></tr></tbody></table>
+<hr/><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><hr/><div class='footer'>Generated by <i>Lunatech Labs jax-doclets v0.8</i></div></BODY></HTML>
