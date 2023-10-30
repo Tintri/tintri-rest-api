@@ -278,8 +278,18 @@ currently documented.  API clients will have to be modified to obtain new Tintri
 </tr>
 <tr>
     <td>v310.151</td>
-    <td>5.4.0.x</td>
     <td>5.4.x</td>
+    <td>5.4.x</td>
+</tr>
+<tr>
+    <td>v310.161</td>
+    <td>NA</td>
+    <td>5.5.0.x</td>
+</tr>
+<tr>
+    <td>v310.171</td>
+    <td>5.4.2.x</td>
+    <td>5.5.2.x</td>
 </tr>
 </table>
 
@@ -870,31 +880,52 @@ Only the properties that are in <i>properyNames</i> for the specified object in
     </tr>
 </table>
 
-<h2 id="new_apis">New APIs for v310.151</h2>
+<h2 id="new_apis">New APIs for v310.171</h2>
 <table>
     <tr>
         <td>GET</td>
-        <td>/v310/appliance/authProvider</td>
-        <td>Returns the current Identity Providers configurations. Used to create the authorize request to the Id provider as part of the Authorization Code Grant workflow</td>
-        <td>TgcOnly</td>
+        <td>/v310/datastore/{uuid}/hypervisorManagerConfig/{managerId}</td>
+        <td>
+            Gets hypervisor manager configuration for given manager id and optionally refreshes the manager.
+            If refresh is requested, API call is blocked until refresh completes.
+        </td>
+        <td>VMstoreOnly</td>
     </tr>
     <tr>
-        <td>POST</td>
-        <td>/v310/appliance/authProvider</td>
-        <td>Create the Authentication Provider which contains the OAuth 2 configurations used to SSO authenticate the user.</td>
-        <td>TgcOnly</td>
+        <td>GET</td>
+        <td>/v310/datastore/{uuid}/k8s/pod</td>
+        <td>Returns k8s pods.</td>
+        <td>All</td>
     </tr>
     <tr>
-        <td>PUT</td>
-        <td>/v310/appliance/authProvider</td>
-        <td>Update the Auth Provider.  All provided fields will be used to update the object.</td>
-        <td>TgcOnly</td>
+        <td>GET</td>
+        <td>/v310/datastore/{uuid}/k8s/container</td>
+        <td>Returns k8s containers.</td>
+        <td>All</td>
     </tr>
     <tr>
-        <td>DELETE</td>
-        <td>/v310/appliance/authProvider</td>
-        <td>Delete the auth provider</td>
-        <td>TgcOnly</td>
+        <td>GET</td>
+        <td>/v310/datastore/{uuid}/k8s/pv</td>
+        <td>Returns k8s Persistent Volumes.</td>
+        <td>All</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td>/v310/datastore/{uuid}/k8s/pvc</td>
+        <td>Returns k8s Persistent Volume Claims.</td>
+        <td>All</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td>/v310/datastore/{uuid}/k8s/namespace</td>
+        <td>Returns k8s Namespaces.</td>
+        <td>All</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td>/v310/datastore/{uuid}/k8s/deployment</td>
+        <td>Returns k8s Deployments.</td>
+        <td>All</td>
     </tr>
 </table>
 

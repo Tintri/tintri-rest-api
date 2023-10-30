@@ -791,6 +791,12 @@ function create_link(jax_path, path_name) {
      <td><tt>VMstoreOnly - Since v310.21</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/HypervisorManagerConfig.html">HypervisorManagerConfig</a>&gt;</tt> - - HypervisorManagerConfig with new username/password or both</td><td><tt>void</tt></td></td>
     </tr>
     <tr>
+     <td><a href="v310/datastore/{uuid}/hypervisorManagerConfig/{managerId}/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/hypervisorManagerConfig/{managerId}/index.html"><tt>/v310/datastore/{uuid}/hypervisorManagerConfig/{managerId}?refresh=…</tt></a></td>
+     <td>Gets hypervisor manager configuration for given manager id and optionally refreshes the manager.</td>
+     <td><tt>VMstoreOnly - Since v310.171</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/HypervisorManagerConfig.html">HypervisorManagerConfig</a></tt> - the hypervisor manager config</td></td>
+    </tr>
+    <tr>
      <td><a href="v310/datastore/{uuid}/hypervisorManagerStatus/index.html#POST"><tt>POST</tt></a></td>
      <td><a href="v310/datastore/{uuid}/hypervisorManagerStatus/index.html"><tt>/v310/datastore/{uuid}/hypervisorManagerStatus</tt></a></td>
      <td>Ping hypervisor managers configured on the Datastore</td>
@@ -801,6 +807,42 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/datastore/{uuid}/hypervisorManagersFromAD/index.html"><tt>/v310/datastore/{uuid}/hypervisorManagersFromAD</tt></a></td>
      <td>Find potential Hyper-V hosts from Active Directory that this Datastore can manage.</td>
      <td><tt>VMstoreOnly - Since v310.31</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/HypervisorManagerConfig.html">HypervisorManagerConfig</a>&gt;</tt> - Status of the find calls to potential hypervisor managers</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/k8s/container/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/k8s/container/index.html"><tt>/v310/datastore/{uuid}/k8s/container</tt></a></td>
+     <td>Returns k8s containers in paginated form as specified by filter parameters in request.</td>
+     <td><tt>All - Since v310.171</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> -</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/k8s/deployment/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/k8s/deployment/index.html"><tt>/v310/datastore/{uuid}/k8s/deployment</tt></a></td>
+     <td>Returns k8s deployments in paginated form as specified by filter parameters in request.</td>
+     <td><tt>All - Since v310.171</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> -</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/k8s/namespace/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/k8s/namespace/index.html"><tt>/v310/datastore/{uuid}/k8s/namespace</tt></a></td>
+     <td>Returns k8s namespaces in paginated form as specified by filter parameters in request.</td>
+     <td><tt>All - Since v310.171</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> -</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/k8s/pod/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/k8s/pod/index.html"><tt>/v310/datastore/{uuid}/k8s/pod</tt></a></td>
+     <td>Returns k8s pods in paginated form as specified by filter parameters in request.</td>
+     <td><tt>All - Since v310.171</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> -</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/k8s/pv/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/k8s/pv/index.html"><tt>/v310/datastore/{uuid}/k8s/pv</tt></a></td>
+     <td>Returns k8s persistent volumes in paginated form as specified by filter parameters in request.</td>
+     <td><tt>All - Since v310.171</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> -</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/k8s/pvc/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/k8s/pvc/index.html"><tt>/v310/datastore/{uuid}/k8s/pvc</tt></a></td>
+     <td>Returns k8s persistent volume claims in paginated form as specified by filter parameters in request.</td>
+     <td><tt>All - Since v310.171</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> -</td></td>
     </tr>
     <tr>
      <td><a href="v310/datastore/{uuid}/nfsaccess/index.html#GET"><tt>GET</tt></a></td>
@@ -1403,19 +1445,19 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/snapshot/index.html#POST"><tt>POST</tt></a></td>
      <td><a href="v310/snapshot/index.html"><tt>/v310/snapshot</tt></a></td>
      <td>Takes a manual snapshot for a list of VMs.</td>
-     <td><tt>All</tt><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/snapshot/SnapshotSpec.html">SnapshotSpec</a>&gt;</tt></td><td><tt>List&lt;String&gt;</tt> - a list of Snapshot Tintri UUIDs</td></td>
+     <td><tt>VMstoreOnly</tt><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/snapshot/SnapshotSpec.html">SnapshotSpec</a>&gt;</tt></td><td><tt>List&lt;String&gt;</tt> - a list of Snapshot Tintri UUIDs</td></td>
     </tr>
     <tr>
      <td><a href="v310/snapshot/index.html#DELETE"><tt>DELETE</tt></a></td>
      <td><a href="v310/snapshot/index.html"><tt>/v310/snapshot</tt></a></td>
      <td>Removes snapshots that belongs to a VM, which vmUuid is a mandatory field.</td>
-     <td><tt>All</tt><td> </td><td><tt>String</tt> - formatted string response message about snapshot deletion.</td></td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt>String</tt> - formatted string response message about snapshot deletion.</td></td>
     </tr>
     <tr>
      <td><a href="v310/snapshot/remote/{tintriUuid}/{instanceId}/index.html#DELETE"><tt>DELETE</tt></a></td>
      <td><a href="v310/snapshot/remote/{tintriUuid}/{instanceId}/index.html"><tt>/v310/snapshot/remote/{tintriUuid}/{instanceId}</tt></a></td>
      <td>Removes remote snapshot resource identified by snapshot Tintri UUID, for example on cloud.</td>
-     <td><tt>All</tt><td> </td><td><tt>String</tt> - formatted string response message about snapshot deletion.</td></td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt>String</tt> - formatted string response message about snapshot deletion.</td></td>
     </tr>
     <tr>
      <td><a href="v310/snapshot/restore/index.html#POST"><tt>POST</tt></a></td>
@@ -1427,19 +1469,19 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/snapshot/{tintriSnapshotUuid}/disks/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/snapshot/{tintriSnapshotUuid}/disks/index.html"><tt>/v310/snapshot/{tintriSnapshotUuid}/disks</tt></a></td>
      <td>Fetches disks of a snapshot.</td>
-     <td><tt>All - Since v310.21</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/VirtualDisk.html">VirtualDisk</a>&gt;</tt> - the VirtualDisk objects of snapshot.</td></td>
+     <td><tt>VMstoreOnly - Since v310.21</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/VirtualDisk.html">VirtualDisk</a>&gt;</tt> - the VirtualDisk objects of snapshot.</td></td>
     </tr>
     <tr>
      <td><a href="v310/snapshot/{tintriUuid}/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/snapshot/{tintriUuid}/index.html"><tt>/v310/snapshot/{tintriUuid}</tt></a></td>
      <td>Fetches a snapshot by Tintri UUID.</td>
-     <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/Snapshot.html">Snapshot</a></tt> - the particular snapshot as specified by snapshotId in the URI in the form of a Tintri UUID.</td></td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/Snapshot.html">Snapshot</a></tt> - the particular snapshot as specified by snapshotId in the URI in the form of a Tintri UUID.</td></td>
     </tr>
     <tr>
      <td><a href="v310/snapshot/{tintriUuid}/index.html#DELETE"><tt>DELETE</tt></a></td>
      <td><a href="v310/snapshot/{tintriUuid}/index.html"><tt>/v310/snapshot/{tintriUuid}</tt></a></td>
      <td>Removes snapshot resource identified by snapshot Tintri UUID.</td>
-     <td><tt>All</tt><td> </td><td><tt>String</tt> - formatted string response message about snapshot deletion.</td></td>
+     <td><tt>VMstoreOnly</tt><td> </td><td><tt>String</tt> - formatted string response message about snapshot deletion.</td></td>
     </tr>
     <tr>
      <td><a href="v310/task/index.html#GET"><tt>GET</tt></a></td>

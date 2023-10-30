@@ -14,6 +14,7 @@ com.tintri.api.rest.v310.dto.domain.beans.connectivity
 com.tintri.api.rest.v310.dto.domain.beans.snmp
 com.tintri.api.rest.v310.dto.domain.beans.loadbalance.recommendation
 com.tintri.api.rest.v310.dto.domain.beans.file
+com.tintri.api.rest.v310.dto.domain.beans.v1.tcoms
 com.tintri.api.rest.v310.dto.domain.beans.xenserver
 org.joda.time
 com.tintri.api.rest.v310.dto.domain.beans.repl
@@ -21,6 +22,7 @@ com.tintri.api.rest.v310.dto.domain.beans
 com.tintri.api.rest.v310.dto.domain.beans.syncrepl.common
 com.tintri.api.rest.v310.dto.domain.beans.perf
 com.tintri.api.rest.v310.dto.domain.beans.profiler.phasetimer
+com.tintri.api.rest.v310.dto.domain.beans.k8s
 com.tintri.api.rest.vcommon.dto.rbac
 com.tintri.api.rest.v310.dto.domain.beans.rbac.role
 com.tintri.api.rest.v310.dto.domain.beans.svg

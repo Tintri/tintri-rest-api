@@ -25,11 +25,11 @@ function create_link(jax_path, path_name) {
    "<a href='#m_vCenterName'>vCenterName</a>": &ltString&gt,
 }
 </pre></td></tr></table><dl></dl>
-<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_cloneVmName'>cloneVmName</td><td>xsd:string</td><td>Name for the new VM resource.</td></tr><tr><td id='m_customizationScript'>customizationScript</td><td>xsd:string</td><td>An optional customization script to be executed after the clone is finished.</td></tr><tr><td id='m_datastoreName'>datastoreName</td><td>xsd:string</td><td>Datastore name of the destination datastore, where the newly cloned VM to be created.</td></tr><tr><td id='m_folderMoref'>folderMoref</td><td>xsd:string</td><td>If specified, the folderMoref identifies the the same folder (for the cloned VM) as that of the source VM. 
+<hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_cloneVmName'>cloneVmName</td><td>xsd:string</td><td>Name for the new VM resource.</td></tr><tr><td id='m_customizationScript'>customizationScript</td><td>xsd:string</td><td>An optional customization script to be executed after the clone is finished.</td></tr><tr><td id='m_datastoreName'>datastoreName</td><td>xsd:string</td><td>Datastore name of the destination datastore, where the newly cloned VM to be created.</td></tr><tr><td id='m_folderMoref'>folderMoref</td><td>xsd:string</td><td>If specified, the folderMoref identifies the the same folder (for the cloned VM) as that of the source VM.
  Otherwise, the new VM is placed in the default folder of the datacenter.</td></tr><tr><td id='m_hostClusterMoref'>hostClusterMoref</td><td>xsd:string</td><td>VMWare ID for the destination virtual node (Host, Resource Pool, Cluster, Folder, etc).
  Optional field for clone from VM/Snapshot to the local datastore.</td></tr><tr><td id='m_vCenterName'>vCenterName</td><td>xsd:string</td><td>Hostname of the destination vCenter, where the newly cloned VM to be created.
- The vcenter host name must be a 'COMPUTE' resource which can be verified by using the 
- output from the 
+ The vcenter host name must be a 'COMPUTE' resource which can be verified by using the
+ output from the
  <script>
  create_link("jaxrs/v310/v310/datastore/%7Buuid%7D/hostResources/index.html", "host resource API")
  </script>
