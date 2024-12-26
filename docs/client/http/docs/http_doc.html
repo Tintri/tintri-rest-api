@@ -172,6 +172,16 @@ additional response keys.
 <p>
 With this in mind, clients should avoid passing undocumented parameters and accept keys that are not
 currently documented.  API clients will have to be modified to obtain new Tintri features.
+<p>
+From TXOS and TGC 5.6.0.1 and onward, older API versions below v310.101 are deprecated.
+<p>
+API version v310.191 and newer support IPv6 address. To use IPv6 address, the client must login and 
+set the the RestApiCredentials.fullApiVersion to v310.191 or later. Otherwise, the API will only
+support IPv4 address.
+<p>
+From TXOS and TGC 5.6.0.1 and onward, only TLSv1.2 is supported.
+<p>
+
 
 <a id="compatibility_table">
 <table>
@@ -288,13 +298,23 @@ currently documented.  API clients will have to be modified to obtain new Tintri
 </tr>
 <tr>
     <td>v310.171</td>
-    <td>5.4.2.x</td>
-    <td>5.5.2.x</td>
+    <td>5.4.2</td>
+    <td>5.5.x</td>
 </tr>
 <tr>
     <td>v310.181</td>
     <td>5.5.1.x</td>
     <td>5.5.3.x</td>
+</tr>
+<tr>
+    <td>v310.183</td>
+    <td>5.5.2.x</td>
+    <td>5.5.4.x</td>
+</tr>
+<tr>
+    <td>v310.191</td>
+    <td>5.6.0</td>
+    <td>5.6.0</td>
 </tr>
 </table>
 
@@ -376,17 +396,23 @@ Currently, the roles are:
     <th>Read</th>
     <th>Write</th>
     <th>User Management</th>
+    <th>Lock Snapshot</th>
+    <th>Escalate Privilege</th>
 </tr>
 <tr>
     <td>Admin</td>
     <td>Yes</td>
     <td>Yes</td>
     <td>Yes</td>
+    <td>No</td>
+    <td>No</td>
 </tr>
 <tr>
     <td>System Admin</td>
     <td>Yes</td>
     <td>Yes</td>
+    <td>No</td>
+    <td>No</td>
     <td>No</td>
 </tr>
 <tr>
@@ -394,6 +420,33 @@ Currently, the roles are:
     <td>Yes</td>
     <td>No</td>
     <td>No</td>
+    <td>No</td>
+    <td>No</td>
+</tr>
+<tr>
+    <td>DBA</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>No</td>
+    <td>No</td>
+    <td>No</td>
+</tr>
+<tr>
+    <td>Data Protection Admin</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>No</td>
+    <td>Yes</td>
+    <td>No</td>
+</tr>
+<tr>
+    <td>Data Protection Escalation Admin</td>
+    <td>Yes</td>
+    <td>Yes</td>
+    <td>No</td>
+    <td>No</td>
+    <td>Yes</td>
+</tr>
 </table>
 
 <p>
@@ -408,6 +461,20 @@ The Admin role is the System Admin role plus updating and creating user
 management.  This means that all GET, POST, PUT, and DELETE APIs are allowed.
 <p>
 The admin user is a special user that cannot be deleted or modified.
+<p>
+The DBA role extends the System Admin role, plus the operation for the 
+database managed objects and operations.
+<p>
+The Data Protection Admin (DPA) role extends the System Admin role, 
+plus the privilege to lock/unlock snapshots, update snapshot schedules, 
+and modify protection policies associated with locked snapshot schedules.
+<p>
+The Data Protection Escalation Admin (DPEA) role extends the System Admin 
+role, plus the operation to escalate the privilege of DPA user to perform
+restricted operations related to Lock Snapshot feature.
+<p>
+The dpea-user is a special user that is auto created when the Lock Snapshot 
+feature is enabled for the first time. This user cannot be deleted or modified.
 
 <h3>Filters</h3>
 <p>
@@ -519,7 +586,8 @@ https://ttvm38.tintri.com/api/v310/session/login
 <dd><pre>
 {"username":"admin",
  "typeId":"com.tintri.api.rest.vcommon.dto.rbac.RestApiCredentials",
- "password":"mypass"}
+ "password":"mypass",
+ "fullApiVersion":"v310.191"}
 </pre></dd>
 <dt>Returns</dt>
 <dd><pre>
@@ -622,196 +690,6 @@ HTTP status 204.
 
 Only the properties that are in <i>properyNames</i> for the specified object in
 <i>newValue</i> for the <i>ids</i> will be updated.
-
-<h2 id="new_apis">New APIs for v310.64</h2>
-<table>
-<tr>
-    <td>GET</td>
-    <td>/v310/datastore/{uuid}/systemProperty</td>
-    <td>Returns a list of system properties and related information</td>
-    <td>VMstore Only</td>
-</tr>
-<tr>
-    <td>GET</td>
-    <td>/v310/datastore/{uuid}/systemProperty/{propertyName}</td>
-    <td>Returns information on the specified system property
-    <td>VMstore Only</td>
-</tr>
-<tr>
-    <td>PUT</td>
-    <td>/v310/datastore/{uuid}/systemProperty</td>
-    <td>Updates a system property's custom value</td>
-    <td>VMstore Only</td>
-</tr>
-<tr>
-    <td>DELETE</td>
-    <td>/v310/datastore/{uuid}/systemProperty{propertyName}</td>
-    <td>Removes the specified system property's custom value</td>
-    <td>VMstore Only</td>
-</tr>
-</table>
-
-<h2 id="new_apis">New APIs for v310.66</h2>
-<table>
-<tr>
-    <td>POST</td>
-    <td>/v310/alert/notificationPolicy</td>
-    <td>Creates a new notification policy</td>
-    <td>All</td>
-</tr>
-<tr>
-    <td>PUT</td>
-    <td>/v310/alert/notificationPolicy/{uuid}</td>
-    <td>Update an existing notification policy</td>
-    <td>All</td>
-</tr>
-<tr>
-    <td>DELETE</td>
-    <td>/v310/alert/notificationPolicy/{uuid}</td>
-    <td>Delete an existing notification policy</td>
-    <td>All</td>
-</tr>
-<tr>
-    <td>GET</td>
-    <td>/v310/alert/notificationPolicy/{uuid}</td>
-    <td>Get the notification policy associated with an ID</td>
-    <td>All</td>
-</tr>
-<tr>
-    <td>GET</td>
-    <td>/v310/alert/notificationPolicy</td>
-    <td>Get all notification policies</td>
-    <td>All</td>
-</tr>
-</table>
-
-<h2 id="new_apis">New APIs for v310.71</h2>
-<table>
-    <tr>
-        <td>DELETE</td>
-        <td>v310/datastore/{uuid}/deleteAllCloudReplication</td>
-        <td>Deletes all per VM configurations that point to a cloud replication Link.</td>
-        <td>All</td>
-    </tr>
-    <tr>
-        <td>DELETE</td>
-        <td>/v310/datastore/{uuid}/deleteAllReplication</td>
-        <td>Deletes all per VM configurations that point to an asynchronous replication link.</td>
-        <td>All<td>
-    </tr>
-    <tr>
-        <td>PUT</td>
-        <td>/v310/datastore/{uuid}/fileShare/{fsName}/resetFileAcls</td>
-        <td>Resets the permissions of all the files on the specified share</td>
-        <td>VMstoreOnly</td>
-    </tr>
-    <tr>
-        <td>POST</td>
-        <td>/v310/datastore/{uuid}/pauseAsyncSyncReplication</td>
-        <td>Pause asynchronous and synchronous replication</td>
-        <td>All</td>
-    </tr>
-    <tr>
-        <td>POST</td>
-        <td>/v310/datastore/{uuid}/pauseCloudReplication</td>
-        <td>Pause cloud replication</td>
-        <td>All</td>
-    </tr>
-    <tr>
-        <td>GET</td>
-        <td>/v310/license/eval</td>
-        <td>Returns a list of all the evaluation licenses.</td>
-        <td>All</td>
-    </tr>
-    <tr>
-        <td>POST</td>
-        <td>/v310/license/eval/{feature}</td>
-        <td>Activates an evaluation license for a feature.</td>
-        <td>All</td>
-    </tr>
-    <tr>
-        <td>GET</td>
-        <td>/v310/servicegroup/{id}/quota/statsHistoric</td>
-        <td>Get all of the historic quota statistics slices for the service group.</td>
-        <td>All</td>
-    </tr>
-    <tr>
-        <td>GET</td>
-        <td>/v310/servicegroup/{id}/quotaPolicy</td>
-        <td>Returns the quota policy associated with the given service group.</td>
-        <td>All</td>
-    </tr>
-    <tr>
-        <td>POST</td>
-        <td>/v310/servicegroup/{id}/quotaPolicy</td>
-        <td>Create a quota policy for the given service group.</td>
-        <td>All</td>
-    </tr>
-    <tr>
-        <td>PUT</td>
-        <td>/v310/servicegroup/{id}/quotaPolicy</td>
-        <td>Update the quota policy for the given service group.</td>
-        <td>All</td>
-    </tr>
-    <tr>
-        <td>DELETE</td>
-        <td>/v310/servicegroup/{id}/quotaPolicy</td>
-        <td>Delete the quota policy associated with the given service group.</td>
-        <td>All</td>
-    </tr>
-    <tr>
-        <td>POST</td>
-        <td>/v310/servicegroup/{uuid}/statsDownloadable</td>
-        <td>Returns a URL for retrieving the service group historical performance statistics report.</td>
-        <td>TgcOnly</td>
-    </tr>
-    <tr>
-        <td>POST</td>
-        <td>/v310/session/{tintriSessionId}/invalidate</td>
-        <td>Invalidate a session by a user belonging to &quot;Admin&quot; role.</td>
-        <td>All</td>
-    </tr>
-    <tr>
-        <td>POST</td>
-        <td>/v310/snapshot/restore</td>
-        <td>Restore a snapshot from cloud as specified by the snapshot restore specification.</td>
-        <td>All</td>
-    </tr>
-</table>
-
-<h2 id="new_apis">New APIs for v310.81</h2>
-<table>
-    <tr>
-        <td>GET</td>
-        <td>/v310/appliance/{uuid}/stagingAreaInfo</td>
-        <td>Gets the Tintri appliance staging area information, which includes details about the space, software uploaded</td>
-        <td>TgcOnly</td>
-    </tr>
-    <tr>
-        <td>GET</td>
-        <td>/v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares</td>
-        <td>Gets the Tintri appliance staging area available software information, which includes details of the software uploaded</td>
-        <td>TgcOnly</td>
-    </tr>
-    <tr>
-        <td>POST</td>
-        <td>/v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/cancelupgrade</td>
-        <td>Cancel the VMstore software upgrade.</td>
-        <td>TgcOnly</td>
-    </tr>
-    <tr>
-        <td>DELETE</td>
-        <td>/v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/{softwareuuid}</td>
-        <td>Delete the specified TxOS software from the staging area.</td>
-        <td>TgcOnly</td>
-    </tr>
-    <tr>
-        <td>POST</td>
-        <td>/v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/{softwareuuid}/startupgrade</td>
-        <td>Upgrades the TXOS software to the specified VMstores.</td>
-        <td>TgcOnly</td>
-    </tr>
-</table>
 
 <h2 id="new_apis">New APIs for v310.91</h2>
 <table>
@@ -934,7 +812,148 @@ Only the properties that are in <i>properyNames</i> for the specified object in
     </tr>
 </table>
 
+<h2 id="new_apis">New APIs for v310.183</h2>
+<table>
+    <tr>
+        <td>PUT</td>
+        <td>/v310/appliance/{uuid}</td>
+        <td>
+            The API is updated to set DataProectionConfig.
+        </td>
+        <td>All</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td>/v310/appliance/{uuid}/dataProtectionConfig</td>
+        <td>Returns the Tintri appliance data protection config.
+        </td>
+        <td>All</td>
+    </tr>
+    <tr>
+        <td>PUT</td>
+        <td>/v310/appliance/{uuid]/escalateDPAPrivileges</td>
+        <td>
+           Escalates DATA_PROTECTION_ADMIN user's privilges until the time specific by escalatedPrivilegeExpiryTimeMs. If
+           the time is in past, privileges aren't escalated.<br> With escalated privileges, a DATA_PROTECTION_ADMIN user can
+           perform below operations:<br>
+           <ul>
+             <li>Unlock snapshot</li>
+             <li>Remove lock feature from VM snapshot schedule</li>
+             <li>Remove lock feature from service group</li>
+             <li>Disable the Lock Snapshot feature</li>
+             <li>Resume snapshot deletion</li>
+           </ul>
+        </td>
+        <td>All</td>
+    </tr>
+    <tr>
+        <td>POST</td>
+        <td>/v310/snapshot/{snapshotTintriUuid}/lock</td>
+        <td>
+            Locks a snapshot.
+        </td>
+        <td>VMstoreOnly</td>
+    </tr>
+    <tr>
+        <td>POST</td>
+        <td>/v310/snapshot/{snapshotTintriUuid}/unlock</td>
+        <td>
+            Unlocks a snapshot.
+        </td>
+        <td>VMstoreOnly</td>
+    </tr>
+</table>
+
+<h2 id="new_apis">New APIs for v310.191</h2>
+<table>
+    <tr>
+        <td>GET</td>
+        <td>/v310/datastore/{uuid}/customTunables</td>
+        <td>
+            Returns custom tunables set for realstore and tomcat on each controller.
+        </td>
+        <td>VMstoreOnly</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td>/v310/datastore/{uuid}/customTunablesDiff</td>
+        <td>
+            Returns list of tunables that do not match between the two controllers. 
+            Returns an empty list in case of single controller system.
+        </td>
+        <td>VMstoreOnly</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td>/v310/alerts/paginated</td>
+        <td>
+            Fetches information based on the alert related query string parameters. Supports pagination.
+        </td>
+        <td>VMstoreOnly</td>
+    </tr>
+    <tr>
+        <td>DELETE</td>
+        <td>/v310/appliance/{uuid}/stagingAreaInfo/clearError/{applianceUuid}</td>
+        <td>
+            Clears upgrade validation error from VMstores.
+        </td>
+        <td>TgcOnly</td>
+    </tr>
+    <tr>
+        <td>PUT</td>
+        <td>/v310/appliance/{uuid}</td>
+        <td>
+            The API is updated to set ApplianceCsiProperties.
+        </td>
+        <td>VMstoreOnly</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td>/v310/appliance/{uuid}/csiProperties</td>
+        <td>
+            Gets CSI properties.
+        </td>
+        <td>VMstoreOnly</td>
+    </tr>
+    <tr>
+        <td>POST</td>
+        <td>/v310/datastore/{uuid}/hypervisorManagerConfig/csi/refresh</td>
+        <td>
+            Refresh the manager of the CSI Managed Object (OtherFileCsiVm).
+            The call is returned immediately and the refresh runs in a background thread.
+            It pushes the new CSI Managed Object to the filesystem and
+            updates the VM and vDisk caches.
+        </td>
+        <td>VMstoreOnly</td>
+    </tr>
+    <tr>
+        <td>PUT</td>
+        <td>/v310/appliance/{uuid}/dnsIpVersionPreference</td>
+        <td>
+            Update the DNS preference to prefer IPv4 vs IPv6 when a hostname being looked up has both IPv4 and IPv6
+            addresses. Possible input values are:
+            <ul>
+               <li>ipv4</li>
+               <li>ipv6</li>
+               <li>ipv6ula</li>
+            </ul>
+        </td>
+        <td>All</td>
+    </tr>
+    <tr>
+        <td>GET</td>
+        <td>/v310/appliance/{uuid}/dnsIpVersionPreference</td>
+        <td>
+            Returns the DNS preference to prefer IPv4 vs IPv6 when a hostname being looked up has both IPv4 and IPv6
+            addresses.
+        </td>
+        <td>All</td>
+    </tr>
+</table>
+
+
 <h2 id="resources_header">Resources</h2>
+
 <p>
 The API resources are presented below.  The <i>Data Overview</i> button presents the Data Transfer
 Objects (DTOs) that are transferred between the Tintri server and the client.  The

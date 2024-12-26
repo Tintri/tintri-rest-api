@@ -14,14 +14,13 @@ function create_link(jax_path, path_name) {
 </SCRIPT>
 <LINK REL='stylesheet' TYPE='text/css' HREF='../../../../../../doclet.css' TITLE='Style'/><META http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </HEAD>
-<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: AuthProvider</h2>The AuthProvider is created/deleted/updated using the api/v310/appliance/authProvider endpoint and used to OAuth 2.0
- authenticate a user through the api/v310/session/login endpoint using the
- <a href="https://datatracker.ietf.org/doc/html/rfc6749#section-4.1">Authorization Code Grant</a> workflow.
+<BODY><table class='menu'><colgroup><col/><col/></colgroup><tbody><tr><td class='NavBarCell1' colspan='2'><table><tbody><tr><th><a href='../../../../../../overview-summary.html'>Overview</a></th></tr></tbody></table></td></tr><tr><td class='NavBarCell3' colspan='2'>detail: <a href='#Elements'>element</a> | <a href='#Attributes'>attribute</a> | value</td></tr></table><h2><h2>Name: AuthProvider</h2>The AuthProvider is created/deleted/updated using the api/v310/appliance/authProvider endpoint.
+ The api/v310/session/login endpoint uses OAuth 2.0 to authenticate a user through the <a href="https://datatracker.ietf.org/doc/html/rfc6749#section-4.1">Authorization Code Grant</a> workflow.
 
- </p>
+ <br>
  We will use the issuer to get <a href="https://datatracker.ietf.org/doc/html/rfc5785">well-known</a> configs if this
  is supported by the IdP.
- </p>
+ <br>
  The AuthRoles are used to associated the IdP grants to TGC.<table class='examples'><tr><td><br>
 <b>Data Structure</b><pre>{
    "typeId": "com.tintri.api.rest.v310.dto.AuthProvider",
@@ -37,64 +36,64 @@ function create_link(jax_path, path_name) {
 }
 </pre></td></tr></table><dl></dl>
 <hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_authClaimsAndScopes'>authClaimsAndScopes</td><td><a href='../../../../../../com/tintri/api/rest/v310/dto/AuthClaimsAndScopes.html'>AuthClaimsAndScopes</a></td><td><b>Optional:</b>
- </p>
+ <br>
  Well known configuration typically derived from the issuer but can be overriden here.</td></tr><tr><td id='m_authRoles'>authRoles</td><td><a href='../../../../../../com/tintri/api/rest/v310/dto/AuthRoles.html'>AuthRoles</a></td><td><b>Optional:</b>
- </p>
+ <br>
  A way to associated IdP group membership with TGC role. Typically done via investigating the "groups"
  <a href="https://datatracker.ietf.org/doc/html/rfc8693#section-4">claim</a>.</td></tr><tr><td id='m_endpoints'>endpoints</td><td>xsd:list[<a href='../../../../../../com/tintri/api/rest/v310/dto/Endpoint.html'>Endpoint</a>]</td><td><b>Optional:</b>
- </p>
+ <br>
  The well-known configurations.
- </p>
+ <br>
  Will be derived from the issuer for IdPs that support
  <a href="https://datatracker.ietf.org/doc/html/rfc5785">well-known URIs</a> otherwise the user can provide and/or
  override the well-known configs here.</td></tr></tbody></table>
 
 <hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_client_id'>client_id</td><td>xsd:string</td><td><b>Required:</b>
- </p>
+ <br>
  The <a href="https://datatracker.ietf.org/doc/html/rfc6749#section-2.3.1">client id</a> is the client id of the
  IdP (e.g. <a href="https://developer.okta.com/docs/guides/implement-oauth-for-okta/main/#create-an-oauth-2-0-app-in-okta">okta</a>)
  application used to OAuth 2.0 authenticate the user.</td></tr><tr><td id='m_displayName'>displayName</td><td>xsd:string</td><td><b>Optional:</b>
- </p>
+ <br>
  Human readable description of the Authentication Provider provided by the user at creation.
- </p>
+ <br>
  If not provided we will use the host of the issuer.</td></tr><tr><td id='m_issuer'>issuer</td><td>xsd:string</td><td><b>Required:</b>
- </p>
+ <br>
  Used to pre-populate the <a href="https://datatracker.ietf.org/doc/html/rfc5785">well-known</a> configs if this
  is supported by the IdP.
- </p>
+ <br>
  Used to validate the access tokens issuer via the "iss" claim
- </p>
+ <br>
  Example: <a href="https://developer.okta.com/docs/reference/api/oidc/#well-known-openid-configuration">Okta well
  known endpoint</a>
- </p>
+ <br>
  The <a href="https://datatracker.ietf.org/doc/html/rfc6749#section-1.1">authorization server</a>'s
  <a href="https://datatracker.ietf.org/doc/html/rfc8414#section-2">issuer</a> identifier, which is a URL that uses
  the "https" scheme and has no query or fragment components. Authorization server metadata is published at a
  location that is ".well-known" according to RFC 5785 [RFC5785] derived from this issuer identifier, as described
  in Section 3. The issuer identifier is used to prevent authorization server mix- up attacks, as described in
  "OAuth 2.0 Mix-Up Mitigation"
- </p></td></tr><tr><td id='m_redirect_uri'>redirect_uri</td><td>xsd:string</td><td><b>Fixed:</b>
- </p>
+ <br></td></tr><tr><td id='m_redirect_uri'>redirect_uri</td><td>xsd:string</td><td><b>Fixed:</b>
+ <br>
  The <a href="https://datatracker.ietf.org/doc/html/rfc6749#section-3.1.2">redirection endpoint</a> is used by the
  authorization server to redirect the resource owner back to the client during authorization.
- </p>
+ <br>
  TGC currently uses the TGC_HOST as the redirection uri.
- </p>
+ <br>
  The redirect_uri is a query parameter in the /authorize endpoint telling the IdP where to send a "code" to this endpoint
  and is also used in the request body to the /token endpoint when requesting access token.  This redirect_uri should be white listed
  in the IdP OIDC application.</td></tr><tr><td id='m_response_type'>response_type</td><td>xsd:string</td><td><b>Fixed:</b>
- </p>
+ <br>
  The <a href=https://datatracker.ietf.org/doc/html/rfc6749#section-3.1.1>response type</a> is the authorization
  endpoint used by the authorization code grant type and implicit grant type flows. The client informs the
  authorization server of the desired grant type using the response_type parameter.
- </p>
+ <br>
  Currently only support <a href="https://datatracker.ietf.org/doc/html/rfc6749#section-4.1">code</a> for the
  Authorization Code Grant workflow.
- </p>
+ <br>
  If in the future we support other workflows like
  <a href="https://datatracker.ietf.org/doc/html/rfc6749#section-4.2">token</a> for the Implicit Grant workflow we can
  support this here.</td></tr><tr><td id='m_secret_id'>secret_id</td><td>xsd:string</td><td><b>Required:</b>
- </p>
+ <br>
  The <a href="https://datatracker.ietf.org/doc/html/rfc6749#section-2.3.1">client secret</a> is the secret of the
  IdP (e.g. <a href=
  "https://developer.okta.com/docs/guides/implement-oauth-for-okta/main/#create-an-oauth-2-0-app-in-okta">okta</a>)

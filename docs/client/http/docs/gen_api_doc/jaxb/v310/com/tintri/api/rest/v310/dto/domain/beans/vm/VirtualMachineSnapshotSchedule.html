@@ -30,6 +30,7 @@ function create_link(jax_path, path_name) {
    "<a href='#m_initialDefaultRetentionMinutes'>initialDefaultRetentionMinutes</a>": &ltNumber&gt,
    "<a href='#m_isSystemDefaultSchedule'>isSystemDefaultSchedule</a>": &ltBoolean&gt,
    "<a href='#m_lastUpdatedTime'>lastUpdatedTime</a>": <a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a>,
+   "<a href='#m_locked'>locked</a>": &ltBoolean&gt,
    "<a href='#m_name'>name</a>": &ltString&gt,
    "<a href='#m_retentionDestinationMinutes'>retentionDestinationMinutes</a>": &ltNumber&gt,
    "<a href='#m_retentionSourceMinutes'>retentionSourceMinutes</a>": &ltNumber&gt,
@@ -136,7 +137,7 @@ function create_link(jax_path, path_name) {
      <td>first day</td>
      <td>Keep 100 days</td>
    </tr>
- </table></td></tr><tr><td id='m_initialDefaultRetentionMinutes'>initialDefaultRetentionMinutes</td><td>xsd:int</td><td>The intial defautlt retention time in minutes.</td></tr><tr><td id='m_isSystemDefaultSchedule'>isSystemDefaultSchedule</td><td>xsd:boolean</td><td>Returns true if the schedule name matches any of the default schedule names.</td></tr><tr><td id='m_lastUpdatedTime'>lastUpdatedTime</td><td><a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Time stamp when the object is last updated.</td></tr><tr><td id='m_name'>name</td><td>xsd:string</td><td>For hourly, daily, weekly, monthly, quarterly schedule type, the schedule name is assigned by the system.
+ </table></td></tr><tr><td id='m_initialDefaultRetentionMinutes'>initialDefaultRetentionMinutes</td><td>xsd:int</td><td>The intial defautlt retention time in minutes.</td></tr><tr><td id='m_isSystemDefaultSchedule'>isSystemDefaultSchedule</td><td>xsd:boolean</td><td>Returns true if the schedule name matches any of the default schedule names.</td></tr><tr><td id='m_lastUpdatedTime'>lastUpdatedTime</td><td><a href='../../../../../../../../../org/joda/time/DateTime.html'>DateTime</a></td><td>Time stamp when the object is last updated.</td></tr><tr><td id='m_locked'>locked</td><td>xsd:boolean</td><td>Signifies if all snapshots created by the schedule are to be locked.</td></tr><tr><td id='m_name'>name</td><td>xsd:string</td><td>For hourly, daily, weekly, monthly, quarterly schedule type, the schedule name is assigned by the system.
  They are Hourly, Daily, Weekly, Monthly, Quarterly accordingly.
 
  For custom schedule type, the schedule name is assigned by the user.  The name of a schedule of type custom

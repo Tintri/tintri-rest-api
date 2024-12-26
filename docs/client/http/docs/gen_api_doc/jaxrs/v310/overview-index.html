@@ -135,6 +135,13 @@ function create_link(jax_path, path_name) {
          "NotificationPolicy"); </script></td></td>
     </tr>
     <tr>
+     <td><a href="v310/alert/paginated/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/alert/paginated/index.html"><tt>/v310/alert/paginated</tt></a></td>
+     <td>Fetches information based on the alert related query string parameters.</td>
+     <td><tt>All - Since v310.191</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script> create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/Alert.html", "Alert");
+         </script> items.</td></td>
+    </tr>
+    <tr>
      <td><a href="v310/appliance/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/appliance/index.html"><tt>/v310/appliance</tt></a></td>
      <td>Gets Tintri Appliances.</td>
@@ -255,10 +262,22 @@ function create_link(jax_path, path_name) {
      <td><tt>VMstoreOnly - Since v310.31</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceController.html">ApplianceController</a>&gt;</tt> - The information about Tintri controllers.</td></td>
     </tr>
     <tr>
+     <td><a href="v310/appliance/{uuid}/csiProperties/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/csiProperties/index.html"><tt>/v310/appliance/{uuid}/csiProperties</tt></a></td>
+     <td>Gets CSI properties.</td>
+     <td><tt>VMstoreOnly - Since v310.191</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/ApplianceCsiProperties.html">ApplianceCsiProperties</a></tt> - The appliance CSI properties</td></td>
+    </tr>
+    <tr>
      <td><a href="v310/appliance/{uuid}/customizationInfo/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/appliance/{uuid}/customizationInfo/index.html"><tt>/v310/appliance/{uuid}/customizationInfo</tt></a></td>
      <td>Gets the Tintri appliance customization information, which includes replication interface and space saving support.</td>
      <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceCustomizationInfo.html">ApplianceCustomizationInfo</a></tt> - Appliance customization information</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/dataProtectionConfig/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/dataProtectionConfig/index.html"><tt>/v310/appliance/{uuid}/dataProtectionConfig</tt></a></td>
+     <td>Returns the Tintri appliance data protection config.</td>
+     <td><tt>All - Since v310.183</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/DataProtectionConfig.html">DataProtectionConfig</a></tt> - The data protection config.</td></td>
     </tr>
     <tr>
      <td><a href="v310/appliance/{uuid}/dateTime/index.html#GET"><tt>GET</tt></a></td>
@@ -295,6 +314,12 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/appliance/{uuid}/encryptionInfo/index.html"><tt>/v310/appliance/{uuid}/encryptionInfo</tt></a></td>
      <td>Gets the disk encryption information.</td>
      <td><tt>VMstoreOnly</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/ApplianceDiskEncryptionInfo.html">ApplianceDiskEncryptionInfo</a></tt> - The appliance disk encryption information</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/escalateDPAPrivileges/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/escalateDPAPrivileges/index.html"><tt>/v310/appliance/{uuid}/escalateDPAPrivileges</tt></a></td>
+     <td>Escalates DATA_PROTECTION_ADMIN user's privilges until the time specific by escalatedPrivilegeExpiryTimeMs.</td>
+     <td><tt>All - Since v310.183</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/hardware/DataProtectionConfig.html">DataProtectionConfig</a></tt></td><td><tt>void</tt></td></td>
     </tr>
     <tr>
      <td><a href="v310/appliance/{uuid}/expand/index.html#POST"><tt>POST</tt></a></td>
@@ -527,20 +552,30 @@ function create_link(jax_path, path_name) {
     <tr>
      <td><a href="v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/{softwareuuid}/index.html#DELETE"><tt>DELETE</tt></a></td>
      <td><a href="v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/{softwareuuid}/index.html"><tt>/v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/{softwareuuid}</tt></a></td>
-     <td><b>Deprecated.</b> Delete the specified TxOS software from the staging area.</td>
+     <td>Delete the specified TxOS software from the staging area.</td>
      <td><tt>TgcOnly - Since v310.81</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Response.html">Response</a></tt></td></td>
     </tr>
     <tr>
      <td><a href="v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/{softwareuuid}/error/index.html#DELETE"><tt>DELETE</tt></a></td>
      <td><a href="v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/{softwareuuid}/error/index.html"><tt>/v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/{softwareuuid}/error</tt></a></td>
-     <td>Delete the specified TxOS software from the staging area and clears upgrade validation errors.</td>
-     <td><tt>TgcOnly - Since v310.101</tt><td><tt>List&lt;String&gt;</tt> - . List of upgrade of appliance UUIDs that needs to be cancelled.</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Response.html">Response</a></tt></td></td>
+     <td><b>Deprecated.</b> Delete the specified TxOS software from the staging area and clears upgrade validation errors.</td>
+     <td><tt>TgcOnly</tt><td><tt>List&lt;String&gt;</tt> - . List of upgrade of appliance UUIDs that needs to be cancelled. Deprecated since v310.191. Please use <script>
+ create_link("jaxrs/v310/v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/{softwareuuid}/index.html", "availableSoftwares");
+ </script> for deleting software and <script>
+ create_link("jaxrs/v310/v310/appliance/{uuid}/stagingAreaInfo/clearError/index.html", "clearError");
+ </script> to clear errors.</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Response.html">Response</a></tt></td></td>
     </tr>
     <tr>
      <td><a href="v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/{softwareuuid}/startupgrade/index.html#POST"><tt>POST</tt></a></td>
      <td><a href="v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/{softwareuuid}/startupgrade/index.html"><tt>/v310/appliance/{uuid}/stagingAreaInfo/availableSoftwares/{softwareuuid}/startupgrade</tt></a></td>
      <td>Upgrades the TXOS software to the specified VMstores.</td>
      <td><tt>TgcOnly - Since v310.81</tt><td><tt>List&lt;String&gt;</tt> - List of appliance UUIDs that needs to be upgraded.</td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Task.html">Task</a>&gt;</tt> - a list of tasks, one per appliance</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/appliance/{uuid}/stagingAreaInfo/clearError/{applianceUuid}/index.html#DELETE"><tt>DELETE</tt></a></td>
+     <td><a href="v310/appliance/{uuid}/stagingAreaInfo/clearError/{applianceUuid}/index.html"><tt>/v310/appliance/{uuid}/stagingAreaInfo/clearError/{applianceUuid}</tt></a></td>
+     <td>Clears upgrade validation error from VMstores.</td>
+     <td><tt>TgcOnly - Since v310.191</tt><td> </td><td><tt>void</tt> -</td></td>
     </tr>
     <tr>
      <td><a href="v310/appliance/{uuid}/support/index.html#GET"><tt>GET</tt></a></td>
@@ -671,6 +706,18 @@ function create_link(jax_path, path_name) {
      <td><tt>VMstoreOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Request.html">Request</a>&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/Datastore.html">Datastore</a>&gt;</tt> - A request wrapper containing the datastore attributes to be modified set in the object and a properties set listing the attributes to be updated.</td><td><tt>void</tt></td></td>
     </tr>
     <tr>
+     <td><a href="v310/datastore/{uuid}/customTunables/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/customTunables/index.html"><tt>/v310/datastore/{uuid}/customTunables</tt></a></td>
+     <td>Returns custom tunables set for realstore and tomcat on each controller</td>
+     <td><tt>VMstoreOnly - Since v310.191</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/Tunables.html">Tunables</a></tt> -</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/customTunablesDiff/index.html#GET"><tt>GET</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/customTunablesDiff/index.html"><tt>/v310/datastore/{uuid}/customTunablesDiff</tt></a></td>
+     <td>Returns list of tunables that do not match between the two controllers.</td>
+     <td><tt>VMstoreOnly - Since v310.191</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/TunablesDiff.html">TunablesDiff</a></tt> -</td></td>
+    </tr>
+    <tr>
      <td><a href="v310/datastore/{uuid}/customizationSpec/{vcenterName}/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/datastore/{uuid}/customizationSpec/{vcenterName}/index.html"><tt>/v310/datastore/{uuid}/customizationSpec/{vcenterName}?refresh=…</tt></a></td>
      <td>Gets the customization specifications of the datastore for the specified vCenter.</td>
@@ -769,14 +816,20 @@ function create_link(jax_path, path_name) {
     <tr>
      <td><a href="v310/datastore/{uuid}/hypervisorManagerConfig/index.html#POST"><tt>POST</tt></a></td>
      <td><a href="v310/datastore/{uuid}/hypervisorManagerConfig/index.html"><tt>/v310/datastore/{uuid}/hypervisorManagerConfig</tt></a></td>
-     <td>Adds hypervisor manager configuration</td>
+     <td>Adds hypervisor manager configuration.</td>
      <td><tt>VMstoreOnly - Since v310.21</tt><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/HypervisorManagerConfig.html">HypervisorManagerConfig</a>&gt;</tt> - List of HypervisorManagaerConfig objects with hypervisor manager information</td><td><tt>void</tt></td></td>
     </tr>
     <tr>
      <td><a href="v310/datastore/{uuid}/hypervisorManagerConfig/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/datastore/{uuid}/hypervisorManagerConfig/index.html"><tt>/v310/datastore/{uuid}/hypervisorManagerConfig</tt></a></td>
      <td>Gets hypervisor manager configuration</td>
-     <td><tt>VMstoreOnly - Since v310.21</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/HypervisorManagerConfig.html">HypervisorManagerConfig</a>&gt;</tt> - A list of configured Hypervisor Managers</td></td>
+     <td><tt>All - Since v310.21</tt><td> </td><td><tt>List&lt;<a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/HypervisorManagerConfig.html">HypervisorManagerConfig</a>&gt;</tt> - A list of configured Hypervisor Managers</td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/datastore/{uuid}/hypervisorManagerConfig/csi/refresh/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/datastore/{uuid}/hypervisorManagerConfig/csi/refresh/index.html"><tt>/v310/datastore/{uuid}/hypervisorManagerConfig/csi/refresh</tt></a></td>
+     <td>Refresh the manager of the CSI Managed Object (OtherFileCsiVm).</td>
+     <td><tt>VMstoreOnly - Since v310.191</tt><td> </td><td><tt>void</tt></td></td>
     </tr>
     <tr>
      <td><a href="v310/datastore/{uuid}/hypervisorManagerConfig/{managerConfigId}/index.html#DELETE"><tt>DELETE</tt></a></td>
@@ -794,7 +847,7 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/datastore/{uuid}/hypervisorManagerConfig/{managerId}/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/datastore/{uuid}/hypervisorManagerConfig/{managerId}/index.html"><tt>/v310/datastore/{uuid}/hypervisorManagerConfig/{managerId}?refresh=…</tt></a></td>
      <td>Gets hypervisor manager configuration for given manager id and optionally refreshes the manager.</td>
-     <td><tt>VMstoreOnly - Since v310.171</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/HypervisorManagerConfig.html">HypervisorManagerConfig</a></tt> - the hypervisor manager config</td></td>
+     <td><tt>All - Since v310.171</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/HypervisorManagerConfig.html">HypervisorManagerConfig</a></tt> - the hypervisor manager config</td></td>
     </tr>
     <tr>
      <td><a href="v310/datastore/{uuid}/hypervisorManagerStatus/index.html#POST"><tt>POST</tt></a></td>
@@ -812,37 +865,49 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/datastore/{uuid}/k8s/container/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/datastore/{uuid}/k8s/container/index.html"><tt>/v310/datastore/{uuid}/k8s/container</tt></a></td>
      <td>Returns k8s containers in paginated form as specified by filter parameters in request.</td>
-     <td><tt>All - Since v310.171</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> -</td></td>
+     <td><tt>All - Since v310.171</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/k8s/Container.html", "Container");
+ </script> items.</td></td>
     </tr>
     <tr>
      <td><a href="v310/datastore/{uuid}/k8s/deployment/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/datastore/{uuid}/k8s/deployment/index.html"><tt>/v310/datastore/{uuid}/k8s/deployment</tt></a></td>
      <td>Returns k8s deployments in paginated form as specified by filter parameters in request.</td>
-     <td><tt>All - Since v310.171</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> -</td></td>
+     <td><tt>All - Since v310.171</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/k8s/Deployment.html", "Deployment");
+ </script> items.</td></td>
     </tr>
     <tr>
      <td><a href="v310/datastore/{uuid}/k8s/namespace/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/datastore/{uuid}/k8s/namespace/index.html"><tt>/v310/datastore/{uuid}/k8s/namespace</tt></a></td>
      <td>Returns k8s namespaces in paginated form as specified by filter parameters in request.</td>
-     <td><tt>All - Since v310.171</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> -</td></td>
+     <td><tt>All - Since v310.171</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/k8s/Namespace.html", "Namespace");
+ </script> items.</td></td>
     </tr>
     <tr>
      <td><a href="v310/datastore/{uuid}/k8s/pod/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/datastore/{uuid}/k8s/pod/index.html"><tt>/v310/datastore/{uuid}/k8s/pod</tt></a></td>
      <td>Returns k8s pods in paginated form as specified by filter parameters in request.</td>
-     <td><tt>All - Since v310.171</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> -</td></td>
+     <td><tt>All - Since v310.171</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/k8s/Pod.html", "Pod");
+ </script> items.</td></td>
     </tr>
     <tr>
      <td><a href="v310/datastore/{uuid}/k8s/pv/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/datastore/{uuid}/k8s/pv/index.html"><tt>/v310/datastore/{uuid}/k8s/pv</tt></a></td>
      <td>Returns k8s persistent volumes in paginated form as specified by filter parameters in request.</td>
-     <td><tt>All - Since v310.171</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> -</td></td>
+     <td><tt>All - Since v310.171</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/k8s/PersistentVolume.html", "PersistentVolume");
+ </script> items.</td></td>
     </tr>
     <tr>
      <td><a href="v310/datastore/{uuid}/k8s/pvc/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/datastore/{uuid}/k8s/pvc/index.html"><tt>/v310/datastore/{uuid}/k8s/pvc</tt></a></td>
      <td>Returns k8s persistent volume claims in paginated form as specified by filter parameters in request.</td>
-     <td><tt>All - Since v310.171</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> -</td></td>
+     <td><tt>All - Since v310.171</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
+ create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/k8s/PersistentVolumeClaim.html", "PersistentVolumeClaim");
+ </script> items.</td></td>
     </tr>
     <tr>
      <td><a href="v310/datastore/{uuid}/nfsaccess/index.html#GET"><tt>GET</tt></a></td>
@@ -963,20 +1028,22 @@ function create_link(jax_path, path_name) {
      <td><a href="v310/datastore/{uuid}/statsHistoric/index.html"><tt>/v310/datastore/{uuid}/statsHistoric</tt></a></td>
      <td>Gets the historic datastore performance slices containing all of the statistics for the datastore.</td>
      <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
- create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/Stats.html", "Stats");
- </script> items containing a list of <script>
- create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/DatastoreStat.html", "DatastoreStat");
- </script>.</td></td>
+         create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/Stats.html", "Stats");
+         </script> items containing a list of <script>
+         create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/DatastoreStat.html",
+         "DatastoreStat");
+         </script>.</td></td>
     </tr>
     <tr>
      <td><a href="v310/datastore/{uuid}/statsRealtime/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/datastore/{uuid}/statsRealtime/index.html"><tt>/v310/datastore/{uuid}/statsRealtime</tt></a></td>
      <td>Gets the real time datastore performance slice containing all of the statistics for the datastore.</td>
      <td><tt>All</tt><td> </td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Page.html">Page</a></tt> - Paginated <script>
- create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/Stats.html", "Stats");
- </script> items contining a list of <script>
- create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/DatastoreStat.html", "DatastoreStat");
- </script>.</td></td>
+         create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/Stats.html", "Stats");
+         </script> items contining a list of <script>
+         create_link("jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/perf/DatastoreStat.html",
+         "DatastoreStat");
+         </script>.</td></td>
     </tr>
     <tr>
      <td><a href="v310/datastore/{uuid}/statsSummary/index.html#GET"><tt>GET</tt></a></td>
@@ -1466,6 +1533,18 @@ function create_link(jax_path, path_name) {
      <td><tt>All - Since v310.71</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/beans/snapshot/SnapshotRestoreSpec.html">SnapshotRestoreSpec</a></tt> - snapshot restore specification</td><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/Task.html">Task</a></tt> - Task representing the progress of snapshot restore from cloud</td></td>
     </tr>
     <tr>
+     <td><a href="v310/snapshot/{snapshotTintriUuid}/lock/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/snapshot/{snapshotTintriUuid}/lock/index.html"><tt>/v310/snapshot/{snapshotTintriUuid}/lock</tt></a></td>
+     <td>Locks a snapshot.</td>
+     <td><tt>VMstoreOnly - Since v310.183</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/snapshot/{snapshotTintriUuid}/unlock/index.html#POST"><tt>POST</tt></a></td>
+     <td><a href="v310/snapshot/{snapshotTintriUuid}/unlock/index.html"><tt>/v310/snapshot/{snapshotTintriUuid}/unlock</tt></a></td>
+     <td>Unlocks a snapshot</td>
+     <td><tt>VMstoreOnly - Since v310.183</tt><td> </td><td><tt>void</tt></td></td>
+    </tr>
+    <tr>
      <td><a href="v310/snapshot/{tintriSnapshotUuid}/disks/index.html#GET"><tt>GET</tt></a></td>
      <td><a href="v310/snapshot/{tintriSnapshotUuid}/disks/index.html"><tt>/v310/snapshot/{tintriSnapshotUuid}/disks</tt></a></td>
      <td>Fetches disks of a snapshot.</td>
@@ -1504,6 +1583,12 @@ function create_link(jax_path, path_name) {
   /api/v310/task?refresh=true&amp;vmstoreTaskId=cloneVM@07-01-18:43:03.653&amp;vmstoreTintriIds=TIN-87f37d16-8d9a-415e-8c98-d15cca6e4a37
  </pre> </li> 
        </ol></td></td>
+    </tr>
+    <tr>
+     <td><a href="v310/task/restart/index.html#PUT"><tt>PUT</tt></a></td>
+     <td><a href="v310/task/restart/index.html"><tt>/v310/task/restart</tt></a></td>
+     <td>Restart a job</td>
+     <td><tt>TgcOnly</tt><td><tt><a href="../../jaxb/v310/com/tintri/api/rest/v310/dto/domain/TaskRestartInfo.html">TaskRestartInfo</a></tt></td><td><tt>void</tt></td></td>
     </tr>
     <tr>
      <td><a href="v310/task/{id}/index.html#DELETE"><tt>DELETE</tt></a></td>
