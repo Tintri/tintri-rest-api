@@ -45,7 +45,7 @@ function create_link(jax_path, path_name) {
 <hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_consistency'>consistency</td><td>CRASH_CONSISTENT | VM_CONSISTENT | APP_CONSISTENT</td><td>The snapshot consistency type. Crash consistency is a VMstore snapshot that can
  be used to recover from a VM crash.  VM consistency is a hypervisor snapshot that
  is hypervisor consistent and can be used to recover from a VM crash. App
- consistency is not used at this time.<table class='info'><tr><td>CRASH_CONSISTENT</td><td>Disk activity quiesed snapshot</td></tr><tr><td>VM_CONSISTENT</td><td>VM activity  quiesed snapshot</td></tr><tr><td>APP_CONSISTENT</td><td>Application activity quiesed snapshot (currently not used)</td></tr></table></td></tr><tr><td id='m_cronExpressions'>cronExpressions</td><td>xsd:list[xsd:string]</td><td>A list of 
+ consistency is not used at this time.<table class='info'><tr><td>CRASH_CONSISTENT</td><td>Disk activity quiesed snapshot</td></tr><tr><td>VM_CONSISTENT</td><td>VM activity  quiesed snapshot</td></tr><tr><td>APP_CONSISTENT</td><td>Application activity quiesed snapshot (currently not used)</td></tr></table></td></tr><tr><td id='m_cronExpressions'>cronExpressions</td><td>xsd:list[xsd:string]</td><td>A list of
  <a href="http://www.quartz-scheduler.org/documentation/quartz-2.x/tutorials/tutorial-lesson-06.html">quartz cron expressions</a>.
  The format is:
 

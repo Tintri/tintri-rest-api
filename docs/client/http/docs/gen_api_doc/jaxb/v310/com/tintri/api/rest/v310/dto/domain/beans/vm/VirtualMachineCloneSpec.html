@@ -34,16 +34,16 @@ function create_link(jax_path, path_name) {
   "restoreInfo":null,
   "rhev":null,
   "vmware":{
-     "typeId":"com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec$VMwareCloneInfo",
-     "cloneVmName":"new-clone-from-vm",
-     "vCenterName":VCENTER-HOSTNAME,
-     "datastoreName":DATASTORE-NAME,
-     "folderMorefValue":null,
-     "hostClusterMoref":HOSTRESOURCE-ID,
-     "customizationScript":null
-     }
-   "hyperv":null,
-   "generic":null
+      "typeId":"com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec$VMwareCloneInfo",
+      "cloneVmName":"new-clone-from-vm",
+      "vCenterName":VCENTER-HOSTNAME,
+      "datastoreName":DATASTORE-NAME,
+      "folderMorefValue":null,
+      "hostClusterMoref":HOSTRESOURCE-ID,
+      "customizationScript":null
+      }
+  "hyperv":null,
+  "generic":null
   }
  }
  </pre>
@@ -63,16 +63,16 @@ function create_link(jax_path, path_name) {
    "restoreInfo":null,
    "rhev":null,
    "vmware":{
-      "typeId":"com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec$VMwareCloneInfo",
-      "cloneVmName":"new-clone-from-snapshot",
-      "vCenterName":VCENTER-HOSTNAME,
-      "datastoreName":DATASTORE-NAME,
-      "folderMorefValue":null,
-      "hostClusterMoref":<HOSTRESOURCE-ID>,
-      "customizationScript":null
-      },
-    "hyperv":null,
-    "generic":null
+       "typeId":"com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec$VMwareCloneInfo",
+       "cloneVmName":"new-clone-from-snapshot",
+       "vCenterName":VCENTER-HOSTNAME,
+       "datastoreName":DATASTORE-NAME,
+       "folderMorefValue":null,
+       "hostClusterMoref":<HOSTRESOURCE-ID>,
+       "customizationScript":null
+       },
+   "hyperv":null,
+   "generic":null
   }
  }
  </pre>
@@ -88,10 +88,10 @@ function create_link(jax_path, path_name) {
   "snapshotId":"C218198C-9CE4-E5FD-00B3-EE96D2B3270F-SST-0000000000000001",
   "consistency":null,
   "remoteCopyInfo":{
-     "typeId":"com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec$RemoteCopyInfo",
-     "replicationPathId":"d3b57854-b241-4378-8afc-598a3dd5017e",
-     "directoryName":"destinationOfShotCopy"
-     },
+      "typeId":"com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec$RemoteCopyInfo",
+      "replicationPathId":"d3b57854-b241-4378-8afc-598a3dd5017e",
+      "directoryName":"destinationOfShotCopy"
+      },
   "restoreInfo":null,
   "rhev":null,
   "vmware":null,
@@ -112,13 +112,64 @@ function create_link(jax_path, path_name) {
   "snapshotId":"C218198C-9CE4-E5FD-00B3-EE96D2B3270F-SST-0000000000000001",
   "consistency":null,
   "restoreInfo":{
-     "typeId":"com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec$RestoreInfo",
-     "directoryName":"destinationOfShotCopy"
-     },
+      "typeId":"com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec$RestoreInfo",
+      "directoryName":"destinationOfShotCopy"
+      },
   "rhev":null,
   "vmware":null,
   "hyperv":null,
   "generic":null
+  }
+ }
+ </pre>
+ </li>
+
+ <li>Clone from XenServer VM's snapshot <br>
+ <pre>
+ {@code
+  {
+  "typeId": "com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec",
+  "count": 1,
+  "xenServer": {
+      "typeId": "com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec$XenServerCloneInfo",
+      "cloneVmName": "test-clone3",
+      "datastoreName": "ttvm954_sr1",
+      "xenServerName": "dd4372a8-4e73-698f-ba94-23cd1924de55",
+      "hostClusterMoref": "5de68c52-af9a-aa86-2e17-2c7d861c8f54:203c87c4-f2e7-4de2-9874-38aba9c2d9e8"
+      },
+  "snapshotId": "83C3FBD0-973E-9EAC-CFA6-2DD4D7E185D0-SST-0000000000000020",
+  }
+ }
+ </pre>
+ </li>
+
+ <li>Clone from XenServer VM <br>
+ <pre>
+ {@code
+  {
+  "typeId": "com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec",
+  "count": 1,
+  "vmId": "VIM-179D542F-6773-402D-9417-EED01ED8149D",
+  "consistency": "CRASH_CONSISTENT",
+  "xenServer": {
+        "typeId": "com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec$XenServerCloneInfo",
+        "cloneVmName": "test-clone-6",
+        "datastoreName": "ttvm975_sr2",
+        "xenServerName": "dd4372a8-4e73-698f-ba94-23cd1924de55",
+        "hostClusterMoref": "8b0c25af-a8e8-e6a7-f883-a3d0fa925dab:203c87c4-f2e7-4de2-9874-38aba9c2d9e8"
+      }
+ }
+ </pre>
+ </li>
+
+ <li>Clone from CSI snapshot <br>
+ <pre>
+ {@code
+  {
+  "typeId":"com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec",
+  "count":1,
+  "simpleCloneVmName":"csi/ttvm928-cloned-vm-10",
+  "snapshotId":"35E40653-9176-3625-1C66-098CB9C2A758-SST-0000000000000001"
   }
  }
  </pre>
@@ -134,6 +185,7 @@ function create_link(jax_path, path_name) {
    "<a href='#m_vmId'>vmId</a>": &ltString&gt,
    "<a href='#m_generic'>generic</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.GenericCloneInfo.html'>GenericCloneInfo</a>,
    "<a href='#m_hyperv'>hyperv</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.HyperVCloneInfo.html'>HyperVCloneInfo</a>,
+   "<a href='#m_openStack'>openStack</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.OpenStackCloneInfo.html'>OpenStackCloneInfo</a>,
    "<a href='#m_otherDb'>otherDb</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.OtherDbCloneInfo.html'>OtherDbCloneInfo</a>,
    "<a href='#m_remoteCopyInfo'>remoteCopyInfo</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.RemoteCopyInfo.html'>RemoteCopyInfo</a>,
    "<a href='#m_restoreInfo'>restoreInfo</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.RestoreInfo.html'>RestoreInfo</a>,
@@ -142,14 +194,14 @@ function create_link(jax_path, path_name) {
    "<a href='#m_xenServer'>xenServer</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.XenServerCloneInfo.html'>XenServerCloneInfo</a>,
 }
 </pre></td></tr></table><dl></dl>
-<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_generic'>generic</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.GenericCloneInfo.html'>GenericCloneInfo</a></td><td>Generic Integrations specific information if the clone operation involves Generic VMs</td></tr><tr><td id='m_hyperv'>hyperv</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.HyperVCloneInfo.html'>HyperVCloneInfo</a></td><td>Hyper-V specific information if the clone operation involves Hyper-V VMs</td></tr><tr><td id='m_otherDb'>otherDb</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.OtherDbCloneInfo.html'>OtherDbCloneInfo</a></td><td>Returns information required to clone OtherFileDB.</td></tr><tr><td id='m_remoteCopyInfo'>remoteCopyInfo</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.RemoteCopyInfo.html'>RemoteCopyInfo</a></td><td>Contains information needed for remote copy operation. Populate remoteCopyInfo object along with snapshotId.</td></tr><tr><td id='m_restoreInfo'>restoreInfo</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.RestoreInfo.html'>RestoreInfo</a></td><td>Contains information needed for restore operation. Populated restoreInfo object along with snapshotId. Clone API
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_generic'>generic</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.GenericCloneInfo.html'>GenericCloneInfo</a></td><td>Generic Integrations specific information if the clone operation involves Generic VMs</td></tr><tr><td id='m_hyperv'>hyperv</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.HyperVCloneInfo.html'>HyperVCloneInfo</a></td><td>Hyper-V specific information if the clone operation involves Hyper-V VMs</td></tr><tr><td id='m_openStack'>openStack</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.OpenStackCloneInfo.html'>OpenStackCloneInfo</a></td><td>Returns OpenStack specific clone information</td></tr><tr><td id='m_otherDb'>otherDb</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.OtherDbCloneInfo.html'>OtherDbCloneInfo</a></td><td>Returns information required to clone OtherFileDB.</td></tr><tr><td id='m_remoteCopyInfo'>remoteCopyInfo</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.RemoteCopyInfo.html'>RemoteCopyInfo</a></td><td>Contains information needed for remote copy operation. Populate remoteCopyInfo object along with snapshotId.</td></tr><tr><td id='m_restoreInfo'>restoreInfo</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.RestoreInfo.html'>RestoreInfo</a></td><td>Contains information needed for restore operation. Populated restoreInfo object along with snapshotId. Clone API
  with restoreInfo option is called on the destination of the clone. SnapshotId should be a UUID of replica.
  (replicated Snapshot)</td></tr><tr><td id='m_rhev'>rhev</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.RhevCloneInfo.html'>RhevCloneInfo</a></td><td>RHEV specific information if the clone operation involves RHEV VMs</td></tr><tr><td id='m_vmware'>vmware</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.VMwareCloneInfo.html'>VMwareCloneInfo</a></td><td>VMware specific information if the clone operation involves VMware VMs</td></tr><tr><td id='m_xenServer'>xenServer</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.XenServerCloneInfo.html'>XenServerCloneInfo</a></td><td>Returns information required to clone XenServer VM.</td></tr></tbody></table>
 
 <hr/><table class='info' id='Attributes'><caption class='TableCaption'>Attributes</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_consistency'>consistency</td><td>CRASH_CONSISTENT | VM_CONSISTENT | APP_CONSISTENT</td><td>The consistency of the snapshot used by the clone API in case of clone from VM.
- SnapshotConsistency has 3 options. VM_CONSISTENT, CRASH_CONSISTENT or APP_CONSISTENT.<table class='info'><tr><td>CRASH_CONSISTENT</td><td>Disk activity quiesed snapshot</td></tr><tr><td>VM_CONSISTENT</td><td>VM activity  quiesed snapshot</td></tr><tr><td>APP_CONSISTENT</td><td>Application activity quiesed snapshot (currently not used)</td></tr></table></td></tr><tr><td id='m_count'>count</td><td>xsd:int</td><td>Count represents number of cloned VMs to be created. Its value should be in the range of 1, 500.
+ SnapshotConsistency has 3 options. VM_CONSISTENT, CRASH_CONSISTENT or APP_CONSISTENT.<table class='info'><tr><td>CRASH_CONSISTENT</td><td>Disk activity quiesed snapshot</td></tr><tr><td>VM_CONSISTENT</td><td>VM activity  quiesed snapshot</td></tr><tr><td>APP_CONSISTENT</td><td>Application activity quiesed snapshot (currently not used)</td></tr></table></td></tr><tr><td id='m_count'>count</td><td>xsd:int</td><td>Count represents number of cloned VMs to be created. Its value should be in the range of 1, 500. The range is 1, 50 for only OpenStack VMs.
  Mandatory for 'clone from VM' and 'clone from snapshot' to local datastore.
- The value will always be considered is 1 for 'remote copy' and 'mini DR'.</td></tr><tr><td id='m_preserveInstanceUuid'>preserveInstanceUuid</td><td>xsd:boolean</td><td>When set to true, assigns the same instance uuid to the cloned VM as that of snapshot.
+ The value will always be considered is 1 for 'remote copy', 'mini DR', and CSI managed object or snapshots.</td></tr><tr><td id='m_preserveInstanceUuid'>preserveInstanceUuid</td><td>xsd:boolean</td><td>When set to true, assigns the same instance uuid to the cloned VM as that of snapshot.
  The count must set to 1. Otherwise, the operation is rejected.
  The operation is rejected if there is a live VM with the same instance UUID.
  For XenServer VM/snapshot clone, this attribute has no effect. A new instance uuid is assigned always.</td></tr><tr><td id='m_simpleCloneVmName'>simpleCloneVmName</td><td>xsd:string</td><td>This is the clone VM name for HypervisorType.OTHERFILE_CSI VM.

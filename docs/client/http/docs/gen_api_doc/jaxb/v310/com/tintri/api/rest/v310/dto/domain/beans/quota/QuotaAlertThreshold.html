@@ -27,7 +27,8 @@ function create_link(jax_path, path_name) {
    "<a href='#m_alertThresholdsPercent'>alertThresholdsPercent</a>": [&ltNumber&gt],
 }
 </pre></td></tr></table><dl></dl>
-<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_alertThresholdsPercent'>alertThresholdsPercent</td><td>xsd:list[xsd:double]</td><td>Returns a list of alert thresholds in terms of percentage (up to two decimal places) of the total space limit.
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_alertThresholdsPercent'>alertThresholdsPercent</td><td>xsd:list[xsd:double]</td><td>Alert thresholds as a percentage (up to two decimal places) of the total space limit.
+ The second threshold must be greater than the first.
  The valid range is 0 to 100. The value 0 is considered as no configuration. Error will be generated when trying
  to apply out of range value to the quota policy.</td></tr></tbody></table>
 
