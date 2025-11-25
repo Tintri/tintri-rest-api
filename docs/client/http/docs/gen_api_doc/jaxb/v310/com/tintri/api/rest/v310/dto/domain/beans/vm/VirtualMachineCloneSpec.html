@@ -152,12 +152,13 @@ function create_link(jax_path, path_name) {
   "vmId": "VIM-179D542F-6773-402D-9417-EED01ED8149D",
   "consistency": "CRASH_CONSISTENT",
   "xenServer": {
-        "typeId": "com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec$XenServerCloneInfo",
-        "cloneVmName": "test-clone-6",
-        "datastoreName": "ttvm975_sr2",
-        "xenServerName": "dd4372a8-4e73-698f-ba94-23cd1924de55",
-        "hostClusterMoref": "8b0c25af-a8e8-e6a7-f883-a3d0fa925dab:203c87c4-f2e7-4de2-9874-38aba9c2d9e8"
+      "typeId": "com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec$XenServerCloneInfo",
+      "cloneVmName": "test-clone-6",
+      "datastoreName": "ttvm975_sr2",
+      "xenServerName": "dd4372a8-4e73-698f-ba94-23cd1924de55",
+      "hostClusterMoref": "8b0c25af-a8e8-e6a7-f883-a3d0fa925dab:203c87c4-f2e7-4de2-9874-38aba9c2d9e8"
       }
+   }
  }
  </pre>
  </li>
@@ -174,7 +175,44 @@ function create_link(jax_path, path_name) {
  }
  </pre>
  </li>
- </ol><table class='examples'><tr><td><br>
+
+  <li>Clone from Proxmox VM's snapshot <br>
+  <pre>
+  {@code
+   {
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec",
+   "count": 1,
+   "proxmox": {
+       "typeId": "com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec$ProxmoxCloneInfo",
+       "cloneVmName": "test-clone3",
+       "datastoreName": "ttvm888_proxmox1",
+       "hostClusterMoref": "Proxmox_10.136.79.165_ttvm888_proxmox1:node/apendse-pve-poc"
+       },
+   "snapshotId": "83C3FBD0-973E-9EAC-CFA6-2DD4D7E185D0-SST-0000000000000020",
+   }
+  }
+  </pre>
+  </li>
+
+  <li>Clone from Proxmox VM <br>
+  <pre>
+  {@code
+   {
+   "typeId": "com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec",
+   "count": 1,
+   "vmId": "VIM-179D542F-6773-402D-9417-EED01ED8149D",
+   "consistency": "CRASH_CONSISTENT",
+   "proxmox": {
+       "typeId": "com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec$ProxmoxCloneInfo",
+       "cloneVmName": "test-clone3",
+       "datastoreName": "ttvm888_proxmox1",
+       "hostClusterMoref": "Proxmox_10.136.79.165_ttvm888_proxmox1:node/apendse-pve-poc"
+       }
+    }
+  }
+  </pre>
+  </li>
+  </ol><table class='examples'><tr><td><br>
 <b>Data Structure</b><pre>{
    "typeId": "com.tintri.api.rest.v310.dto.domain.beans.vm.VirtualMachineCloneSpec",
    "<a href='#m_consistency'>consistency</a>": 'CRASH_CONSISTENT' | 'VM_CONSISTENT' | 'APP_CONSISTENT',
@@ -187,6 +225,7 @@ function create_link(jax_path, path_name) {
    "<a href='#m_hyperv'>hyperv</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.HyperVCloneInfo.html'>HyperVCloneInfo</a>,
    "<a href='#m_openStack'>openStack</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.OpenStackCloneInfo.html'>OpenStackCloneInfo</a>,
    "<a href='#m_otherDb'>otherDb</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.OtherDbCloneInfo.html'>OtherDbCloneInfo</a>,
+   "<a href='#m_proxmox'>proxmox</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.ProxmoxCloneInfo.html'>ProxmoxCloneInfo</a>,
    "<a href='#m_remoteCopyInfo'>remoteCopyInfo</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.RemoteCopyInfo.html'>RemoteCopyInfo</a>,
    "<a href='#m_restoreInfo'>restoreInfo</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.RestoreInfo.html'>RestoreInfo</a>,
    "<a href='#m_rhev'>rhev</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.RhevCloneInfo.html'>RhevCloneInfo</a>,
@@ -194,7 +233,7 @@ function create_link(jax_path, path_name) {
    "<a href='#m_xenServer'>xenServer</a>": <a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.XenServerCloneInfo.html'>XenServerCloneInfo</a>,
 }
 </pre></td></tr></table><dl></dl>
-<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_generic'>generic</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.GenericCloneInfo.html'>GenericCloneInfo</a></td><td>Generic Integrations specific information if the clone operation involves Generic VMs</td></tr><tr><td id='m_hyperv'>hyperv</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.HyperVCloneInfo.html'>HyperVCloneInfo</a></td><td>Hyper-V specific information if the clone operation involves Hyper-V VMs</td></tr><tr><td id='m_openStack'>openStack</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.OpenStackCloneInfo.html'>OpenStackCloneInfo</a></td><td>Returns OpenStack specific clone information</td></tr><tr><td id='m_otherDb'>otherDb</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.OtherDbCloneInfo.html'>OtherDbCloneInfo</a></td><td>Returns information required to clone OtherFileDB.</td></tr><tr><td id='m_remoteCopyInfo'>remoteCopyInfo</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.RemoteCopyInfo.html'>RemoteCopyInfo</a></td><td>Contains information needed for remote copy operation. Populate remoteCopyInfo object along with snapshotId.</td></tr><tr><td id='m_restoreInfo'>restoreInfo</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.RestoreInfo.html'>RestoreInfo</a></td><td>Contains information needed for restore operation. Populated restoreInfo object along with snapshotId. Clone API
+<hr/><table class='info' id='Elements'><caption class='TableCaption'>Elements</caption><tbody><tr><th class='TableHeader'>Name</th><th class='TableHeader'>Type</th><th class='TableHeader'>Description</th></tr><tr><td id='m_generic'>generic</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.GenericCloneInfo.html'>GenericCloneInfo</a></td><td>Generic Integrations specific information if the clone operation involves Generic VMs</td></tr><tr><td id='m_hyperv'>hyperv</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.HyperVCloneInfo.html'>HyperVCloneInfo</a></td><td>Hyper-V specific information if the clone operation involves Hyper-V VMs</td></tr><tr><td id='m_openStack'>openStack</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.OpenStackCloneInfo.html'>OpenStackCloneInfo</a></td><td>Returns OpenStack specific clone information</td></tr><tr><td id='m_otherDb'>otherDb</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.OtherDbCloneInfo.html'>OtherDbCloneInfo</a></td><td>Returns information required to clone OtherFileDB.</td></tr><tr><td id='m_proxmox'>proxmox</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.ProxmoxCloneInfo.html'>ProxmoxCloneInfo</a></td><td>Proxmox specific clone information.</td></tr><tr><td id='m_remoteCopyInfo'>remoteCopyInfo</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.RemoteCopyInfo.html'>RemoteCopyInfo</a></td><td>Contains information needed for remote copy operation. Populate remoteCopyInfo object along with snapshotId.</td></tr><tr><td id='m_restoreInfo'>restoreInfo</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.RestoreInfo.html'>RestoreInfo</a></td><td>Contains information needed for restore operation. Populated restoreInfo object along with snapshotId. Clone API
  with restoreInfo option is called on the destination of the clone. SnapshotId should be a UUID of replica.
  (replicated Snapshot)</td></tr><tr><td id='m_rhev'>rhev</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.RhevCloneInfo.html'>RhevCloneInfo</a></td><td>RHEV specific information if the clone operation involves RHEV VMs</td></tr><tr><td id='m_vmware'>vmware</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.VMwareCloneInfo.html'>VMwareCloneInfo</a></td><td>VMware specific information if the clone operation involves VMware VMs</td></tr><tr><td id='m_xenServer'>xenServer</td><td><a href='../../../../../../../../../com/tintri/api/rest/v310/dto/domain/beans/vm/VirtualMachineCloneSpec.XenServerCloneInfo.html'>XenServerCloneInfo</a></td><td>Returns information required to clone XenServer VM.</td></tr></tbody></table>
 

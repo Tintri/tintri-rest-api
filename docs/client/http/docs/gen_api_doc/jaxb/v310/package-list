@@ -21,6 +21,7 @@ com.tintri.api.rest.v310.dto.domain.beans.repl
 com.tintri.api.rest.v310.dto.domain.beans
 com.tintri.api.rest.v310.dto.domain.beans.syncrepl.common
 com.tintri.api.rest.v310.dto.domain.beans.perf
+com.tintri.api.rest.v310.dto.domain.beans.proxmox
 com.tintri.api.rest.v310.dto.domain.beans.profiler.phasetimer
 com.tintri.api.rest.v310.dto.domain.beans.k8s
 com.tintri.api.rest.vcommon.dto.rbac
